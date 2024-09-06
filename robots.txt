@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+Allow: /archives/
+Allow: /tags/
+Allow: /categories/
+Allow: /it-categories/
+Allow: /personal/
+Allow: /game-categories/
+
+
+Disallow: /lib/
+
+Sitemap: https://aixuek-itshare.com/sitemap.xml
