@@ -48,246 +48,6 @@
     <content><![CDATA[]]></content>
   </entry>
   <entry>
-    <title>有趣轶事</title>
-    <url>/personal/funny-experience/index/</url>
-    <content><![CDATA[<h1 id="有趣轶事"><a href="#有趣轶事" class="headerlink" title="有趣轶事"></a>有趣轶事</h1><h2 id="参加SIG-event-day的搞笑事情"><a href="#参加SIG-event-day的搞笑事情" class="headerlink" title="参加SIG event day的搞笑事情"></a><a href="https://aixuek-itshare.com/personal/funny-experience/sig-event">参加SIG event day的搞笑事情</a></h2>]]></content>
-  </entry>
-  <entry>
-    <title>C++面试问题</title>
-    <url>/it-categories/interviews/C++-interview-questions/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>IT分类</category>
-        <category>面试过往</category>
-      </categories>
-      <tags>
-        <tag>C++</tag>
-        <tag>Interview</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>参加SIG event day的搞笑事情</title>
-    <url>/personal/funny-experience/sig-event/</url>
-    <content><![CDATA[<h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>在通过SIG的笔试、HR电话面试之后（有关SIG的面试题和面试经历，请看<a href="/it-categories/interviews/sig-interview">SIG面试</a>），收到了参加SIG办公室俩天参观的邀请，于是开开心心就去了，毕竟美国大投行公司，它的财力对我吸引力是非常大的，也很好奇有钱公司内部长啥样。也就开启了俩天的social娱乐。</p>
-<h1 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h1><p>SIG的参观活动包括：刚开始的破冰，大家一起吃早餐（白人早餐真的一般，但是咖啡和面包还是不错的），一群人一起坐个大桌子，一起聊天，然后会有HR工作人员到每个桌子参与聊天（纯闲聊，之前正值Taylor Swift在悉尼开了个演唱会，而且那个HR是粉丝，于是这个成为了主要话题）。</p>
-<p>结束之后开始由团队做演讲，介绍公司、投行、公司团队结构和负责的事情，有提问环节，在介绍Trading思想时，也会插入跟股票相关的卡牌游戏环节，来方便理解。当然，之后还有赌博游戏，因为SIG这个公司的赌博文化很重，每年还会举行赌博游戏WIZARD的比赛（包含奖金的那种:&gt;）。</p>
-<p>第一天晚上，因为SIG把住宿和路费都包了，很豪华的酒店，就在悉尼歌剧院海湾附近的高楼里面，听住进去的人说晚上的夜景灯光非常漂亮，房间也很豪华（瞬间后悔为啥我要写我住悉尼），所以我们都参加了晚上的酒吧晚餐。酒吧是crown顶楼的露台，非常豪华！（又是豪华，我知道，这就是财力的魅力啊）。SIG的it老员工和第二天带我们的员工组长都会来一起聊天（就是试水感觉，看看你做了啥项目，擅长什么，沟通怎么样），我和之前聊天的大佬也一起聊项目，一起问他们一些之后工作的问题和他们对it的看法啥的。在屋顶上边聊天边喝酒吃小burger，第一次体验服务员轮流托着餐盘一个个服务的感觉挺新奇舒适的。</p>
-<p>第一天结束后，第二天就多了一个题目分析。在这个event之前，SIG会发一个题目邮件，要求在来event前做完。所以第二天员工team leader就会带着自己的组员一起把每个人写的题解放到屏幕上讲解分析，有什么缺点，什么有点，为什么错，现场优化。这就是贼有趣的事情发生的时候了（后面些写）。之后，员工带着我们参观了各种办公区，SIG的办公区属于黑色简约风，黑色的地毯，清爽大气的办公桌，加上落地窗外明朗开阔的风景，简直是我的梦中情office！</p>
-<p>在第二天结束末尾，大家一起拍了合照，领了纪念礼包（喜欢它送到WIZARD卡牌哈哈），就欢快地结束了。</p>
-<h2 id="有趣事件1"><a href="#有趣事件1" class="headerlink" title="有趣事件1"></a>有趣事件1</h2><p>关于代码一起分析那事儿，铺垫挺长的。在第一天晚上酒吧聊天地时候，就有一个白女不停地说，“哎呀，有的时候我的灵感一会儿就来了，我喜欢深夜写码，但有时候写完之后第二天就忘了怎么写的，很惊讶我自己能写出来，真的有趣哈哈。”</p>
-<p>我其实也喜欢大晚上写，可能一部分码农都有这个习惯吧，特别熬夜的时候如何喝酒提神的话（我会这样，很爽哈哈），有的时候确实会再次看到代码有点懵，啊这咋写的。而且我在写完代码一周之后，大概率会忘记我的逻辑和干的事情，所以我一直需要记笔记，记录这个代码重点干了啥，逻辑是怎么样的（之前实习的时候，就因为我忘记我写的代码的逻辑，而被mentor问这是我写的代码吗:&lt;…）。</p>
-<p>所以我理解她说的话，可能说得夸张了一点，但是是可能存在的，但是我不理解为啥她逢人就讲，难不成这是优势？自动清缓存让脑子更灵光？但是第二天，我就理解了。</p>
-<p>当时正巧第二天我跟那个白女在一个组，这个代码题，就我和她写出了全部的解，有另俩个女生卡在了最后一个test，time limit上，还有一个女生有bug，只过了一部分test。于是工作人员在分析完其他人的代码，就让我和她讲讲解题思路。当时我还有点小私心：她在我前面（按顺序一个一个讲），那她把思路讲完了，我就是透明了。随后我发现这个完全多余，因为她直接搬出了“啊呀，我有时候晚上写码blablabla…我忘了咋做的”，mentor一听，就直接问我你来讲讲？</p>
-<p>于是我意味深长地看了她一眼（因为昨晚她挺跳的，除了说她忘代码的事儿，还不停地说她自己的项目，多么多么厉害啥的），如果她只是抄了代码我无所谓，但是又抄代码又要跳说自己多厉害就有点讨厌了。然后到白板讲了解题思路。之后小组的人不理解的也是找我问思路，都不问她。所以嘛，小聪明少耍，大家都懂。</p>
-<p>后来想来挺搞笑的，铺垫了一晚上，也不回去查一查捣鼓下解题思路，还期望第二天能混过去呢，原来有的白女跟普信男一样，老装了。</p>
-<h2 id="有趣事件2"><a href="#有趣事件2" class="headerlink" title="有趣事件2"></a>有趣事件2</h2><p>这个event本身就挺drama，但也挺合乎常理吧。在第一天开始的时候，SIG团队的工作人员就不停强调“这不是面试中的一环，大家敞开心扉玩，就是互相熟悉熟悉介绍介绍，不要太紧张”。结果我知道一同去参加的一个好友，在这个event之后就给刷了 :&lt;???。我当时听这个话一开始是嗤之以鼻“谁特么信啊”，之后听SIG说了好几次，给我洗脑了：开开心心玩，谁会用这个来评估，有时候玩游戏的时候也没咋看工作人员观察，于是自己开开心心和大佬沉浸在解方块puzzle中，当时一群人在旁边问工作人员面试问题。。。每想到结果还是会刷人。。。，而且当时我都那样都没被刷。</p>
-<h1 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h1><p>在里面遇到了很多有趣的人，有在玩WIZARD一直负分的女生，可可爱爱地向马上让她再次输分的人撒娇说“不要，让我赢一盘嘛，求你了”，有C++大佬谦虚地说我没那么厉害的同时给我展示了他们在做的贼大的开源服务，还有一个眼睛亮闪闪的女生认真地看着我说这个解法很棒…</p>
-<p>这些真诚有趣的人都是比这个event更加令人深刻、有意义的回忆，一直期待遇到更多有趣的人。虽然之后SIG后面几面挂了，但是让我记住了：哇，有钱就是np！</p>
-]]></content>
-      <categories>
-        <category>个人</category>
-        <category>有趣轶事</category>
-      </categories>
-      <tags>
-        <tag>搞笑</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>面试过往</title>
-    <url>/it-categories/interviews/index/</url>
-    <content><![CDATA[<h1 id="面试过往"><a href="#面试过往" class="headerlink" title="面试过往"></a>面试过往</h1><h2 id="C-面试问题"><a href="#C-面试问题" class="headerlink" title="C++面试问题"></a><a href="https://aixuek-itshare.com/it-categories/interviews/C++-interview-questions">C++面试问题</a></h2><h2 id="SIG-grad-tech面试的分享"><a href="#SIG-grad-tech面试的分享" class="headerlink" title="SIG grad tech面试的分享"></a><a href="https://aixuek-itshare.com/it-categories/interviews/sig-interview">SIG grad tech面试的分享</a></h2>]]></content>
-  </entry>
-  <entry>
-    <title>C++常用设计模式</title>
-    <url>/it-categories/dev-record/C++%E5%B8%B8%E7%94%A8%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</url>
-    <content><![CDATA[<h1 id="工厂模式-Factory"><a href="#工厂模式-Factory" class="headerlink" title="工厂模式(Factory)"></a>工厂模式(Factory)</h1><h2 id="简单工厂"><a href="#简单工厂" class="headerlink" title="简单工厂"></a>简单工厂</h2><p>只有一个工厂，即一个类负责创建不同类的实例。通常使用static静态方法来创建对象，不需要传递工厂类来创建实例。</p>
-<p>优点：</p>
-<ul>
-<li>单一工厂类，实现简单</li>
-</ul>
-<p>缺点：</p>
-<ul>
-<li>扩展性差，添加新类，新产品时，需要修改工厂类代码</li>
-</ul>
-<p>代码实现：<br><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Car</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="type">void</span> <span class="title">drive</span><span class="params">()</span> </span>= <span class="number">0</span>; <span class="comment">// 创建纯虚函数，让每个子类实现</span></span><br><span class="line">    <span class="keyword">virtual</span> ~<span class="built_in">Car</span>() &#123;&#125; <span class="comment">// 析构虚函数，保证子类析构时能正确调用子类析构函数</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">BydCar</span> : <span class="keyword">public</span> Car</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">drive</span><span class="params">()</span> <span class="keyword">override</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;Driving BydCar&quot;</span> &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">TeslaCar</span> : <span class="keyword">public</span> Car</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">drive</span><span class="params">()</span> <span class="keyword">override</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;Driving TeslaCar&quot;</span> &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">CarFactory</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">static</span> Car* <span class="title">createCar</span><span class="params">(<span class="type">const</span> string&amp; brand)</span> <span class="comment">// 静态创建方法，可随地调用，来避免创建多个类工厂</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (brand == <span class="string">&quot;Byd&quot;</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">BydCar</span>();</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (brand == <span class="string">&quot;Tesla&quot;</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">TeslaCar</span>();</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="keyword">return</span> <span class="literal">nullptr</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Car *bydCar = CarFactory::<span class="built_in">createCar</span>(<span class="string">&quot;Byd&quot;</span>);</span><br><span class="line">    bydCar-&gt;<span class="built_in">drive</span>();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">delete</span> bydCar;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h2 id="工厂方法"><a href="#工厂方法" class="headerlink" title="工厂方法"></a>工厂方法</h2>]]></content>
-      <categories>
-        <category>IT分类</category>
-        <category>开发杂记</category>
-      </categories>
-      <tags>
-        <tag>C++</tag>
-        <tag>Code</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>C++笔记</title>
-    <url>/it-categories/dev-record/C++-notes/</url>
-    <content><![CDATA[<h1 id="Static关键字作用"><a href="#Static关键字作用" class="headerlink" title="Static关键字作用"></a>Static关键字作用</h1><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><ol>
-<li><p>使用目的：</p>
-<p> 在 C++ 中，需要一个数据对象为整个类而非某个对象服务,同时又力求不破坏类的封装性,即要求此成员隐藏在类的内部，对外不可见时，可将其定义为静态数据。</p>
-</li>
-</ol>
-<ol>
-<li><p>存放位置</p>
-<p> DATA 段（全局初始化区）存放初始化的全局变量和静态变量；BSS 段（全局未初始化区）存放未初始化的全局变量和静态变量。其中BBS段在程序执行之前会被系统自动清0，所以未初始化的全局变量和静态变量在程序执行之前已经为0。<strong>存储在静态数据区的变量会在程序刚开始运行时就完成初始化，也是唯一的一次初始化</strong>。</p>
-</li>
-<li><p>使用static的优势：</p>
-<ul>
-<li>可以节省内存，因为它是所有对象所公有的，因此，对多个对象来说，<strong>静态数据成员只存储一处，供所有对象共用</strong>。静态数据成员的值对每个对象都是一样，但它的值是可以更新的。只要对静态数据成员的值更新一次，保证所有对象存取更新后的相同的值，这样可以提高时间效率。使用静态成员变量实现多个对象之间的数据共享不会破坏隐藏的原则，保证了安全性还可以节省内存。</li>
-<li>静态全局变量在声明它的整个文件都是可见的，而在文件之外是不可见的。即<strong>静态全局变量不能被其它文件所用</strong>；其它文件中可以定义相同名字的变量，不会发生冲突。</li>
-</ul>
-</li>
-<li><p>动态数据vs静态数据：</p>
-<p>一般程序把新产生的动态数据存放在堆区，函数内部的自动变量存放在栈区。自动变量一般会随着函数的退出而释放空间，<strong>静态数据（即使是函数内部的静态局部变量）也存放在全局数据区。全局数据区的数据并不会因为函数的退出而释放空间。</strong></p>
-</li>
-</ol>
-<h2 id="静态数据成员"><a href="#静态数据成员" class="headerlink" title="静态数据成员"></a>静态数据成员</h2><p>静态数据成员的生存期大于 class 的对象，静态数据成员是每个 class 有一份，普通数据成员是每个 instance 有一份，因此静态数据成员也叫做类变量，而普通数据成员也叫做实例变量。</p>
-<details>
-    <summary>Code</summary>
-
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Test</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="type">int</span> n = <span class="number">0</span>;</span><br><span class="line">    <span class="comment">// 类内的声明只是声明了静态成员变量的存在，类外的定义才真正分配内存并初始化它。</span></span><br><span class="line">    <span class="type">static</span> <span class="type">int</span> i;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 静态成员变量属于类本身，而不是类的某个实例，因此它们的内存分配和初始化必须在类外进行。</span></span><br><span class="line"><span class="comment">// 在类外初始化时，必须再次指定变量的类型，以确保编译器知道该变量的类型和所属类。</span></span><br><span class="line"><span class="type">int</span> Test::i = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Test test1;</span><br><span class="line">    Test test2;</span><br><span class="line">    test1.i += <span class="number">1</span>;</span><br><span class="line">    test1.n += <span class="number">1</span>;</span><br><span class="line">    cout &lt;&lt; test2.i &lt;&lt; endl; <span class="comment">// 输出为1</span></span><br><span class="line">    cout &lt;&lt; test2.n &lt;&lt; endl; <span class="comment">// 输出为0</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</details>
-
-<h2 id="静态成员函数"><a href="#静态成员函数" class="headerlink" title="静态成员函数"></a>静态成员函数</h2><p>静态成员函数不能访问非静态(包括成员函数和数据成员)，但是非静态可以访问静态。因静态成员函数不属于类实例，它获取不了实例的信息，而非静态成员能获取全局静态数据，所以它可以调用静态数据。</p>
-<details>
-    <summary>代码示例</summary>
-
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Test</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="type">int</span> n = <span class="number">0</span>;</span><br><span class="line">    <span class="type">static</span> <span class="type">int</span> i;</span><br><span class="line">    <span class="function"><span class="type">static</span> <span class="type">void</span> <span class="title">printi</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        cout &lt;&lt; i &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">printn</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        cout &lt;&lt; n &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> Test::i = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Test test1;</span><br><span class="line">    Test test2;</span><br><span class="line">    test1.i += <span class="number">1</span>;</span><br><span class="line">    test1.n += <span class="number">1</span>;</span><br><span class="line">    cout &lt;&lt; test2.i &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; test2.n &lt;&lt; endl;</span><br><span class="line">    test1.<span class="built_in">printi</span>();</span><br><span class="line">    test2.i += <span class="number">1</span>;</span><br><span class="line">    Test::<span class="built_in">printi</span>(); <span class="comment">// 输出为2，因test2也给i加了1</span></span><br><span class="line">    <span class="comment">// Test::printn(); // 报错，因printn得由实例来call</span></span><br><span class="line">    test1.<span class="built_in">printn</span>(); <span class="comment">// 实例call就okay</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</details>
-
-<h2 id="局部静态变量"><a href="#局部静态变量" class="headerlink" title="局部静态变量"></a>局部静态变量</h2><p>实现局部能一直使用一个静态变量，而其他域不能访问的静态变量。</p>
-<p>比如，记录一个函数被调用了多少次：<br><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">count</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">static</span> <span class="type">int</span> num = <span class="number">0</span>; <span class="comment">// 这里就将num放到了静态区，所以不会被局部域销毁</span></span><br><span class="line">    ++num;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;called %d\n&quot;</span>, num);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">count</span>(); <span class="comment">// called 1</span></span><br><span class="line">    <span class="built_in">count</span>(); <span class="comment">// called 2</span></span><br><span class="line">    <span class="built_in">count</span>(); <span class="comment">// called 3</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h1 id="Extern关键字作用"><a href="#Extern关键字作用" class="headerlink" title="Extern关键字作用"></a>Extern关键字作用</h1><ol>
-<li>允许多个文件访问同一个全局变量/函数</li>
-<li>在当前文件表明变量/函数来自于其他文件</li>
-</ol>
-<details>
-    <summary>代码示例</summary>
-
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">// file1</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> i = <span class="number">5</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// file2</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;file1.cpp&quot;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">extern</span> <span class="type">int</span> i; <span class="comment">// 声明取的extern的全局变量</span></span><br><span class="line"><span class="keyword">extern</span> <span class="type">int</span> i = <span class="number">0</span>; <span class="comment">// 会报错，说重复定义</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    cout &lt;&lt; i &lt;&lt; endl; <span class="comment">// 输出为5</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</details>
-
-<h1 id="指针和引用"><a href="#指针和引用" class="headerlink" title="指针和引用"></a>指针和引用</h1><h2 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h2><p>指针是一个变量，其值为另一个变量的地址，即，内存位置的直接地址。</p>
-]]></content>
-      <categories>
-        <category>IT分类</category>
-        <category>开发杂记</category>
-      </categories>
-      <tags>
-        <tag>C++</tag>
-        <tag>Code</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>SIG grad tech面试的分享</title>
-    <url>/it-categories/interviews/sig-interview/</url>
-    <content><![CDATA[<ul>
-<li><a href="#面试流程">面试流程：</a></li>
-<li><a href="#面试内容">面试内容</a></li>
-<li><a href="#总结">总结：</a></li>
-</ul>
-<p>在参加完women’s discory day之后，收到了SIG tech面的邀请（也就是继oa，phone interview，event day后，倒数第二轮的面试），在预约好时间之后，便迎来了痛苦tech面。</p>
-<h1 id="面试流程："><a href="#面试流程：" class="headerlink" title="面试流程："></a>面试流程：</h1><ol>
-<li><p>提前十五分钟进面试链接。这是因为他们会需要你提前读题，有解题思路，一定要仔细看邮件，不要掐点进去了，那就是妥妥浪费自己机会和时间[doge]</p>
-</li>
-<li><p>俩面试官会分别自我介绍，讲自己所在团队，和负责内容。在他们说的时候最好仔细听，可以将感兴趣或疑问的点记下，在最后提问环节就可以提出紧密相关的问题以表示对他们团队和公司的兴趣。</p>
-</li>
-<li><p>之后便是自我介绍，讲下学校背景，擅长的编程语言合作过的项目，最好挑重点的说保持精简，因为面试官们需要把控编程和技术提问的时间，如果想展示擅长的技术，最好将时间留给后面提问互动。</p>
-</li>
-<li><p>ice break结束，考官会问“有没有把题目看了”，有的话便会让你讲下解题思路，其中会包括你要用什么数据结构，整体的逻辑处理。他们也会给些建议，比方提醒你考虑数据结构的时间和空间复杂度（只是提醒，肯定不会明确说）。同时，他们会很人性地向你确认并告诉你，你的解答方法思路是不是在正轨上。（也许不在正轨会有提示？没试过，没这个支线的剧透）之后，他们会给你提问的时间，可以借机确认好解答的目的和edge case，来展现你思考的全面性，和对任务的严谨和沟通能力。</p>
-</li>
-<li><p>他们会关掉他们的视频，告诉你你可以关掉mic，然后就开始长达30min的沉浸解题时间。 把代码写出来是第一重要的，其次可以尝试写出最优解，比方说nlogn的方法。题目会自带test，在codesignal界面上点run就会自动跑test，很方便，他们也会教你怎么跑test。</p>
-</li>
-<li><p>到时间后，他们会重新打开摄像头，让你跑test，然后讲解代码，用的什么data structure，为什么选择它，它的time和space complexity是多少，整体的代码逻辑也要讲清楚。随后，如果代码不是最优解，便会引导你说出最优解，然后code出来。</p>
-</li>
-<li><p>题目大体讨论考察完之后，会问理论问题。这次包括：</p>
-</li>
-</ol>
-<ul>
-<li>concurrency， 多人同时读写怎么处理？锁怎么设置？</li>
-<li>hash table，如何实现的？time complexity是多少？有没有time complexity不是1的情况？有的话，最坏可能达到什么情况？</li>
-<li>binary tree的概念和它的time complexity</li>
-</ul>
-<ol>
-<li>你向他们提问环节，这时候一定要问之前提到的他们的工作内容，团队负责任务细节来表示你的兴趣，千万不要说没问题了[笑哭R]。</li>
-</ol>
-<h1 id="面试内容"><a href="#面试内容" class="headerlink" title="面试内容"></a>面试内容</h1><p>这次碰到的是：主题是movie搜索网站，要你设计储存它给的movie数据（title,  genre list, year)，然后input是query，包含（year range和 genre），输出是一个iterative movie class（class是现成的），但要ordered by year。</p>
-<p>具体解决办法不方便说了，题目本身不难，但optimization的办法应该是logn结果。</p>
-<h1 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h1><p>感觉考点是</p>
-<ol>
-<li>对代码的熟练度和抗压，能不能在半小时内将思路在监督（他们说这个没监督，但鬼才信[doge]）的情况下快速写对</li>
-<li>对data structure（map或dict和hash table的time complexity的原理），和基础算法（binary tree）这些足够熟悉，能想到或者写出最优解，并答出基础理论知识（基础concurrency）</li>
-<li>oop的熟悉，来运用class（这个感觉很基础了）</li>
-<li>沟通表达能力。 能不能讲述清楚自己的思路，能不能在和考官的互动下愉快地理解get到他们的提示。</li>
-</ol>
-<p>建议：</p>
-<ol>
-<li>刷design题目，去leetcode tag/design里面刷吧，都是oop，对data structure的理解都有好处</li>
-<li>自己设定时间，比如30min/40min内看题、写题、测试（根据自己能力，保持在拉伸区锻炼，不要太焦虑），之后不管是跟pair还是自言自语地讲解题思路用英文说出来，尽量清晰明了有条理。</li>
-<li>多看看自己心仪公司的面试题目。在glassdoor上面会有很多分享，然后针对地准备理论问题。</li>
-</ol>
-<p>祝大家好运[赞R]👍</p>
-]]></content>
-      <categories>
-        <category>IT分类</category>
-        <category>面试过往</category>
-      </categories>
-      <tags>
-        <tag>Interview</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>复制构造函数</title>
-    <url>/it-categories/dev-record/copy-constructor/</url>
-    <content><![CDATA[<p>复制构造函数的用途就是解决：当将数据从一个对象复制到另一个对象时，其中的指针数据成员没有被正确处理的情况。</p>
-<p>如：<br><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">Node</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">char</span> *name;</span><br><span class="line">    <span class="type">int</span> age;</span><br><span class="line">    <span class="built_in">Node</span>(<span class="type">char</span> *n=<span class="string">&quot; &quot;</span>, <span class="type">int</span> a = <span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        name = <span class="built_in">strdup</span>(n); <span class="comment">// strdup是用来分配一个新的内存并返回该指向该字符串的指针</span></span><br><span class="line">        age = a;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>当这样带<code>char *name</code>指针的对象，经历复制时，会遇到以下问题</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function">Node <span class="title">node1</span><span class="params">(<span class="string">&quot;node1&quot;</span>, <span class="number">10</span>)</span></span>; <span class="comment">// Create object node1</span></span><br><span class="line"><span class="function">Node <span class="title">node2</span><span class="params">(node1)</span></span>; <span class="comment">// Create a node1 copy named node, 同样可写为： Node node2 = node1;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">strcpy</span>(node2.name, <span class="string">&quot;changedName&quot;</span>); <span class="comment">// 将node2的name改为&quot;changedName&quot;</span></span><br><span class="line">node2.age = <span class="number">30</span>; <span class="comment">// 将node2的age改为30</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;node1.name = %s, node1.age = %d\n&quot;</span>, node1.name, node1.age);</span><br><span class="line"><span class="comment">// 输出是 node1.name = changedName, node1.age = 10</span></span><br></pre></td></tr></table></figure>
-<p>这里<code>node1.name</code>的值跟<code>node2.name</code>的值一样，是因为Node这个struct没有定义<em>复制构造函数</em>，导致编译器自己生成了复制构造函数。生成的复制构造函数只是逐个对成员进行复制，所以它将<code>char *name</code>上面指向name字符串的指针值，即地址，复制给了node2，而不是在地址上的字符串的值。而因为age本身就是一个值，所以没被影响。</p>
-<p>所以这里需要创建复制构造函数来解决这个问题。</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">Node</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">char</span> *name;</span><br><span class="line">    <span class="type">int</span> age;</span><br><span class="line">    <span class="built_in">Node</span>(<span class="type">char</span> *n=<span class="string">&quot; &quot;</span>, <span class="type">int</span> a = <span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        name = <span class="built_in">strdup</span>(n); <span class="comment">// strdup是用来分配一个新的内存并返回该指向该字符串的指针</span></span><br><span class="line">        age = a;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 创建复制构造函数</span></span><br><span class="line">    <span class="built_in">Node</span>(<span class="type">const</span> Node&amp; n)</span><br><span class="line">    &#123;</span><br><span class="line">        name = <span class="built_in">strdup</span>(n.name); <span class="comment">// 用strdup来分配新内存，储存新的指针来避免只复制指向同一个地址的指针</span></span><br><span class="line">        age = n.age;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这样node1, node2之间就不会有相互影响的问题。</p>
-<p>同样，为了完全杜绝此类问题发生，还需<em>重载复制运算符</em>来应对<code>node1 = node2</code>这种复制方式。<br><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">Node&amp; <span class="keyword">operator</span>= (<span class="type">const</span> Node&amp; n)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">this</span> != &amp;n) <span class="comment">// 避免自己=自己还多走一步, this是一个指向自己（调用这个函数的调用对象）的指针，比如 a = b，调用对象就是a</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (name != <span class="number">0</span>) <span class="comment">// 不为特殊地址/空地址</span></span><br><span class="line">            <span class="built_in">free</span>(name); <span class="comment">// 将指向的地址free掉</span></span><br><span class="line">        name = <span class="built_in">strdup</span>(n.name); <span class="comment">// 来储存新的字符串地址</span></span><br><span class="line">        age = n.age;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> *<span class="keyword">this</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>所以当对象包含指针数据时，需要同时加上<em>复制构造函数</em>以及<em>重载=运算符</em>，这样所有情况就都解决了。</p>
-]]></content>
-      <categories>
-        <category>IT分类</category>
-        <category>开发杂记</category>
-      </categories>
-      <tags>
-        <tag>C++</tag>
-        <tag>Code</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>函数指针</title>
-    <url>/it-categories/dev-record/func-pointer/</url>
-    <content><![CDATA[<p>函数指针是指向函数的指针，跟指向变量的指针没差。</p>
-<p>函数的一个属性就是其地址指明了函数体在内存中的位置，在调用函数时，系统将控制权给这个位置来执行函数。</p>
-<p>用一个函数来举例</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">double</span> <span class="title">f</span><span class="params">(<span class="type">double</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">2</span>*x;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这里，<code>f</code>是指向函数<code>f()</code>的指针，<code>*f()</code>是函数本身， <code>(*f)(7)</code>是调用这个函数并取得值，其本质跟<code>f(7)</code>没有任何差别，只是在大多数编程语言中（包括 C 和 C++），编译器会自动理解<code>f</code>是一个函数指针并进行适当的解引用。</p>
-<p>函数指针一般在需要函数作为一个变量的时候起到作用，即函数作为参数传递，如当要求n到m之间用函数f的总和时：<br><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">double</span> <span class="title">sum</span><span class="params">(<span class="type">double</span> (*f)(<span class="type">double</span>), <span class="type">int</span> n, <span class="type">int</span> m)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">double</span> result = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = n; i &lt;= m ; ++i)</span><br><span class="line">        result += <span class="built_in">f</span>(i);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>这里，<code>double (*f)(double)</code>是指<code>f</code>为指向一个返回<code>double</code>，输入值为<code>double</code>的函数指针，那么实际上传入的function就可以是满足输入和输出的多变的模式，极大地提高了灵活性：<br><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">double</span> <span class="title">square</span><span class="params">(<span class="type">double</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x * x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">double</span> <span class="title">cube</span><span class="params">(<span class="type">double</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x * x * x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">double</span> <span class="title">identity</span><span class="params">(<span class="type">double</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 三种不同的function都可以被当作参数传递进去</span></span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;Sum of squares from 1 to 3: &quot;</span> &lt;&lt; <span class="built_in">sum</span>(square, <span class="number">1</span>, <span class="number">3</span>) &lt;&lt; std::endl;</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;Sum of cubes from 1 to 3: &quot;</span> &lt;&lt; <span class="built_in">sum</span>(cube, <span class="number">1</span>, <span class="number">3</span>) &lt;&lt; std::endl;</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;Sum of identity from 1 to 3: &quot;</span> &lt;&lt; <span class="built_in">sum</span>(identity, <span class="number">1</span>, <span class="number">3</span>) &lt;&lt; std::endl;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>拓展来说，<code>double *f(double)</code>则是一个函数声明，表示 f 是一个函数，它接受一个 double 类型的参数，并返回一个<em>指向double类型的指针</em><br><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">double</span>* <span class="title">f</span><span class="params">(<span class="type">double</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="type">double</span>* result = <span class="keyword">new</span> <span class="built_in">double</span>(x * <span class="number">2</span>); <span class="comment">// 动态分配一个 double 并将其值设置为 x 的两倍</span></span><br><span class="line">    <span class="keyword">return</span> result; <span class="comment">// 返回的是一个指向double这个值的指针</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">double</span> value = <span class="number">5.0</span>;</span><br><span class="line">    <span class="type">double</span>* result = <span class="built_in">f</span>(value); <span class="comment">// 定义一个double指针</span></span><br><span class="line"></span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;Result: &quot;</span> &lt;&lt; *result &lt;&lt; std::endl; <span class="comment">// 输出指针指向的值，解引用</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">delete</span> result; <span class="comment">// 释放动态分配的内存</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>所以<code>double (*f)(double)</code>代表的是一个指向返回double，输入为double的函数指针。函数指针可以让函数作为参数被灵活地使用。</p>
-]]></content>
-      <categories>
-        <category>IT分类</category>
-        <category>开发杂记</category>
-      </categories>
-      <tags>
-        <tag>C++</tag>
-        <tag>Code</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>开发杂记</title>
-    <url>/it-categories/dev-record/index/</url>
-    <content><![CDATA[<h1 id="开发杂记"><a href="#开发杂记" class="headerlink" title="开发杂记"></a>开发杂记</h1><h2 id="C-笔记"><a href="#C-笔记" class="headerlink" title="C++笔记"></a><a href="https://aixuek-itshare.com/it-categories/dev-record/C++-notes">C++笔记</a></h2><h2 id="指针vs引用"><a href="#指针vs引用" class="headerlink" title="指针vs引用"></a><a href="https://aixuek-itshare.com/it-categories/dev-record/pointer-and-reference">指针vs引用</a></h2><h2 id="复制构造函数"><a href="#复制构造函数" class="headerlink" title="复制构造函数"></a><a href="https://aixuek-itshare.com/it-categories/dev-record/copy-constructor">复制构造函数</a></h2><h2 id="函数指针"><a href="#函数指针" class="headerlink" title="函数指针"></a><a href="https://aixuek-itshare.com/it-categories/dev-record/func-pointer">函数指针</a></h2>]]></content>
-  </entry>
-  <entry>
     <title>C++面试准备</title>
     <url>/it-categories/code-prac/C++-interview-prepare/</url>
     <content><![CDATA[<p>这里是自己搜罗准备的C++面试八股文常用题目，持续更新。</p>
@@ -482,6 +242,71 @@
       </tags>
   </entry>
   <entry>
+    <title>经典笔试刷题集合</title>
+    <url>/it-categories/code-prac/code-ass/</url>
+    <content><![CDATA[<h1 id="牛客-HJ17-坐标移动（中等）"><a href="#牛客-HJ17-坐标移动（中等）" class="headerlink" title="牛客 HJ17 坐标移动（中等）"></a>牛客 HJ17 坐标移动（中等）</h1><p>开发一个坐标计算工具， A表示向左移动，D表示向右移动，W表示向上移动，S表示向下移动。从（0,0）点开始移动，从输入字符串里面读取一些坐标，并将最终输入结果输出到输出文件里面。</p>
+<p>输入：</p>
+<p>合法坐标为A(或者D或者W或者S) + 数字（两位以内），坐标之间以;分隔。（如：A10;S20;W10;D30;X;A1A;B10A11;;A10;）</p>
+<p>非法坐标点需要进行丢弃。如AA10;  A1A;  $%$;  YAD; 等。</p>
+<p>起点（0,0），A10   =  （-10,0），S20   =  (-10,-20)</p>
+<p>数据范围：1 &lt;= n &lt;= 10000</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>IT分类</category>
+        <category>代码刷题</category>
+      </categories>
+      <tags>
+        <tag>Code</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>DFS和BFS</title>
+    <url>/it-categories/code-prac/dfs-bfs/</url>
+    <content><![CDATA[<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>特征</th>
+<th>DFS</th>
+<th>BFS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>数据结构</td>
+<td>stack</td>
+<td>queue</td>
+</tr>
+<tr>
+<td>储存空间</td>
+<td>只用储存一条路的数值，所以跟高度或者路的长度有关 O(h)，使用空间较少</td>
+<td>每次储存一层的数值，所以是指数增长 O(2^h)，使用空间较多</td>
+</tr>
+<tr>
+<td>常用场景</td>
+<td>不具有最短性</td>
+<td>因为是一层一层地搜索，所以可以最快搜索到<strong>最短路径</strong>(特别是权重为1的时候)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h1 id="深度优先搜索-DFS"><a href="#深度优先搜索-DFS" class="headerlink" title="深度优先搜索 DFS"></a>深度优先搜索 DFS</h1><p>一条路一直搜索下去，然后后退。</p>
+<p>题目例子：排列数字</p>
+<p>给一个数n，将1~n排成一排，按字典顺序输出所有的排列方法。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Input: 3</span><br><span class="line">Output:</span><br><span class="line">1 2 3</span><br><span class="line">1 3 2</span><br><span class="line">2 1 3</span><br><span class="line">2 3 1</span><br><span class="line">3 1 2</span><br><span class="line">3 2 1</span><br></pre></td></tr></table></figure>
+<p>DFS代码：<br><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">10</span>;</span><br><span class="line"><span class="type">int</span> n;</span><br><span class="line"><span class="type">int</span> path[N];</span><br><span class="line"><span class="type">bool</span> used[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">dfs</span><span class="params">(<span class="type">int</span> level)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (level == n)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            cout &lt;&lt; path[i] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        cout &lt;&lt; endl;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (!used[i])</span><br><span class="line">        &#123;</span><br><span class="line">            path[level] = i;</span><br><span class="line">            used[i] = <span class="literal">true</span>;</span><br><span class="line">            <span class="built_in">dfs</span>(level + <span class="number">1</span>);</span><br><span class="line">            used[i] = <span class="literal">false</span>; <span class="comment">// 回溯恢复</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line">    <span class="built_in">dfs</span>(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h1 id="宽度优先搜索-BFS"><a href="#宽度优先搜索-BFS" class="headerlink" title="宽度优先搜索 BFS"></a>宽度优先搜索 BFS</h1><p>一层一层搜索。</p>
+]]></content>
+      <categories>
+        <category>IT分类</category>
+        <category>代码刷题</category>
+      </categories>
+      <tags>
+        <tag>Code</tag>
+        <tag>Algorithm</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>二分算法</title>
     <url>/it-categories/code-prac/bisection-alg/</url>
     <content><![CDATA[<h1 id="整数二分"><a href="#整数二分" class="headerlink" title="整数二分"></a>整数二分</h1><p>本质：</p>
@@ -527,110 +352,6 @@
 
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">double</span> x;</span><br><span class="line">    cin &gt;&gt; x;</span><br><span class="line"></span><br><span class="line">    <span class="type">double</span> l = <span class="number">0</span>, r = x;</span><br><span class="line">    <span class="keyword">while</span> (r - l &gt; <span class="number">1e-6</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">double</span> mid = (l + r) / <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (mid * mid &gt;= x)</span><br><span class="line">            r = mid;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            l = mid;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%lf\n&quot;</span>, r);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </details>]]></content>
-      <categories>
-        <category>IT分类</category>
-        <category>代码刷题</category>
-      </categories>
-      <tags>
-        <tag>Code</tag>
-        <tag>Algorithm</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>经典笔试刷题集合</title>
-    <url>/it-categories/code-prac/code-ass/</url>
-    <content><![CDATA[<h1 id="牛客-HJ17-坐标移动（中等）"><a href="#牛客-HJ17-坐标移动（中等）" class="headerlink" title="牛客 HJ17 坐标移动（中等）"></a>牛客 HJ17 坐标移动（中等）</h1><p>开发一个坐标计算工具， A表示向左移动，D表示向右移动，W表示向上移动，S表示向下移动。从（0,0）点开始移动，从输入字符串里面读取一些坐标，并将最终输入结果输出到输出文件里面。</p>
-<p>输入：</p>
-<p>合法坐标为A(或者D或者W或者S) + 数字（两位以内），坐标之间以;分隔。（如：A10;S20;W10;D30;X;A1A;B10A11;;A10;）</p>
-<p>非法坐标点需要进行丢弃。如AA10;  A1A;  $%$;  YAD; 等。</p>
-<p>起点（0,0），A10   =  （-10,0），S20   =  (-10,-20)</p>
-<p>数据范围：1 &lt;= n &lt;= 10000</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>IT分类</category>
-        <category>代码刷题</category>
-      </categories>
-      <tags>
-        <tag>Code</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>指针vs引用</title>
-    <url>/it-categories/dev-record/pointer-and-reference/</url>
-    <content><![CDATA[<p>指针：</p>
-<ul>
-<li>指向值，但本身值为地址。</li>
-<li>可以有null pointer，指向特殊地址0</li>
-<li>初始化后可以被改变</li>
-</ul>
-<p>引用：</p>
-<ul>
-<li>相当于const指针，<code>int&amp; r = n</code>等同于<code>int *const r = &amp;n</code></li>
-<li>因为是<code>int *const</code>所以初始化之后，r本身的值不能改变，也就是不能改变它指向的地址了</li>
-</ul>
-<p>关于<code>int *const r</code>:</p>
-<ul>
-<li>表示一个常量指针，指向一个整数。</li>
-<li>指针是常量：一旦初始化，指针本身的值（即它指向的地址）不能改变。</li>
-<li>指向的数据是可变的：可以通过这个指针修改它指向的整数的值。</li>
-</ul>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> value1 = <span class="number">10</span>;</span><br><span class="line"><span class="type">int</span> value2 = <span class="number">20</span>;</span><br><span class="line"><span class="type">int</span> *<span class="type">const</span> ptr = &amp;value1; <span class="comment">// 常量指针，指向 value1，可以将const后面的(ptr)单独看，它是指针本身，所以是指针本身不能变，也就是ptr所储存的地址不能变</span></span><br><span class="line"></span><br><span class="line">*ptr = <span class="number">15</span>; <span class="comment">// 这是可以的，因为可以修改指针指向的数据，所以也可以更改被引用的变量的值</span></span><br><span class="line"><span class="comment">// ptr = &amp;value2; // 报错，因为不能修改指针本身的值</span></span><br></pre></td></tr></table></figure>
-<p>相应的有<code>const int *</code>：</p>
-<ul>
-<li>表示一个指向常量整数的指针。</li>
-<li>指针是可变的：指针本身的值（即它指向的地址）可以改变。</li>
-<li>指向的数据是常量：不能通过这个指针修改它指向的整数的值。</li>
-</ul>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> value1 = <span class="number">10</span>;</span><br><span class="line"><span class="type">int</span> value2 = <span class="number">20</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> *ptr = &amp;value1; <span class="comment">// 指向常量整数的指针，可以将(int *ptr)看作一个整体，它代表的是指针指向的值，所以是指向的值不能改变</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// *ptr = 15; // 报错，因为不能修改指针指向的数据</span></span><br><span class="line">ptr = &amp;value2; <span class="comment">// 这是可以的，因为可以改变指针本身的值</span></span><br></pre></td></tr></table></figure>
-<p>所以，引用的作用就是一个常量指针，它经常被用于函数中传递数据来节省单独copy一次的空间，或者当函数执行的过程中，参数需要永久被改变，就可以通过引用来传递参数（因为它是通过地址来获取值，所以更改引用的值，就是在地址上更改值，而不是更改复制的值）</p>
-]]></content>
-      <categories>
-        <category>IT分类</category>
-        <category>开发杂记</category>
-      </categories>
-      <tags>
-        <tag>C++</tag>
-        <tag>Code</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>DFS和BFS</title>
-    <url>/it-categories/code-prac/dfs-bfs/</url>
-    <content><![CDATA[<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>特征</th>
-<th>DFS</th>
-<th>BFS</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>数据结构</td>
-<td>stack</td>
-<td>queue</td>
-</tr>
-<tr>
-<td>储存空间</td>
-<td>只用储存一条路的数值，所以跟高度或者路的长度有关 O(h)，使用空间较少</td>
-<td>每次储存一层的数值，所以是指数增长 O(2^h)，使用空间较多</td>
-</tr>
-<tr>
-<td>常用场景</td>
-<td>不具有最短性</td>
-<td>因为是一层一层地搜索，所以可以最快搜索到<strong>最短路径</strong>(特别是权重为1的时候)</td>
-</tr>
-</tbody>
-</table>
-</div>
-<h1 id="深度优先搜索-DFS"><a href="#深度优先搜索-DFS" class="headerlink" title="深度优先搜索 DFS"></a>深度优先搜索 DFS</h1><p>一条路一直搜索下去，然后后退。</p>
-<p>题目例子：排列数字</p>
-<p>给一个数n，将1~n排成一排，按字典顺序输出所有的排列方法。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Input: 3</span><br><span class="line">Output:</span><br><span class="line">1 2 3</span><br><span class="line">1 3 2</span><br><span class="line">2 1 3</span><br><span class="line">2 3 1</span><br><span class="line">3 1 2</span><br><span class="line">3 2 1</span><br></pre></td></tr></table></figure>
-<p>DFS代码：<br><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">10</span>;</span><br><span class="line"><span class="type">int</span> n;</span><br><span class="line"><span class="type">int</span> path[N];</span><br><span class="line"><span class="type">bool</span> used[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">dfs</span><span class="params">(<span class="type">int</span> level)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (level == n)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            cout &lt;&lt; path[i] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        cout &lt;&lt; endl;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (!used[i])</span><br><span class="line">        &#123;</span><br><span class="line">            path[level] = i;</span><br><span class="line">            used[i] = <span class="literal">true</span>;</span><br><span class="line">            <span class="built_in">dfs</span>(level + <span class="number">1</span>);</span><br><span class="line">            used[i] = <span class="literal">false</span>; <span class="comment">// 回溯恢复</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line">    <span class="built_in">dfs</span>(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h1 id="宽度优先搜索-BFS"><a href="#宽度优先搜索-BFS" class="headerlink" title="宽度优先搜索 BFS"></a>宽度优先搜索 BFS</h1><p>一层一层搜索。</p>
-]]></content>
       <categories>
         <category>IT分类</category>
         <category>代码刷题</category>
@@ -767,6 +488,29 @@
       </tags>
   </entry>
   <entry>
+    <title>C++常用设计模式</title>
+    <url>/it-categories/dev-record/C++%E5%B8%B8%E7%94%A8%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</url>
+    <content><![CDATA[<h1 id="工厂模式-Factory"><a href="#工厂模式-Factory" class="headerlink" title="工厂模式(Factory)"></a>工厂模式(Factory)</h1><h2 id="简单工厂"><a href="#简单工厂" class="headerlink" title="简单工厂"></a>简单工厂</h2><p>只有一个工厂，即一个类负责创建不同类的实例。通常使用static静态方法来创建对象，不需要传递工厂类来创建实例。</p>
+<p>优点：</p>
+<ul>
+<li>单一工厂类，实现简单</li>
+</ul>
+<p>缺点：</p>
+<ul>
+<li>扩展性差，添加新类，新产品时，需要修改工厂类代码</li>
+</ul>
+<p>代码实现：<br><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Car</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="type">void</span> <span class="title">drive</span><span class="params">()</span> </span>= <span class="number">0</span>; <span class="comment">// 创建纯虚函数，让每个子类实现</span></span><br><span class="line">    <span class="keyword">virtual</span> ~<span class="built_in">Car</span>() &#123;&#125; <span class="comment">// 析构虚函数，保证子类析构时能正确调用子类析构函数</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">BydCar</span> : <span class="keyword">public</span> Car</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">drive</span><span class="params">()</span> <span class="keyword">override</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;Driving BydCar&quot;</span> &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">TeslaCar</span> : <span class="keyword">public</span> Car</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">drive</span><span class="params">()</span> <span class="keyword">override</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;Driving TeslaCar&quot;</span> &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">CarFactory</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">static</span> Car* <span class="title">createCar</span><span class="params">(<span class="type">const</span> string&amp; brand)</span> <span class="comment">// 静态创建方法，可随地调用，来避免创建多个类工厂</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (brand == <span class="string">&quot;Byd&quot;</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">BydCar</span>();</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (brand == <span class="string">&quot;Tesla&quot;</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">TeslaCar</span>();</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="keyword">return</span> <span class="literal">nullptr</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Car *bydCar = CarFactory::<span class="built_in">createCar</span>(<span class="string">&quot;Byd&quot;</span>);</span><br><span class="line">    bydCar-&gt;<span class="built_in">drive</span>();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">delete</span> bydCar;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="工厂方法"><a href="#工厂方法" class="headerlink" title="工厂方法"></a>工厂方法</h2>]]></content>
+      <categories>
+        <category>IT分类</category>
+        <category>开发杂记</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+        <tag>Code</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>双指针算法</title>
     <url>/it-categories/code-prac/two-pointers/</url>
     <content><![CDATA[<h1 id="双指针算法"><a href="#双指针算法" class="headerlink" title="双指针算法"></a>双指针算法</h1><p>主要思想：</p>
@@ -787,6 +531,250 @@
       <tags>
         <tag>Code</tag>
         <tag>Algorithm</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>C++笔记</title>
+    <url>/it-categories/dev-record/C++-notes/</url>
+    <content><![CDATA[<h1 id="Static关键字作用"><a href="#Static关键字作用" class="headerlink" title="Static关键字作用"></a>Static关键字作用</h1><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><ol>
+<li><p>使用目的：</p>
+<p> 在 C++ 中，需要一个数据对象为整个类而非某个对象服务,同时又力求不破坏类的封装性,即要求此成员隐藏在类的内部，对外不可见时，可将其定义为静态数据。</p>
+</li>
+</ol>
+<ol>
+<li><p>存放位置</p>
+<p> DATA 段（全局初始化区）存放初始化的全局变量和静态变量；BSS 段（全局未初始化区）存放未初始化的全局变量和静态变量。其中BBS段在程序执行之前会被系统自动清0，所以未初始化的全局变量和静态变量在程序执行之前已经为0。<strong>存储在静态数据区的变量会在程序刚开始运行时就完成初始化，也是唯一的一次初始化</strong>。</p>
+</li>
+<li><p>使用static的优势：</p>
+<ul>
+<li>可以节省内存，因为它是所有对象所公有的，因此，对多个对象来说，<strong>静态数据成员只存储一处，供所有对象共用</strong>。静态数据成员的值对每个对象都是一样，但它的值是可以更新的。只要对静态数据成员的值更新一次，保证所有对象存取更新后的相同的值，这样可以提高时间效率。使用静态成员变量实现多个对象之间的数据共享不会破坏隐藏的原则，保证了安全性还可以节省内存。</li>
+<li>静态全局变量在声明它的整个文件都是可见的，而在文件之外是不可见的。即<strong>静态全局变量不能被其它文件所用</strong>；其它文件中可以定义相同名字的变量，不会发生冲突。</li>
+</ul>
+</li>
+<li><p>动态数据vs静态数据：</p>
+<p>一般程序把新产生的动态数据存放在堆区，函数内部的自动变量存放在栈区。自动变量一般会随着函数的退出而释放空间，<strong>静态数据（即使是函数内部的静态局部变量）也存放在全局数据区。全局数据区的数据并不会因为函数的退出而释放空间。</strong></p>
+</li>
+</ol>
+<h2 id="静态数据成员"><a href="#静态数据成员" class="headerlink" title="静态数据成员"></a>静态数据成员</h2><p>静态数据成员的生存期大于 class 的对象，静态数据成员是每个 class 有一份，普通数据成员是每个 instance 有一份，因此静态数据成员也叫做类变量，而普通数据成员也叫做实例变量。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Test</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="type">int</span> n = <span class="number">0</span>;</span><br><span class="line">    <span class="comment">// 类内的声明只是声明了静态成员变量的存在，类外的定义才真正分配内存并初始化它。</span></span><br><span class="line">    <span class="type">static</span> <span class="type">int</span> i;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 静态成员变量属于类本身，而不是类的某个实例，因此它们的内存分配和初始化必须在类外进行。</span></span><br><span class="line"><span class="comment">// 在类外初始化时，必须再次指定变量的类型，以确保编译器知道该变量的类型和所属类。</span></span><br><span class="line"><span class="type">int</span> Test::i = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Test test1;</span><br><span class="line">    Test test2;</span><br><span class="line">    test1.i += <span class="number">1</span>;</span><br><span class="line">    test1.n += <span class="number">1</span>;</span><br><span class="line">    cout &lt;&lt; test2.i &lt;&lt; endl; <span class="comment">// 输出为1</span></span><br><span class="line">    cout &lt;&lt; test2.n &lt;&lt; endl; <span class="comment">// 输出为0</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="静态成员函数"><a href="#静态成员函数" class="headerlink" title="静态成员函数"></a>静态成员函数</h2><p>静态成员函数不能访问非静态(包括成员函数和数据成员)，但是非静态可以访问静态。因静态成员函数不属于类实例，它获取不了实例的信息，而非静态成员能获取全局静态数据，所以它可以调用静态数据。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Test</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="type">int</span> n = <span class="number">0</span>;</span><br><span class="line">    <span class="type">static</span> <span class="type">int</span> i;</span><br><span class="line">    <span class="function"><span class="type">static</span> <span class="type">void</span> <span class="title">printi</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        cout &lt;&lt; i &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">printn</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        cout &lt;&lt; n &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> Test::i = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Test test1;</span><br><span class="line">    Test test2;</span><br><span class="line">    test1.i += <span class="number">1</span>;</span><br><span class="line">    test1.n += <span class="number">1</span>;</span><br><span class="line">    cout &lt;&lt; test2.i &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; test2.n &lt;&lt; endl;</span><br><span class="line">    test1.<span class="built_in">printi</span>();</span><br><span class="line">    test2.i += <span class="number">1</span>;</span><br><span class="line">    Test::<span class="built_in">printi</span>(); <span class="comment">// 输出为2，因test2也给i加了1</span></span><br><span class="line">    <span class="comment">// Test::printn(); // 报错，因printn得由实例来call</span></span><br><span class="line">    test1.<span class="built_in">printn</span>(); <span class="comment">// 实例call就okay</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="局部静态变量"><a href="#局部静态变量" class="headerlink" title="局部静态变量"></a>局部静态变量</h2><p>实现局部能一直使用一个静态变量，而其他域不能访问的静态变量。</p>
+<p>比如，记录一个函数被调用了多少次：<br><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">count</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">static</span> <span class="type">int</span> num = <span class="number">0</span>; <span class="comment">// 这里就将num放到了静态区，所以不会被局部域销毁;初始赋值只会被执行一次</span></span><br><span class="line">    ++num;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;called %d\n&quot;</span>, num);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">count</span>(); <span class="comment">// called 1</span></span><br><span class="line">    <span class="built_in">count</span>(); <span class="comment">// called 2</span></span><br><span class="line">    <span class="built_in">count</span>(); <span class="comment">// called 3</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="静态全局变量"><a href="#静态全局变量" class="headerlink" title="静态全局变量"></a>静态全局变量</h2><p>限制全局变量的获取权限，只让当前文件访问，不让其他文件访问</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// file1</span></span><br><span class="line"><span class="type">int</span> b;</span><br><span class="line"><span class="type">static</span> <span class="type">int</span> a;</span><br><span class="line"></span><br><span class="line"><span class="comment">// file2</span></span><br><span class="line"><span class="keyword">extern</span> <span class="type">int</span> b; <span class="comment">// 成功</span></span><br><span class="line"><span class="keyword">extern</span> <span class="type">int</span> a; <span class="comment">// 报错显示找不到a，因为file1中的a是静态的，其他文件访问不到</span></span><br></pre></td></tr></table></figure>
+<h1 id="Extern关键字作用"><a href="#Extern关键字作用" class="headerlink" title="Extern关键字作用"></a>Extern关键字作用</h1><ol>
+<li>允许多个文件访问同一个全局变量/函数</li>
+<li>在当前文件表明变量/函数来自于其他文件</li>
+<li>外来函数默认在外面找，不用extern关键字</li>
+</ol>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">// file1</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> i = <span class="number">5</span>, j = <span class="number">6</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">add</span><span class="params">(<span class="type">int</span> num1, <span class="type">int</span> num2)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> num1 + num2;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// file2</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;file1.cpp&quot;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">extern</span> <span class="type">int</span> i, j; <span class="comment">// 声明取的extern的全局变量</span></span><br><span class="line"><span class="keyword">extern</span> <span class="type">int</span> i = <span class="number">0</span>; <span class="comment">// 会报错，说重复定义</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">add</span><span class="params">(<span class="type">int</span>, <span class="type">int</span>)</span></span>; <span class="comment">// 只用声明一下add函数，不需要extern关键字</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    cout &lt;&lt; i &lt;&lt; endl; <span class="comment">// 输出为5</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;add result: %d\n&quot;</span>, <span class="built_in">add</span>(i, j));</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="指针和引用"><a href="#指针和引用" class="headerlink" title="指针和引用"></a>指针和引用</h1><h2 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h2><p>指针是一个变量，其值为另一个变量的地址，即，内存位置的直接地址。</p>
+]]></content>
+      <categories>
+        <category>IT分类</category>
+        <category>开发杂记</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+        <tag>Code</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>复制构造函数</title>
+    <url>/it-categories/dev-record/copy-constructor/</url>
+    <content><![CDATA[<p>复制构造函数的用途就是解决：当将数据从一个对象复制到另一个对象时，其中的指针数据成员没有被正确处理的情况。</p>
+<p>如：<br><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">Node</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">char</span> *name;</span><br><span class="line">    <span class="type">int</span> age;</span><br><span class="line">    <span class="built_in">Node</span>(<span class="type">char</span> *n=<span class="string">&quot; &quot;</span>, <span class="type">int</span> a = <span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        name = <span class="built_in">strdup</span>(n); <span class="comment">// strdup是用来分配一个新的内存并返回该指向该字符串的指针</span></span><br><span class="line">        age = a;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>当这样带<code>char *name</code>指针的对象，经历复制时，会遇到以下问题</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function">Node <span class="title">node1</span><span class="params">(<span class="string">&quot;node1&quot;</span>, <span class="number">10</span>)</span></span>; <span class="comment">// Create object node1</span></span><br><span class="line"><span class="function">Node <span class="title">node2</span><span class="params">(node1)</span></span>; <span class="comment">// Create a node1 copy named node, 同样可写为： Node node2 = node1;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">strcpy</span>(node2.name, <span class="string">&quot;changedName&quot;</span>); <span class="comment">// 将node2的name改为&quot;changedName&quot;</span></span><br><span class="line">node2.age = <span class="number">30</span>; <span class="comment">// 将node2的age改为30</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;node1.name = %s, node1.age = %d\n&quot;</span>, node1.name, node1.age);</span><br><span class="line"><span class="comment">// 输出是 node1.name = changedName, node1.age = 10</span></span><br></pre></td></tr></table></figure>
+<p>这里<code>node1.name</code>的值跟<code>node2.name</code>的值一样，是因为Node这个struct没有定义<em>复制构造函数</em>，导致编译器自己生成了复制构造函数。生成的复制构造函数只是逐个对成员进行复制，所以它将<code>char *name</code>上面指向name字符串的指针值，即地址，复制给了node2，而不是在地址上的字符串的值。而因为age本身就是一个值，所以没被影响。</p>
+<p>所以这里需要创建复制构造函数来解决这个问题。</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">Node</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">char</span> *name;</span><br><span class="line">    <span class="type">int</span> age;</span><br><span class="line">    <span class="built_in">Node</span>(<span class="type">char</span> *n=<span class="string">&quot; &quot;</span>, <span class="type">int</span> a = <span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        name = <span class="built_in">strdup</span>(n); <span class="comment">// strdup是用来分配一个新的内存并返回该指向该字符串的指针</span></span><br><span class="line">        age = a;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 创建复制构造函数</span></span><br><span class="line">    <span class="built_in">Node</span>(<span class="type">const</span> Node&amp; n)</span><br><span class="line">    &#123;</span><br><span class="line">        name = <span class="built_in">strdup</span>(n.name); <span class="comment">// 用strdup来分配新内存，储存新的指针来避免只复制指向同一个地址的指针</span></span><br><span class="line">        age = n.age;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这样node1, node2之间就不会有相互影响的问题。</p>
+<p>同样，为了完全杜绝此类问题发生，还需<em>重载复制运算符</em>来应对<code>node1 = node2</code>这种复制方式。<br><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">Node&amp; <span class="keyword">operator</span>= (<span class="type">const</span> Node&amp; n)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">this</span> != &amp;n) <span class="comment">// 避免自己=自己还多走一步, this是一个指向自己（调用这个函数的调用对象）的指针，比如 a = b，调用对象就是a</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (name != <span class="number">0</span>) <span class="comment">// 不为特殊地址/空地址</span></span><br><span class="line">            <span class="built_in">free</span>(name); <span class="comment">// 将指向的地址free掉</span></span><br><span class="line">        name = <span class="built_in">strdup</span>(n.name); <span class="comment">// 来储存新的字符串地址</span></span><br><span class="line">        age = n.age;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> *<span class="keyword">this</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>所以当对象包含指针数据时，需要同时加上<em>复制构造函数</em>以及<em>重载=运算符</em>，这样所有情况就都解决了。</p>
+]]></content>
+      <categories>
+        <category>IT分类</category>
+        <category>开发杂记</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+        <tag>Code</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>开发杂记</title>
+    <url>/it-categories/dev-record/index/</url>
+    <content><![CDATA[<h1 id="开发杂记"><a href="#开发杂记" class="headerlink" title="开发杂记"></a>开发杂记</h1><h2 id="C-笔记"><a href="#C-笔记" class="headerlink" title="C++笔记"></a><a href="https://aixuek-itshare.com/it-categories/dev-record/C++-notes">C++笔记</a></h2><h2 id="指针vs引用"><a href="#指针vs引用" class="headerlink" title="指针vs引用"></a><a href="https://aixuek-itshare.com/it-categories/dev-record/pointer-and-reference">指针vs引用</a></h2><h2 id="复制构造函数"><a href="#复制构造函数" class="headerlink" title="复制构造函数"></a><a href="https://aixuek-itshare.com/it-categories/dev-record/copy-constructor">复制构造函数</a></h2><h2 id="函数指针"><a href="#函数指针" class="headerlink" title="函数指针"></a><a href="https://aixuek-itshare.com/it-categories/dev-record/func-pointer">函数指针</a></h2>]]></content>
+  </entry>
+  <entry>
+    <title>函数指针</title>
+    <url>/it-categories/dev-record/func-pointer/</url>
+    <content><![CDATA[<p>函数指针是指向函数的指针，跟指向变量的指针没差。</p>
+<p>函数的一个属性就是其地址指明了函数体在内存中的位置，在调用函数时，系统将控制权给这个位置来执行函数。</p>
+<p>用一个函数来举例</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">double</span> <span class="title">f</span><span class="params">(<span class="type">double</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">2</span>*x;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里，<code>f</code>是指向函数<code>f()</code>的指针，<code>*f()</code>是函数本身， <code>(*f)(7)</code>是调用这个函数并取得值，其本质跟<code>f(7)</code>没有任何差别，只是在大多数编程语言中（包括 C 和 C++），编译器会自动理解<code>f</code>是一个函数指针并进行适当的解引用。</p>
+<p>函数指针一般在需要函数作为一个变量的时候起到作用，即函数作为参数传递，如当要求n到m之间用函数f的总和时：<br><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">double</span> <span class="title">sum</span><span class="params">(<span class="type">double</span> (*f)(<span class="type">double</span>), <span class="type">int</span> n, <span class="type">int</span> m)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">double</span> result = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = n; i &lt;= m ; ++i)</span><br><span class="line">        result += <span class="built_in">f</span>(i);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这里，<code>double (*f)(double)</code>是指<code>f</code>为指向一个返回<code>double</code>，输入值为<code>double</code>的函数指针，那么实际上传入的function就可以是满足输入和输出的多变的模式，极大地提高了灵活性：<br><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">double</span> <span class="title">square</span><span class="params">(<span class="type">double</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x * x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">double</span> <span class="title">cube</span><span class="params">(<span class="type">double</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x * x * x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">double</span> <span class="title">identity</span><span class="params">(<span class="type">double</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 三种不同的function都可以被当作参数传递进去</span></span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;Sum of squares from 1 to 3: &quot;</span> &lt;&lt; <span class="built_in">sum</span>(square, <span class="number">1</span>, <span class="number">3</span>) &lt;&lt; std::endl;</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;Sum of cubes from 1 to 3: &quot;</span> &lt;&lt; <span class="built_in">sum</span>(cube, <span class="number">1</span>, <span class="number">3</span>) &lt;&lt; std::endl;</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;Sum of identity from 1 to 3: &quot;</span> &lt;&lt; <span class="built_in">sum</span>(identity, <span class="number">1</span>, <span class="number">3</span>) &lt;&lt; std::endl;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>拓展来说，<code>double *f(double)</code>则是一个函数声明，表示 f 是一个函数，它接受一个 double 类型的参数，并返回一个<em>指向double类型的指针</em><br><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">double</span>* <span class="title">f</span><span class="params">(<span class="type">double</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="type">double</span>* result = <span class="keyword">new</span> <span class="built_in">double</span>(x * <span class="number">2</span>); <span class="comment">// 动态分配一个 double 并将其值设置为 x 的两倍</span></span><br><span class="line">    <span class="keyword">return</span> result; <span class="comment">// 返回的是一个指向double这个值的指针</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">double</span> value = <span class="number">5.0</span>;</span><br><span class="line">    <span class="type">double</span>* result = <span class="built_in">f</span>(value); <span class="comment">// 定义一个double指针</span></span><br><span class="line"></span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;Result: &quot;</span> &lt;&lt; *result &lt;&lt; std::endl; <span class="comment">// 输出指针指向的值，解引用</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">delete</span> result; <span class="comment">// 释放动态分配的内存</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>所以<code>double (*f)(double)</code>代表的是一个指向返回double，输入为double的函数指针。函数指针可以让函数作为参数被灵活地使用。</p>
+]]></content>
+      <categories>
+        <category>IT分类</category>
+        <category>开发杂记</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+        <tag>Code</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>指针vs引用</title>
+    <url>/it-categories/dev-record/pointer-and-reference/</url>
+    <content><![CDATA[<p>指针：</p>
+<ul>
+<li>指向值，但本身值为地址。</li>
+<li>可以有null pointer，指向特殊地址0</li>
+<li>初始化后可以被改变</li>
+</ul>
+<p>引用：</p>
+<ul>
+<li>相当于const指针，<code>int&amp; r = n</code>等同于<code>int *const r = &amp;n</code></li>
+<li>因为是<code>int *const</code>所以初始化之后，r本身的值不能改变，也就是不能改变它指向的地址了</li>
+</ul>
+<p>关于<code>int *const r</code>:</p>
+<ul>
+<li>表示一个常量指针，指向一个整数。</li>
+<li>指针是常量：一旦初始化，指针本身的值（即它指向的地址）不能改变。</li>
+<li>指向的数据是可变的：可以通过这个指针修改它指向的整数的值。</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> value1 = <span class="number">10</span>;</span><br><span class="line"><span class="type">int</span> value2 = <span class="number">20</span>;</span><br><span class="line"><span class="type">int</span> *<span class="type">const</span> ptr = &amp;value1; <span class="comment">// 常量指针，指向 value1，可以将const后面的(ptr)单独看，它是指针本身，所以是指针本身不能变，也就是ptr所储存的地址不能变</span></span><br><span class="line"></span><br><span class="line">*ptr = <span class="number">15</span>; <span class="comment">// 这是可以的，因为可以修改指针指向的数据，所以也可以更改被引用的变量的值</span></span><br><span class="line"><span class="comment">// ptr = &amp;value2; // 报错，因为不能修改指针本身的值</span></span><br></pre></td></tr></table></figure>
+<p>相应的有<code>const int *</code>：</p>
+<ul>
+<li>表示一个指向常量整数的指针。</li>
+<li>指针是可变的：指针本身的值（即它指向的地址）可以改变。</li>
+<li>指向的数据是常量：不能通过这个指针修改它指向的整数的值。</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> value1 = <span class="number">10</span>;</span><br><span class="line"><span class="type">int</span> value2 = <span class="number">20</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> *ptr = &amp;value1; <span class="comment">// 指向常量整数的指针，可以将(int *ptr)看作一个整体，它代表的是指针指向的值，所以是指向的值不能改变</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// *ptr = 15; // 报错，因为不能修改指针指向的数据</span></span><br><span class="line">ptr = &amp;value2; <span class="comment">// 这是可以的，因为可以改变指针本身的值</span></span><br></pre></td></tr></table></figure>
+<p>所以，引用的作用就是一个常量指针，它经常被用于函数中传递数据来节省单独copy一次的空间，或者当函数执行的过程中，参数需要永久被改变，就可以通过引用来传递参数（因为它是通过地址来获取值，所以更改引用的值，就是在地址上更改值，而不是更改复制的值）</p>
+]]></content>
+      <categories>
+        <category>IT分类</category>
+        <category>开发杂记</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+        <tag>Code</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>C++面试问题</title>
+    <url>/it-categories/interviews/C++-interview-questions/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>IT分类</category>
+        <category>面试过往</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+        <tag>Interview</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>面试过往</title>
+    <url>/it-categories/interviews/index/</url>
+    <content><![CDATA[<h1 id="面试过往"><a href="#面试过往" class="headerlink" title="面试过往"></a>面试过往</h1><h2 id="C-面试问题"><a href="#C-面试问题" class="headerlink" title="C++面试问题"></a><a href="https://aixuek-itshare.com/it-categories/interviews/C++-interview-questions">C++面试问题</a></h2><h2 id="SIG-grad-tech面试的分享"><a href="#SIG-grad-tech面试的分享" class="headerlink" title="SIG grad tech面试的分享"></a><a href="https://aixuek-itshare.com/it-categories/interviews/sig-interview">SIG grad tech面试的分享</a></h2>]]></content>
+  </entry>
+  <entry>
+    <title>有趣轶事</title>
+    <url>/personal/funny-experience/index/</url>
+    <content><![CDATA[<h1 id="有趣轶事"><a href="#有趣轶事" class="headerlink" title="有趣轶事"></a>有趣轶事</h1><h2 id="参加SIG-event-day的搞笑事情"><a href="#参加SIG-event-day的搞笑事情" class="headerlink" title="参加SIG event day的搞笑事情"></a><a href="https://aixuek-itshare.com/personal/funny-experience/sig-event">参加SIG event day的搞笑事情</a></h2>]]></content>
+  </entry>
+  <entry>
+    <title>SIG grad tech面试的分享</title>
+    <url>/it-categories/interviews/sig-interview/</url>
+    <content><![CDATA[<ul>
+<li><a href="#面试流程">面试流程：</a></li>
+<li><a href="#面试内容">面试内容</a></li>
+<li><a href="#总结">总结：</a></li>
+</ul>
+<p>在参加完women’s discory day之后，收到了SIG tech面的邀请（也就是继oa，phone interview，event day后，倒数第二轮的面试），在预约好时间之后，便迎来了痛苦tech面。</p>
+<h1 id="面试流程："><a href="#面试流程：" class="headerlink" title="面试流程："></a>面试流程：</h1><ol>
+<li><p>提前十五分钟进面试链接。这是因为他们会需要你提前读题，有解题思路，一定要仔细看邮件，不要掐点进去了，那就是妥妥浪费自己机会和时间[doge]</p>
+</li>
+<li><p>俩面试官会分别自我介绍，讲自己所在团队，和负责内容。在他们说的时候最好仔细听，可以将感兴趣或疑问的点记下，在最后提问环节就可以提出紧密相关的问题以表示对他们团队和公司的兴趣。</p>
+</li>
+<li><p>之后便是自我介绍，讲下学校背景，擅长的编程语言合作过的项目，最好挑重点的说保持精简，因为面试官们需要把控编程和技术提问的时间，如果想展示擅长的技术，最好将时间留给后面提问互动。</p>
+</li>
+<li><p>ice break结束，考官会问“有没有把题目看了”，有的话便会让你讲下解题思路，其中会包括你要用什么数据结构，整体的逻辑处理。他们也会给些建议，比方提醒你考虑数据结构的时间和空间复杂度（只是提醒，肯定不会明确说）。同时，他们会很人性地向你确认并告诉你，你的解答方法思路是不是在正轨上。（也许不在正轨会有提示？没试过，没这个支线的剧透）之后，他们会给你提问的时间，可以借机确认好解答的目的和edge case，来展现你思考的全面性，和对任务的严谨和沟通能力。</p>
+</li>
+<li><p>他们会关掉他们的视频，告诉你你可以关掉mic，然后就开始长达30min的沉浸解题时间。 把代码写出来是第一重要的，其次可以尝试写出最优解，比方说nlogn的方法。题目会自带test，在codesignal界面上点run就会自动跑test，很方便，他们也会教你怎么跑test。</p>
+</li>
+<li><p>到时间后，他们会重新打开摄像头，让你跑test，然后讲解代码，用的什么data structure，为什么选择它，它的time和space complexity是多少，整体的代码逻辑也要讲清楚。随后，如果代码不是最优解，便会引导你说出最优解，然后code出来。</p>
+</li>
+<li><p>题目大体讨论考察完之后，会问理论问题。这次包括：</p>
+</li>
+</ol>
+<ul>
+<li>concurrency， 多人同时读写怎么处理？锁怎么设置？</li>
+<li>hash table，如何实现的？time complexity是多少？有没有time complexity不是1的情况？有的话，最坏可能达到什么情况？</li>
+<li>binary tree的概念和它的time complexity</li>
+</ul>
+<ol>
+<li>你向他们提问环节，这时候一定要问之前提到的他们的工作内容，团队负责任务细节来表示你的兴趣，千万不要说没问题了[笑哭R]。</li>
+</ol>
+<h1 id="面试内容"><a href="#面试内容" class="headerlink" title="面试内容"></a>面试内容</h1><p>这次碰到的是：主题是movie搜索网站，要你设计储存它给的movie数据（title,  genre list, year)，然后input是query，包含（year range和 genre），输出是一个iterative movie class（class是现成的），但要ordered by year。</p>
+<p>具体解决办法不方便说了，题目本身不难，但optimization的办法应该是logn结果。</p>
+<h1 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h1><p>感觉考点是</p>
+<ol>
+<li>对代码的熟练度和抗压，能不能在半小时内将思路在监督（他们说这个没监督，但鬼才信[doge]）的情况下快速写对</li>
+<li>对data structure（map或dict和hash table的time complexity的原理），和基础算法（binary tree）这些足够熟悉，能想到或者写出最优解，并答出基础理论知识（基础concurrency）</li>
+<li>oop的熟悉，来运用class（这个感觉很基础了）</li>
+<li>沟通表达能力。 能不能讲述清楚自己的思路，能不能在和考官的互动下愉快地理解get到他们的提示。</li>
+</ol>
+<p>建议：</p>
+<ol>
+<li>刷design题目，去leetcode tag/design里面刷吧，都是oop，对data structure的理解都有好处</li>
+<li>自己设定时间，比如30min/40min内看题、写题、测试（根据自己能力，保持在拉伸区锻炼，不要太焦虑），之后不管是跟pair还是自言自语地讲解题思路用英文说出来，尽量清晰明了有条理。</li>
+<li>多看看自己心仪公司的面试题目。在glassdoor上面会有很多分享，然后针对地准备理论问题。</li>
+</ol>
+<p>祝大家好运[赞R]👍</p>
+]]></content>
+      <categories>
+        <category>IT分类</category>
+        <category>面试过往</category>
+      </categories>
+      <tags>
+        <tag>Interview</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>参加SIG event day的搞笑事情</title>
+    <url>/personal/funny-experience/sig-event/</url>
+    <content><![CDATA[<h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>在通过SIG的笔试、HR电话面试之后（有关SIG的面试题和面试经历，请看<a href="/it-categories/interviews/sig-interview">SIG面试</a>），收到了参加SIG办公室俩天参观的邀请，于是开开心心就去了，毕竟美国大投行公司，它的财力对我吸引力是非常大的，也很好奇有钱公司内部长啥样。也就开启了俩天的social娱乐。</p>
+<h1 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h1><p>SIG的参观活动包括：刚开始的破冰，大家一起吃早餐（白人早餐真的一般，但是咖啡和面包还是不错的），一群人一起坐个大桌子，一起聊天，然后会有HR工作人员到每个桌子参与聊天（纯闲聊，之前正值Taylor Swift在悉尼开了个演唱会，而且那个HR是粉丝，于是这个成为了主要话题）。</p>
+<p>结束之后开始由团队做演讲，介绍公司、投行、公司团队结构和负责的事情，有提问环节，在介绍Trading思想时，也会插入跟股票相关的卡牌游戏环节，来方便理解。当然，之后还有赌博游戏，因为SIG这个公司的赌博文化很重，每年还会举行赌博游戏WIZARD的比赛（包含奖金的那种:&gt;）。</p>
+<p>第一天晚上，因为SIG把住宿和路费都包了，很豪华的酒店，就在悉尼歌剧院海湾附近的高楼里面，听住进去的人说晚上的夜景灯光非常漂亮，房间也很豪华（瞬间后悔为啥我要写我住悉尼），所以我们都参加了晚上的酒吧晚餐。酒吧是crown顶楼的露台，非常豪华！（又是豪华，我知道，这就是财力的魅力啊）。SIG的it老员工和第二天带我们的员工组长都会来一起聊天（就是试水感觉，看看你做了啥项目，擅长什么，沟通怎么样），我和之前聊天的大佬也一起聊项目，一起问他们一些之后工作的问题和他们对it的看法啥的。在屋顶上边聊天边喝酒吃小burger，第一次体验服务员轮流托着餐盘一个个服务的感觉挺新奇舒适的。</p>
+<p>第一天结束后，第二天就多了一个题目分析。在这个event之前，SIG会发一个题目邮件，要求在来event前做完。所以第二天员工team leader就会带着自己的组员一起把每个人写的题解放到屏幕上讲解分析，有什么缺点，什么有点，为什么错，现场优化。这就是贼有趣的事情发生的时候了（后面些写）。之后，员工带着我们参观了各种办公区，SIG的办公区属于黑色简约风，黑色的地毯，清爽大气的办公桌，加上落地窗外明朗开阔的风景，简直是我的梦中情office！</p>
+<p>在第二天结束末尾，大家一起拍了合照，领了纪念礼包（喜欢它送到WIZARD卡牌哈哈），就欢快地结束了。</p>
+<h2 id="有趣事件1"><a href="#有趣事件1" class="headerlink" title="有趣事件1"></a>有趣事件1</h2><p>关于代码一起分析那事儿，铺垫挺长的。在第一天晚上酒吧聊天地时候，就有一个白女不停地说，“哎呀，有的时候我的灵感一会儿就来了，我喜欢深夜写码，但有时候写完之后第二天就忘了怎么写的，很惊讶我自己能写出来，真的有趣哈哈。”</p>
+<p>我其实也喜欢大晚上写，可能一部分码农都有这个习惯吧，特别熬夜的时候如何喝酒提神的话（我会这样，很爽哈哈），有的时候确实会再次看到代码有点懵，啊这咋写的。而且我在写完代码一周之后，大概率会忘记我的逻辑和干的事情，所以我一直需要记笔记，记录这个代码重点干了啥，逻辑是怎么样的（之前实习的时候，就因为我忘记我写的代码的逻辑，而被mentor问这是我写的代码吗:&lt;…）。</p>
+<p>所以我理解她说的话，可能说得夸张了一点，但是是可能存在的，但是我不理解为啥她逢人就讲，难不成这是优势？自动清缓存让脑子更灵光？但是第二天，我就理解了。</p>
+<p>当时正巧第二天我跟那个白女在一个组，这个代码题，就我和她写出了全部的解，有另俩个女生卡在了最后一个test，time limit上，还有一个女生有bug，只过了一部分test。于是工作人员在分析完其他人的代码，就让我和她讲讲解题思路。当时我还有点小私心：她在我前面（按顺序一个一个讲），那她把思路讲完了，我就是透明了。随后我发现这个完全多余，因为她直接搬出了“啊呀，我有时候晚上写码blablabla…我忘了咋做的”，mentor一听，就直接问我你来讲讲？</p>
+<p>于是我意味深长地看了她一眼（因为昨晚她挺跳的，除了说她忘代码的事儿，还不停地说她自己的项目，多么多么厉害啥的），如果她只是抄了代码我无所谓，但是又抄代码又要跳说自己多厉害就有点讨厌了。然后到白板讲了解题思路。之后小组的人不理解的也是找我问思路，都不问她。所以嘛，小聪明少耍，大家都懂。</p>
+<p>后来想来挺搞笑的，铺垫了一晚上，也不回去查一查捣鼓下解题思路，还期望第二天能混过去呢，原来有的白女跟普信男一样，老装了。</p>
+<h2 id="有趣事件2"><a href="#有趣事件2" class="headerlink" title="有趣事件2"></a>有趣事件2</h2><p>这个event本身就挺drama，但也挺合乎常理吧。在第一天开始的时候，SIG团队的工作人员就不停强调“这不是面试中的一环，大家敞开心扉玩，就是互相熟悉熟悉介绍介绍，不要太紧张”。结果我知道一同去参加的一个好友，在这个event之后就给刷了 :&lt;???。我当时听这个话一开始是嗤之以鼻“谁特么信啊”，之后听SIG说了好几次，给我洗脑了：开开心心玩，谁会用这个来评估，有时候玩游戏的时候也没咋看工作人员观察，于是自己开开心心和大佬沉浸在解方块puzzle中，当时一群人在旁边问工作人员面试问题。。。每想到结果还是会刷人。。。，而且当时我都那样都没被刷。</p>
+<h1 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h1><p>在里面遇到了很多有趣的人，有在玩WIZARD一直负分的女生，可可爱爱地向马上让她再次输分的人撒娇说“不要，让我赢一盘嘛，求你了”，有C++大佬谦虚地说我没那么厉害的同时给我展示了他们在做的贼大的开源服务，还有一个眼睛亮闪闪的女生认真地看着我说这个解法很棒…</p>
+<p>这些真诚有趣的人都是比这个event更加令人深刻、有意义的回忆，一直期待遇到更多有趣的人。虽然之后SIG后面几面挂了，但是让我记住了：哇，有钱就是np！</p>
+]]></content>
+      <categories>
+        <category>个人</category>
+        <category>有趣轶事</category>
+      </categories>
+      <tags>
+        <tag>搞笑</tag>
       </tags>
   </entry>
 </search>
