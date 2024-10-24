@@ -1,53 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>SFML C++ 项目</title>
-    <url>/game-categories/gd-tut/SFML-project/</url>
-    <content><![CDATA[<ul>
-<li><a href="#项目简介">项目简介</a></li>
-<li><a href="#项目setup">项目Setup</a></li>
-<li><a href="#项目代码">项目代码</a></li>
-</ul>
-<h1 id="项目简介"><a href="#项目简介" class="headerlink" title="项目简介"></a>项目简介</h1><p>这是一个跟着<a href="https://www.youtube.com/watch?v=UARdwTLUH5U&amp;t=5906s">COMP4300的课程</a>记录制作的项目，因不公开提供代码资料，所以我自己整理了一份方便其他人使用，放在网页上的代码和文档都test过，请放心使用。</p>
-<p>这个项目利用SFML来制作一个含有各种图形四处悬动的窗口，示例如下：</p>
-<p><img src="/images/it-categories/SFML-Ass1示例.png" alt="SFML-Ass1示例"></p>
-<p>要求从config.txt文件中读取窗口大小，生成要求的图形（positionX, positionY, speedX, speedY, r, g, b, (height, width) or radius），图形需要根据自身的速度在窗口中移动，当碰到边框时进行反弹（速度变成相反的），图形需要在正中间显示图形名字：<br><figure class="highlight txt"><table><tr><td class="code"><pre><span class="line">Window 1280 720</span><br><span class="line">Font fonts/KillerTech.ttf 36 128 128 255</span><br><span class="line">Circle CGreen 100 100 -3 2 0 255 0 50</span><br><span class="line">Circle CBlue 200 200 2 4 0 0 255 100</span><br><span class="line">Circle CPurple 300 300 -2 -1 255 0 255 75</span><br><span class="line">Rectangle RRed 200 200 4 4 255 0 0 50 25</span><br><span class="line">Rectangle RGrey 300 250 -2 2 100 100 100 50 100</span><br><span class="line">Rectangle RTeal 25 100 -2 -2 0 255 255 100 100</span><br></pre></td></tr></table></figure></p>
-<h1 id="项目Setup"><a href="#项目Setup" class="headerlink" title="项目Setup"></a>项目Setup</h1><ol>
-<li>下载SFML，官网：<a href="https://www.sfml-dev.org/download.php">https://www.sfml-dev.org/download.php</a></li>
-<li>下载Visual Studio 2022，官网：<a href="https://visualstudio.microsoft.com/downloads/">https://visualstudio.microsoft.com/downloads/</a></li>
-<li>将SFML路径添加到系统环境变量中<ol>
-<li>将下载好的<code>SFML-2.6.1</code>放到<code>C:\lib\</code>中（要自己新建文件夹）</li>
-<li>新建变量<code>SFML_DIR</code>: <code>C:\lib\SFML-2.6.1</code></li>
-<li>在path变量中添加：<code>%SFML_DIR%\bin</code>, <code>%SFML_DIR%\include</code></li>
-</ol>
-</li>
-<li>在visual studio 2022中创建一个项目</li>
-<li>跟随官网配置project settings: <a href="https://www.sfml-dev.org/tutorials/2.6/start-vc.php，这步是让Visual">https://www.sfml-dev.org/tutorials/2.6/start-vc.php，这步是让Visual</a> Studio知道SFML在哪里可以找到</li>
-<li>在项目所在的文件夹中，创建一个新文件夹<code>fonts</code>，并下载一个ttf font文件放入其中（我在这里找的免费font：<a href="https://www.1001freefonts.com/）">https://www.1001freefonts.com/）</a></li>
-</ol>
-<p>可以去我的<a href="https://github.com/AiXueK/COMP4300-Game-Programming/tree/SERGEANT/COMP4300-Ass1">github COMP4300项目</a>中查看文件夹结构，或直接下载所需文件</p>
-<h1 id="项目代码"><a href="#项目代码" class="headerlink" title="项目代码"></a>项目代码</h1><p>如果想自己先写写试试的话，可以从以下的Sample Code入手，同时，也可以用以下代码来检测Setup是否成功。这个代码包含基本的窗口、文字和一个移动的圆形。<br><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;SFML/Graphics.hpp&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;fstream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// Create a window</span></span><br><span class="line">    <span class="type">const</span> <span class="type">int</span> wWidth = <span class="number">640</span>;</span><br><span class="line">    <span class="type">const</span> <span class="type">int</span> wHeight = <span class="number">480</span>;</span><br><span class="line">    <span class="function">sf::RenderWindow <span class="title">window</span><span class="params">(sf::VideoMode(wWidth, wHeight), <span class="string">&quot;SFML Works&quot;</span>)</span></span>; <span class="comment">// render a window in video type</span></span><br><span class="line">    window.<span class="built_in">setFramerateLimit</span>(<span class="number">60</span>); <span class="comment">// limit the screen frame rate at 60 per second</span></span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> r = <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> g = <span class="number">255</span>;</span><br><span class="line">    <span class="type">int</span> b = <span class="number">255</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Draw shapes</span></span><br><span class="line">    <span class="function">sf::CircleShape <span class="title">circle</span><span class="params">(<span class="number">50</span>)</span></span>; <span class="comment">// circle with radius of 50</span></span><br><span class="line">    circle.<span class="built_in">setFillColor</span>(sf::<span class="built_in">Color</span>(r, g, b));</span><br><span class="line">    circle.<span class="built_in">setPosition</span>(<span class="number">300.0f</span>, <span class="number">300.0f</span>); <span class="comment">// set top left position of the shape</span></span><br><span class="line">    <span class="type">float</span> circleSpeed = <span class="number">1.0f</span>; <span class="comment">// 1.0f per frame</span></span><br><span class="line"></span><br><span class="line">    sf::Font font;</span><br><span class="line">    <span class="keyword">if</span> (!font.<span class="built_in">loadFromFile</span>(<span class="string">&quot;fonts/FreshMulberryDemoRegular.ttf&quot;</span>)) <span class="comment">// if it returns true, nothing happens</span></span><br><span class="line">    &#123;</span><br><span class="line">        std::cerr &lt;&lt; <span class="string">&quot;Could not load font.&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">        <span class="built_in">exit</span>(<span class="number">-1</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Set up text object</span></span><br><span class="line">    <span class="function">sf::Text <span class="title">text</span><span class="params">(<span class="string">&quot;Sample Text&quot;</span>, font, <span class="number">24</span>)</span></span>; <span class="comment">// set up text string, font and character size</span></span><br><span class="line">    text.<span class="built_in">setPosition</span>(<span class="number">0</span>, wHeight - (<span class="type">float</span>)text.<span class="built_in">getCharacterSize</span>());</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Set up the main loop to keep the window open</span></span><br><span class="line">    <span class="keyword">while</span> (window.<span class="built_in">isOpen</span>())</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// Set up the supervision of the window event</span></span><br><span class="line">        sf::Event event;</span><br><span class="line">        <span class="keyword">while</span> (window.<span class="built_in">pollEvent</span>(event))</span><br><span class="line">        &#123;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (event.type == sf::Event::Closed)</span><br><span class="line">            &#123;</span><br><span class="line">                window.<span class="built_in">close</span>();</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (event.type == sf::Event::KeyPressed)</span><br><span class="line">            &#123;</span><br><span class="line">                std::cout &lt;&lt; <span class="string">&quot;Key pressed with code = &quot;</span> &lt;&lt; event.key.code &lt;&lt; std::endl;</span><br><span class="line"></span><br><span class="line">                <span class="keyword">if</span> (event.key.code == sf::Keyboard::D)</span><br><span class="line">                &#123;</span><br><span class="line">                    circleSpeed *= <span class="number">-1.0F</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Update new shape position per frame</span></span><br><span class="line">        <span class="type">float</span> speedX = <span class="number">0.5</span>;</span><br><span class="line">        <span class="type">float</span> speedY = <span class="number">2.0</span>;</span><br><span class="line">        circle.<span class="built_in">setPosition</span>(circle.<span class="built_in">getPosition</span>().x + circleSpeed, circle.<span class="built_in">getPosition</span>().y + speedY);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Draw &amp; Render window</span></span><br><span class="line">        window.<span class="built_in">clear</span>(); <span class="comment">// clear what&#x27;s left in the previous frame</span></span><br><span class="line">        window.<span class="built_in">draw</span>(circle);</span><br><span class="line">        window.<span class="built_in">draw</span>(text);</span><br><span class="line">        window.<span class="built_in">display</span>();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-]]></content>
-      <categories>
-        <category>IT分类</category>
-        <category>游戏开发</category>
-      </categories>
-      <tags>
-        <tag>C++</tag>
-        <tag>Game Dev</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>游戏编程</title>
-    <url>/game-categories/gd-tut/index/</url>
-    <content><![CDATA[<h1 id="游戏编程"><a href="#游戏编程" class="headerlink" title="游戏编程"></a>游戏编程</h1><h2 id="SFML-C-项目"><a href="#SFML-C-项目" class="headerlink" title="SFML C++ 项目"></a><a href="https://aixuek-itshare.com/game-categories/gd-tut/SFML-project">SFML C++ 项目</a></h2>]]></content>
-  </entry>
-  <entry>
-    <title>gp-record</title>
-    <url>/game-categories/gp-record/index/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>C++面试准备</title>
     <url>/it-categories/code-prac/C++-interview-prepare/</url>
     <content><![CDATA[<p>这里是自己搜罗准备的C++面试八股文常用题目，持续更新。</p>
@@ -242,71 +195,6 @@
       </tags>
   </entry>
   <entry>
-    <title>经典笔试刷题集合</title>
-    <url>/it-categories/code-prac/code-ass/</url>
-    <content><![CDATA[<h1 id="牛客-HJ17-坐标移动（中等）"><a href="#牛客-HJ17-坐标移动（中等）" class="headerlink" title="牛客 HJ17 坐标移动（中等）"></a>牛客 HJ17 坐标移动（中等）</h1><p>开发一个坐标计算工具， A表示向左移动，D表示向右移动，W表示向上移动，S表示向下移动。从（0,0）点开始移动，从输入字符串里面读取一些坐标，并将最终输入结果输出到输出文件里面。</p>
-<p>输入：</p>
-<p>合法坐标为A(或者D或者W或者S) + 数字（两位以内），坐标之间以;分隔。（如：A10;S20;W10;D30;X;A1A;B10A11;;A10;）</p>
-<p>非法坐标点需要进行丢弃。如AA10;  A1A;  $%$;  YAD; 等。</p>
-<p>起点（0,0），A10   =  （-10,0），S20   =  (-10,-20)</p>
-<p>数据范围：1 &lt;= n &lt;= 10000</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>IT分类</category>
-        <category>代码刷题</category>
-      </categories>
-      <tags>
-        <tag>Code</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>DFS和BFS</title>
-    <url>/it-categories/code-prac/dfs-bfs/</url>
-    <content><![CDATA[<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>特征</th>
-<th>DFS</th>
-<th>BFS</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>数据结构</td>
-<td>stack</td>
-<td>queue</td>
-</tr>
-<tr>
-<td>储存空间</td>
-<td>只用储存一条路的数值，所以跟高度或者路的长度有关 O(h)，使用空间较少</td>
-<td>每次储存一层的数值，所以是指数增长 O(2^h)，使用空间较多</td>
-</tr>
-<tr>
-<td>常用场景</td>
-<td>不具有最短性</td>
-<td>因为是一层一层地搜索，所以可以最快搜索到<strong>最短路径</strong>(特别是权重为1的时候)</td>
-</tr>
-</tbody>
-</table>
-</div>
-<h1 id="深度优先搜索-DFS"><a href="#深度优先搜索-DFS" class="headerlink" title="深度优先搜索 DFS"></a>深度优先搜索 DFS</h1><p>一条路一直搜索下去，然后后退。</p>
-<p>题目例子：排列数字</p>
-<p>给一个数n，将1~n排成一排，按字典顺序输出所有的排列方法。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Input: 3</span><br><span class="line">Output:</span><br><span class="line">1 2 3</span><br><span class="line">1 3 2</span><br><span class="line">2 1 3</span><br><span class="line">2 3 1</span><br><span class="line">3 1 2</span><br><span class="line">3 2 1</span><br></pre></td></tr></table></figure>
-<p>DFS代码：<br><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">10</span>;</span><br><span class="line"><span class="type">int</span> n;</span><br><span class="line"><span class="type">int</span> path[N];</span><br><span class="line"><span class="type">bool</span> used[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">dfs</span><span class="params">(<span class="type">int</span> level)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (level == n)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            cout &lt;&lt; path[i] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        cout &lt;&lt; endl;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (!used[i])</span><br><span class="line">        &#123;</span><br><span class="line">            path[level] = i;</span><br><span class="line">            used[i] = <span class="literal">true</span>;</span><br><span class="line">            <span class="built_in">dfs</span>(level + <span class="number">1</span>);</span><br><span class="line">            used[i] = <span class="literal">false</span>; <span class="comment">// 回溯恢复</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line">    <span class="built_in">dfs</span>(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h1 id="宽度优先搜索-BFS"><a href="#宽度优先搜索-BFS" class="headerlink" title="宽度优先搜索 BFS"></a>宽度优先搜索 BFS</h1><p>一层一层搜索。</p>
-]]></content>
-      <categories>
-        <category>IT分类</category>
-        <category>代码刷题</category>
-      </categories>
-      <tags>
-        <tag>Code</tag>
-        <tag>Algorithm</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>二分算法</title>
     <url>/it-categories/code-prac/bisection-alg/</url>
     <content><![CDATA[<h1 id="整数二分"><a href="#整数二分" class="headerlink" title="整数二分"></a>整数二分</h1><p>本质：</p>
@@ -362,45 +250,66 @@
       </tags>
   </entry>
   <entry>
+    <title>经典笔试刷题集合</title>
+    <url>/it-categories/code-prac/code-ass/</url>
+    <content><![CDATA[<h1 id="牛客-HJ17-坐标移动（中等）"><a href="#牛客-HJ17-坐标移动（中等）" class="headerlink" title="牛客 HJ17 坐标移动（中等）"></a>牛客 HJ17 坐标移动（中等）</h1><p>开发一个坐标计算工具， A表示向左移动，D表示向右移动，W表示向上移动，S表示向下移动。从（0,0）点开始移动，从输入字符串里面读取一些坐标，并将最终输入结果输出到输出文件里面。</p>
+<p>输入：</p>
+<p>合法坐标为A(或者D或者W或者S) + 数字（两位以内），坐标之间以;分隔。（如：A10;S20;W10;D30;X;A1A;B10A11;;A10;）</p>
+<p>非法坐标点需要进行丢弃。如AA10;  A1A;  $%$;  YAD; 等。</p>
+<p>起点（0,0），A10   =  （-10,0），S20   =  (-10,-20)</p>
+<p>数据范围：1 &lt;= n &lt;= 10000</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>IT分类</category>
+        <category>代码刷题</category>
+      </categories>
+      <tags>
+        <tag>Code</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>代码刷题</title>
     <url>/it-categories/code-prac/index/</url>
     <content><![CDATA[<h1 id="代码刷题"><a href="#代码刷题" class="headerlink" title="代码刷题"></a>代码刷题</h1><h2 id="排序算法"><a href="#排序算法" class="headerlink" title="排序算法"></a><a href="https://aixuek-itshare.com/it-categories/code-prac/sort-alg">排序算法</a></h2><h2 id="二分算法"><a href="#二分算法" class="headerlink" title="二分算法"></a><a href="https://aixuek-itshare.com/it-categories/code-prac/bisection-alg">二分算法</a></h2><h2 id="前缀和与差分"><a href="#前缀和与差分" class="headerlink" title="前缀和与差分"></a><a href="https://aixuek-itshare.com/it-categories/code-prac/prefix-sum">前缀和与差分</a></h2><h2 id="C-面试准备"><a href="#C-面试准备" class="headerlink" title="C++面试准备"></a><a href="https://aixuek-itshare.com/it-categories/code-prac/C++-interview-prepare">C++面试准备</a></h2><h2 id="DFS和BFS"><a href="#DFS和BFS" class="headerlink" title="DFS和BFS"></a><a href="https://aixuek-itshare.com/it-categories/code-prac/dfs-bfs">DFS和BFS</a></h2>]]></content>
   </entry>
   <entry>
-    <title>前缀和与差分</title>
-    <url>/it-categories/code-prac/prefix-sum/</url>
-    <content><![CDATA[<h1 id="前缀和"><a href="#前缀和" class="headerlink" title="前缀和"></a>前缀和</h1><h2 id="一维前缀和"><a href="#一维前缀和" class="headerlink" title="一维前缀和"></a>一维前缀和</h2><p>主要思想：</p>
-<ol>
-<li>求[l, r] l到r之间的和，比方说从第二个到五个数的总和可以表示为，前5个数的总和减去前一个数的总和：<code>s[l~r] = s[r] - s[l - 1]</code>，s为到第i个数的总和</li>
-<li>默认s[0] = 0,来统一计算方式（节省了个if）</li>
-</ol>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">1e6</span> + <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> n, m;</span><br><span class="line"><span class="type">int</span> a[N], s[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;n, &amp;m);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;a[i]);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)</span><br><span class="line">        s[i] = s[i - <span class="number">1</span>] + a[i];</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span> (m--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> l, r;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;l, &amp;r);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, s[r] - s[l - <span class="number">1</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="二维前缀和"><a href="#二维前缀和" class="headerlink" title="二维前缀和"></a>二维前缀和</h2><p>问题：求二维数组一块区域的前缀和</p>
-<p>若要计算$s<em>{x2_y2}$到$s</em>{x1_y1}$, 就要减去俩个长方形的，然后加上重复减去的长方形的前缀和: </p>
-<script type="math/tex; mode=display">s_{x2_y2}到s_{x1_y1} = s_{x2_y2} - s_{x2_y0} - s_{x0_y2} + s_{x1_y1} (边界记得-1)</script><p><img src="/images/it-categories/presum-alg.png" alt="二维前缀和问题演示"></p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">1010</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> n, m, q;</span><br><span class="line"><span class="type">int</span> a[N][N], s[N][N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d%d&quot;</span>, &amp;n, &amp;m, &amp;q);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">1</span>; j &lt;= m; ++j)</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;a[i][j]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">1</span>; j &lt;= m; ++j)</span><br><span class="line">            s[i][j] = s[i - <span class="number">1</span>][j] + s[i][j - <span class="number">1</span>] - s[i - <span class="number">1</span>][j - <span class="number">1</span>] + a[i][j];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> (q--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> x1, y1, x2, y2;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d%d%d%d&quot;</span>, &amp;x1, &amp;y1, &amp;x2, &amp;y2);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, s[x2][y2] - s[x2][y1<span class="number">-1</span>] - s[x1<span class="number">-1</span>][y2] + s[x1<span class="number">-1</span>][y1<span class="number">-1</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="差分"><a href="#差分" class="headerlink" title="差分"></a>差分</h1><p>主要思想：</p>
-<p>构造b1, b2, b3…, bn，使得a数组为b数组的前缀和：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ai = b1 + b2 + ... + bi \\</span><br><span class="line">b1 = a1 \\</span><br><span class="line">b2 = a2 - a1 \\</span><br><span class="line">bn = an - a_(n-1)</span><br></pre></td></tr></table></figure>
-<h2 id="一维差分"><a href="#一维差分" class="headerlink" title="一维差分"></a>一维差分</h2><p>用处：</p>
-<p>这样可以通过求b数组的前缀和来得到a数组， 对于要求对于区间[r, l]中a+c，但其他a的值不变，想求改变之后a总共的和就只需要改变$b<em>l$和$b</em>{r+1}$的值 (O(1))，而不需要循环一边全部加上C（O(n)）<br><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">a_l -&gt; b_l + c \\</span><br><span class="line">a_&#123;r+1&#125; -&gt; b_&#123;r+1&#125; - c  （抵消之前加的c）</span><br></pre></td></tr></table></figure></p>
-<p>题目：</p>
-<p>输入一个长度为n的整数序列，接下来输入m个操作，每个操作包含三个整数l, r, c，表示将列序中[l, r]之间的每个数都加上c。</p>
-<p>输出进行完所有操作之后的序列</p>
-<details>
-    <summary>代码示例</summary>
-
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">100006</span>;</span><br><span class="line"><span class="type">int</span> a[N], b[N];</span><br><span class="line"><span class="type">int</span> n, m;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">insert</span><span class="params">(<span class="type">int</span> l, <span class="type">int</span> r, <span class="type">int</span> c)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    b[l] += c;</span><br><span class="line">    b[r + <span class="number">1</span>] -= c;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;n, &amp;m);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;a[i]);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)</span><br><span class="line">        <span class="built_in">insert</span>(i, i, a[i]);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> (m--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> l, r, c;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d%d%d&quot;</span>, &amp;l, &amp;r, &amp;c);</span><br><span class="line">        <span class="built_in">insert</span>(l, r, c);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)</span><br><span class="line">        b[i] += b[i - <span class="number">1</span>];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, b[i]);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</details>
-
-<h2 id="二维差分"><a href="#二维差分" class="headerlink" title="二维差分"></a>二维差分</h2><p>主要思想：</p>
-<p>如下图，在二维数组中，仅让x_1, y_1到x_2, y_2的点之间的数加一个数C。这时可用差分来仅改变四个数的值来求一次和，而不用每次都遍历求和</p>
-<p><img src="/images/it-categories/difference-alg.png" alt="二维差分示意图"></p>
-<p>题目：</p>
-<p>第一行包含整数 n,m,q，接下来 n 行，每行包含 m 个整数，表示整数矩阵。接下来 q 行，每行包含 5 个整数 x1,y1,x2,y2,c，表示一个操作。</p>
-<p>要求输出：共 n 行，每行 m 个整数，表示所有操作进行完毕后的最终矩阵。</p>
-<p>代码解答：</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">1010</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> n, m, q;</span><br><span class="line"><span class="type">int</span> a[N][N], b[N][N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">insert</span><span class="params">(<span class="type">int</span> x1, <span class="type">int</span> y1, <span class="type">int</span> x2, <span class="type">int</span> y2, <span class="type">int</span> c)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    b[x1][y1] += c;</span><br><span class="line">    b[x2 + <span class="number">1</span>][y1] -= c;</span><br><span class="line">    b[x1][y2 + <span class="number">1</span>] -= c;</span><br><span class="line">    b[x2 + <span class="number">1</span>][y2 + <span class="number">1</span>] += c;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d%d&quot;</span>, &amp;n, &amp;m, &amp;q);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i ++ )</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">1</span>; j &lt;= m; j ++ )</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;a[i][j]);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i ++ )</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">1</span>; j &lt;= m; j ++ )</span><br><span class="line">            <span class="built_in">insert</span>(i, j, i, j, a[i][j]);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> (q -- )</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> x1, y1, x2, y2, c;</span><br><span class="line">        cin &gt;&gt; x1 &gt;&gt; y1 &gt;&gt; x2 &gt;&gt; y2 &gt;&gt; c;</span><br><span class="line">        <span class="built_in">insert</span>(x1, y1, x2, y2, c);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i ++ )</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">1</span>; j &lt;= m; j ++ )</span><br><span class="line">            b[i][j] += b[i - <span class="number">1</span>][j] + b[i][j - <span class="number">1</span>] - b[i - <span class="number">1</span>][j - <span class="number">1</span>];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i ++ )</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">1</span>; j &lt;= m; j ++ ) <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, b[i][j]);</span><br><span class="line">        <span class="built_in">puts</span>(<span class="string">&quot;&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    <title>DFS和BFS</title>
+    <url>/it-categories/code-prac/dfs-bfs/</url>
+    <content><![CDATA[<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>特征</th>
+<th>DFS</th>
+<th>BFS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>数据结构</td>
+<td>stack</td>
+<td>queue</td>
+</tr>
+<tr>
+<td>储存空间</td>
+<td>只用储存一条路的数值，所以跟高度或者路的长度有关 O(h)，使用空间较少</td>
+<td>每次储存一层的数值，所以是指数增长 O(2^h)，使用空间较多</td>
+</tr>
+<tr>
+<td>常用场景</td>
+<td>不具有最短性</td>
+<td>因为是一层一层地搜索，所以可以最快搜索到<strong>最短路径</strong>(特别是权重为1的时候)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h1 id="深度优先搜索-DFS"><a href="#深度优先搜索-DFS" class="headerlink" title="深度优先搜索 DFS"></a>深度优先搜索 DFS</h1><p>一条路一直搜索下去，然后后退。</p>
+<p>题目例子：排列数字</p>
+<p>给一个数n，将1~n排成一排，按字典顺序输出所有的排列方法。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Input: 3</span><br><span class="line">Output:</span><br><span class="line">1 2 3</span><br><span class="line">1 3 2</span><br><span class="line">2 1 3</span><br><span class="line">2 3 1</span><br><span class="line">3 1 2</span><br><span class="line">3 2 1</span><br></pre></td></tr></table></figure>
+<p>DFS代码：<br><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">10</span>;</span><br><span class="line"><span class="type">int</span> n;</span><br><span class="line"><span class="type">int</span> path[N];</span><br><span class="line"><span class="type">bool</span> used[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">dfs</span><span class="params">(<span class="type">int</span> level)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (level == n)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            cout &lt;&lt; path[i] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        cout &lt;&lt; endl;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (!used[i])</span><br><span class="line">        &#123;</span><br><span class="line">            path[level] = i;</span><br><span class="line">            used[i] = <span class="literal">true</span>;</span><br><span class="line">            <span class="built_in">dfs</span>(level + <span class="number">1</span>);</span><br><span class="line">            used[i] = <span class="literal">false</span>; <span class="comment">// 回溯恢复</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line">    <span class="built_in">dfs</span>(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h1 id="宽度优先搜索-BFS"><a href="#宽度优先搜索-BFS" class="headerlink" title="宽度优先搜索 BFS"></a>宽度优先搜索 BFS</h1><p>一层一层搜索。</p>
+]]></content>
       <categories>
         <category>IT分类</category>
         <category>代码刷题</category>
@@ -488,29 +397,6 @@
       </tags>
   </entry>
   <entry>
-    <title>C++常用设计模式</title>
-    <url>/it-categories/dev-record/C++%E5%B8%B8%E7%94%A8%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</url>
-    <content><![CDATA[<h1 id="工厂模式-Factory"><a href="#工厂模式-Factory" class="headerlink" title="工厂模式(Factory)"></a>工厂模式(Factory)</h1><h2 id="简单工厂"><a href="#简单工厂" class="headerlink" title="简单工厂"></a>简单工厂</h2><p>只有一个工厂，即一个类负责创建不同类的实例。通常使用static静态方法来创建对象，不需要传递工厂类来创建实例。</p>
-<p>优点：</p>
-<ul>
-<li>单一工厂类，实现简单</li>
-</ul>
-<p>缺点：</p>
-<ul>
-<li>扩展性差，添加新类，新产品时，需要修改工厂类代码</li>
-</ul>
-<p>代码实现：<br><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Car</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="type">void</span> <span class="title">drive</span><span class="params">()</span> </span>= <span class="number">0</span>; <span class="comment">// 创建纯虚函数，让每个子类实现</span></span><br><span class="line">    <span class="keyword">virtual</span> ~<span class="built_in">Car</span>() &#123;&#125; <span class="comment">// 析构虚函数，保证子类析构时能正确调用子类析构函数</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">BydCar</span> : <span class="keyword">public</span> Car</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">drive</span><span class="params">()</span> <span class="keyword">override</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;Driving BydCar&quot;</span> &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">TeslaCar</span> : <span class="keyword">public</span> Car</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">drive</span><span class="params">()</span> <span class="keyword">override</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;Driving TeslaCar&quot;</span> &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">CarFactory</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">static</span> Car* <span class="title">createCar</span><span class="params">(<span class="type">const</span> string&amp; brand)</span> <span class="comment">// 静态创建方法，可随地调用，来避免创建多个类工厂</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (brand == <span class="string">&quot;Byd&quot;</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">BydCar</span>();</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (brand == <span class="string">&quot;Tesla&quot;</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">TeslaCar</span>();</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="keyword">return</span> <span class="literal">nullptr</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Car *bydCar = CarFactory::<span class="built_in">createCar</span>(<span class="string">&quot;Byd&quot;</span>);</span><br><span class="line">    bydCar-&gt;<span class="built_in">drive</span>();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">delete</span> bydCar;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h2 id="工厂方法"><a href="#工厂方法" class="headerlink" title="工厂方法"></a>工厂方法</h2>]]></content>
-      <categories>
-        <category>IT分类</category>
-        <category>开发杂记</category>
-      </categories>
-      <tags>
-        <tag>C++</tag>
-        <tag>Code</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>双指针算法</title>
     <url>/it-categories/code-prac/two-pointers/</url>
     <content><![CDATA[<h1 id="双指针算法"><a href="#双指针算法" class="headerlink" title="双指针算法"></a>双指针算法</h1><p>主要思想：</p>
@@ -581,6 +467,50 @@
       </tags>
   </entry>
   <entry>
+    <title>前缀和与差分</title>
+    <url>/it-categories/code-prac/prefix-sum/</url>
+    <content><![CDATA[<h1 id="前缀和"><a href="#前缀和" class="headerlink" title="前缀和"></a>前缀和</h1><h2 id="一维前缀和"><a href="#一维前缀和" class="headerlink" title="一维前缀和"></a>一维前缀和</h2><p>主要思想：</p>
+<ol>
+<li>求[l, r] l到r之间的和，比方说从第二个到五个数的总和可以表示为，前5个数的总和减去前一个数的总和：<code>s[l~r] = s[r] - s[l - 1]</code>，s为到第i个数的总和</li>
+<li>默认s[0] = 0,来统一计算方式（节省了个if）</li>
+</ol>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">1e6</span> + <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> n, m;</span><br><span class="line"><span class="type">int</span> a[N], s[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;n, &amp;m);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;a[i]);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)</span><br><span class="line">        s[i] = s[i - <span class="number">1</span>] + a[i];</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span> (m--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> l, r;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;l, &amp;r);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, s[r] - s[l - <span class="number">1</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="二维前缀和"><a href="#二维前缀和" class="headerlink" title="二维前缀和"></a>二维前缀和</h2><p>问题：求二维数组一块区域的前缀和</p>
+<p>若要计算$s<em>{x2_y2}$到$s</em>{x1_y1}$, 就要减去俩个长方形的，然后加上重复减去的长方形的前缀和: </p>
+<script type="math/tex; mode=display">s_{x2_y2}到s_{x1_y1} = s_{x2_y2} - s_{x2_y0} - s_{x0_y2} + s_{x1_y1} (边界记得-1)</script><p><img src="/images/it-categories/presum-alg.png" alt="二维前缀和问题演示"></p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">1010</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> n, m, q;</span><br><span class="line"><span class="type">int</span> a[N][N], s[N][N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d%d&quot;</span>, &amp;n, &amp;m, &amp;q);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">1</span>; j &lt;= m; ++j)</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;a[i][j]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">1</span>; j &lt;= m; ++j)</span><br><span class="line">            s[i][j] = s[i - <span class="number">1</span>][j] + s[i][j - <span class="number">1</span>] - s[i - <span class="number">1</span>][j - <span class="number">1</span>] + a[i][j];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> (q--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> x1, y1, x2, y2;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d%d%d%d&quot;</span>, &amp;x1, &amp;y1, &amp;x2, &amp;y2);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, s[x2][y2] - s[x2][y1<span class="number">-1</span>] - s[x1<span class="number">-1</span>][y2] + s[x1<span class="number">-1</span>][y1<span class="number">-1</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="差分"><a href="#差分" class="headerlink" title="差分"></a>差分</h1><p>主要思想：</p>
+<p>构造b1, b2, b3…, bn，使得a数组为b数组的前缀和：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ai = b1 + b2 + ... + bi \\</span><br><span class="line">b1 = a1 \\</span><br><span class="line">b2 = a2 - a1 \\</span><br><span class="line">bn = an - a_(n-1)</span><br></pre></td></tr></table></figure>
+<h2 id="一维差分"><a href="#一维差分" class="headerlink" title="一维差分"></a>一维差分</h2><p>用处：</p>
+<p>这样可以通过求b数组的前缀和来得到a数组， 对于要求对于区间[r, l]中a+c，但其他a的值不变，想求改变之后a总共的和就只需要改变$b<em>l$和$b</em>{r+1}$的值 (O(1))，而不需要循环一边全部加上C（O(n)）<br><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">a_l -&gt; b_l + c \\</span><br><span class="line">a_&#123;r+1&#125; -&gt; b_&#123;r+1&#125; - c  （抵消之前加的c）</span><br></pre></td></tr></table></figure></p>
+<p>题目：</p>
+<p>输入一个长度为n的整数序列，接下来输入m个操作，每个操作包含三个整数l, r, c，表示将列序中[l, r]之间的每个数都加上c。</p>
+<p>输出进行完所有操作之后的序列</p>
+<details>
+    <summary>代码示例</summary>
+
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">100006</span>;</span><br><span class="line"><span class="type">int</span> a[N], b[N];</span><br><span class="line"><span class="type">int</span> n, m;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">insert</span><span class="params">(<span class="type">int</span> l, <span class="type">int</span> r, <span class="type">int</span> c)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    b[l] += c;</span><br><span class="line">    b[r + <span class="number">1</span>] -= c;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;n, &amp;m);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;a[i]);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)</span><br><span class="line">        <span class="built_in">insert</span>(i, i, a[i]);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> (m--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> l, r, c;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d%d%d&quot;</span>, &amp;l, &amp;r, &amp;c);</span><br><span class="line">        <span class="built_in">insert</span>(l, r, c);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)</span><br><span class="line">        b[i] += b[i - <span class="number">1</span>];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, b[i]);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</details>
+
+<h2 id="二维差分"><a href="#二维差分" class="headerlink" title="二维差分"></a>二维差分</h2><p>主要思想：</p>
+<p>如下图，在二维数组中，仅让x_1, y_1到x_2, y_2的点之间的数加一个数C。这时可用差分来仅改变四个数的值来求一次和，而不用每次都遍历求和</p>
+<p><img src="/images/it-categories/difference-alg.png" alt="二维差分示意图"></p>
+<p>题目：</p>
+<p>第一行包含整数 n,m,q，接下来 n 行，每行包含 m 个整数，表示整数矩阵。接下来 q 行，每行包含 5 个整数 x1,y1,x2,y2,c，表示一个操作。</p>
+<p>要求输出：共 n 行，每行 m 个整数，表示所有操作进行完毕后的最终矩阵。</p>
+<p>代码解答：</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">1010</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> n, m, q;</span><br><span class="line"><span class="type">int</span> a[N][N], b[N][N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">insert</span><span class="params">(<span class="type">int</span> x1, <span class="type">int</span> y1, <span class="type">int</span> x2, <span class="type">int</span> y2, <span class="type">int</span> c)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    b[x1][y1] += c;</span><br><span class="line">    b[x2 + <span class="number">1</span>][y1] -= c;</span><br><span class="line">    b[x1][y2 + <span class="number">1</span>] -= c;</span><br><span class="line">    b[x2 + <span class="number">1</span>][y2 + <span class="number">1</span>] += c;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d%d&quot;</span>, &amp;n, &amp;m, &amp;q);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i ++ )</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">1</span>; j &lt;= m; j ++ )</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;a[i][j]);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i ++ )</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">1</span>; j &lt;= m; j ++ )</span><br><span class="line">            <span class="built_in">insert</span>(i, j, i, j, a[i][j]);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> (q -- )</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> x1, y1, x2, y2, c;</span><br><span class="line">        cin &gt;&gt; x1 &gt;&gt; y1 &gt;&gt; x2 &gt;&gt; y2 &gt;&gt; c;</span><br><span class="line">        <span class="built_in">insert</span>(x1, y1, x2, y2, c);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i ++ )</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">1</span>; j &lt;= m; j ++ )</span><br><span class="line">            b[i][j] += b[i - <span class="number">1</span>][j] + b[i][j - <span class="number">1</span>] - b[i - <span class="number">1</span>][j - <span class="number">1</span>];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i ++ )</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">1</span>; j &lt;= m; j ++ ) <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, b[i][j]);</span><br><span class="line">        <span class="built_in">puts</span>(<span class="string">&quot;&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>IT分类</category>
+        <category>代码刷题</category>
+      </categories>
+      <tags>
+        <tag>Code</tag>
+        <tag>Algorithm</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>复制构造函数</title>
     <url>/it-categories/dev-record/copy-constructor/</url>
     <content><![CDATA[<p>复制构造函数的用途就是解决：当将数据从一个对象复制到另一个对象时，其中的指针数据成员没有被正确处理的情况。</p>
@@ -609,57 +539,19 @@
     <content><![CDATA[<h1 id="开发杂记"><a href="#开发杂记" class="headerlink" title="开发杂记"></a>开发杂记</h1><h2 id="C-笔记"><a href="#C-笔记" class="headerlink" title="C++笔记"></a><a href="https://aixuek-itshare.com/it-categories/dev-record/C++-notes">C++笔记</a></h2><h2 id="指针vs引用"><a href="#指针vs引用" class="headerlink" title="指针vs引用"></a><a href="https://aixuek-itshare.com/it-categories/dev-record/pointer-and-reference">指针vs引用</a></h2><h2 id="复制构造函数"><a href="#复制构造函数" class="headerlink" title="复制构造函数"></a><a href="https://aixuek-itshare.com/it-categories/dev-record/copy-constructor">复制构造函数</a></h2><h2 id="函数指针"><a href="#函数指针" class="headerlink" title="函数指针"></a><a href="https://aixuek-itshare.com/it-categories/dev-record/func-pointer">函数指针</a></h2>]]></content>
   </entry>
   <entry>
-    <title>函数指针</title>
-    <url>/it-categories/dev-record/func-pointer/</url>
-    <content><![CDATA[<p>函数指针是指向函数的指针，跟指向变量的指针没差。</p>
-<p>函数的一个属性就是其地址指明了函数体在内存中的位置，在调用函数时，系统将控制权给这个位置来执行函数。</p>
-<p>用一个函数来举例</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">double</span> <span class="title">f</span><span class="params">(<span class="type">double</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">2</span>*x;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这里，<code>f</code>是指向函数<code>f()</code>的指针，<code>*f()</code>是函数本身， <code>(*f)(7)</code>是调用这个函数并取得值，其本质跟<code>f(7)</code>没有任何差别，只是在大多数编程语言中（包括 C 和 C++），编译器会自动理解<code>f</code>是一个函数指针并进行适当的解引用。</p>
-<p>函数指针一般在需要函数作为一个变量的时候起到作用，即函数作为参数传递，如当要求n到m之间用函数f的总和时：<br><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">double</span> <span class="title">sum</span><span class="params">(<span class="type">double</span> (*f)(<span class="type">double</span>), <span class="type">int</span> n, <span class="type">int</span> m)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">double</span> result = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = n; i &lt;= m ; ++i)</span><br><span class="line">        result += <span class="built_in">f</span>(i);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>这里，<code>double (*f)(double)</code>是指<code>f</code>为指向一个返回<code>double</code>，输入值为<code>double</code>的函数指针，那么实际上传入的function就可以是满足输入和输出的多变的模式，极大地提高了灵活性：<br><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">double</span> <span class="title">square</span><span class="params">(<span class="type">double</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x * x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">double</span> <span class="title">cube</span><span class="params">(<span class="type">double</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x * x * x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">double</span> <span class="title">identity</span><span class="params">(<span class="type">double</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 三种不同的function都可以被当作参数传递进去</span></span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;Sum of squares from 1 to 3: &quot;</span> &lt;&lt; <span class="built_in">sum</span>(square, <span class="number">1</span>, <span class="number">3</span>) &lt;&lt; std::endl;</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;Sum of cubes from 1 to 3: &quot;</span> &lt;&lt; <span class="built_in">sum</span>(cube, <span class="number">1</span>, <span class="number">3</span>) &lt;&lt; std::endl;</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;Sum of identity from 1 to 3: &quot;</span> &lt;&lt; <span class="built_in">sum</span>(identity, <span class="number">1</span>, <span class="number">3</span>) &lt;&lt; std::endl;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>拓展来说，<code>double *f(double)</code>则是一个函数声明，表示 f 是一个函数，它接受一个 double 类型的参数，并返回一个<em>指向double类型的指针</em><br><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">double</span>* <span class="title">f</span><span class="params">(<span class="type">double</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="type">double</span>* result = <span class="keyword">new</span> <span class="built_in">double</span>(x * <span class="number">2</span>); <span class="comment">// 动态分配一个 double 并将其值设置为 x 的两倍</span></span><br><span class="line">    <span class="keyword">return</span> result; <span class="comment">// 返回的是一个指向double这个值的指针</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">double</span> value = <span class="number">5.0</span>;</span><br><span class="line">    <span class="type">double</span>* result = <span class="built_in">f</span>(value); <span class="comment">// 定义一个double指针</span></span><br><span class="line"></span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;Result: &quot;</span> &lt;&lt; *result &lt;&lt; std::endl; <span class="comment">// 输出指针指向的值，解引用</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">delete</span> result; <span class="comment">// 释放动态分配的内存</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>所以<code>double (*f)(double)</code>代表的是一个指向返回double，输入为double的函数指针。函数指针可以让函数作为参数被灵活地使用。</p>
-]]></content>
-      <categories>
-        <category>IT分类</category>
-        <category>开发杂记</category>
-      </categories>
-      <tags>
-        <tag>C++</tag>
-        <tag>Code</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>指针vs引用</title>
-    <url>/it-categories/dev-record/pointer-and-reference/</url>
-    <content><![CDATA[<p>指针：</p>
+    <title>C++常用设计模式</title>
+    <url>/it-categories/dev-record/C++%E5%B8%B8%E7%94%A8%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</url>
+    <content><![CDATA[<h1 id="工厂模式-Factory"><a href="#工厂模式-Factory" class="headerlink" title="工厂模式(Factory)"></a>工厂模式(Factory)</h1><h2 id="简单工厂"><a href="#简单工厂" class="headerlink" title="简单工厂"></a>简单工厂</h2><p>只有一个工厂，即一个类负责创建不同类的实例。通常使用static静态方法来创建对象，不需要传递工厂类来创建实例。</p>
+<p>优点：</p>
 <ul>
-<li>指向值，但本身值为地址。</li>
-<li>可以有null pointer，指向特殊地址0</li>
-<li>初始化后可以被改变</li>
+<li>单一工厂类，实现简单</li>
 </ul>
-<p>引用：</p>
+<p>缺点：</p>
 <ul>
-<li>相当于const指针，<code>int&amp; r = n</code>等同于<code>int *const r = &amp;n</code></li>
-<li>因为是<code>int *const</code>所以初始化之后，r本身的值不能改变，也就是不能改变它指向的地址了</li>
+<li>扩展性差，添加新类，新产品时，需要修改工厂类代码</li>
 </ul>
-<p>关于<code>int *const r</code>:</p>
-<ul>
-<li>表示一个常量指针，指向一个整数。</li>
-<li>指针是常量：一旦初始化，指针本身的值（即它指向的地址）不能改变。</li>
-<li>指向的数据是可变的：可以通过这个指针修改它指向的整数的值。</li>
-</ul>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> value1 = <span class="number">10</span>;</span><br><span class="line"><span class="type">int</span> value2 = <span class="number">20</span>;</span><br><span class="line"><span class="type">int</span> *<span class="type">const</span> ptr = &amp;value1; <span class="comment">// 常量指针，指向 value1，可以将const后面的(ptr)单独看，它是指针本身，所以是指针本身不能变，也就是ptr所储存的地址不能变</span></span><br><span class="line"></span><br><span class="line">*ptr = <span class="number">15</span>; <span class="comment">// 这是可以的，因为可以修改指针指向的数据，所以也可以更改被引用的变量的值</span></span><br><span class="line"><span class="comment">// ptr = &amp;value2; // 报错，因为不能修改指针本身的值</span></span><br></pre></td></tr></table></figure>
-<p>相应的有<code>const int *</code>：</p>
-<ul>
-<li>表示一个指向常量整数的指针。</li>
-<li>指针是可变的：指针本身的值（即它指向的地址）可以改变。</li>
-<li>指向的数据是常量：不能通过这个指针修改它指向的整数的值。</li>
-</ul>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> value1 = <span class="number">10</span>;</span><br><span class="line"><span class="type">int</span> value2 = <span class="number">20</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> *ptr = &amp;value1; <span class="comment">// 指向常量整数的指针，可以将(int *ptr)看作一个整体，它代表的是指针指向的值，所以是指向的值不能改变</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// *ptr = 15; // 报错，因为不能修改指针指向的数据</span></span><br><span class="line">ptr = &amp;value2; <span class="comment">// 这是可以的，因为可以改变指针本身的值</span></span><br></pre></td></tr></table></figure>
-<p>所以，引用的作用就是一个常量指针，它经常被用于函数中传递数据来节省单独copy一次的空间，或者当函数执行的过程中，参数需要永久被改变，就可以通过引用来传递参数（因为它是通过地址来获取值，所以更改引用的值，就是在地址上更改值，而不是更改复制的值）</p>
-]]></content>
+<p>代码实现：<br><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Car</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="type">void</span> <span class="title">drive</span><span class="params">()</span> </span>= <span class="number">0</span>; <span class="comment">// 创建纯虚函数，让每个子类实现</span></span><br><span class="line">    <span class="keyword">virtual</span> ~<span class="built_in">Car</span>() &#123;&#125; <span class="comment">// 析构虚函数，保证子类析构时能正确调用子类析构函数</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">BydCar</span> : <span class="keyword">public</span> Car</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">drive</span><span class="params">()</span> <span class="keyword">override</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;Driving BydCar&quot;</span> &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">TeslaCar</span> : <span class="keyword">public</span> Car</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">drive</span><span class="params">()</span> <span class="keyword">override</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;Driving TeslaCar&quot;</span> &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">CarFactory</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">static</span> Car* <span class="title">createCar</span><span class="params">(<span class="type">const</span> string&amp; brand)</span> <span class="comment">// 静态创建方法，可随地调用，来避免创建多个类工厂</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (brand == <span class="string">&quot;Byd&quot;</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">BydCar</span>();</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (brand == <span class="string">&quot;Tesla&quot;</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">TeslaCar</span>();</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="keyword">return</span> <span class="literal">nullptr</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Car *bydCar = CarFactory::<span class="built_in">createCar</span>(<span class="string">&quot;Byd&quot;</span>);</span><br><span class="line">    bydCar-&gt;<span class="built_in">drive</span>();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">delete</span> bydCar;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="工厂方法"><a href="#工厂方法" class="headerlink" title="工厂方法"></a>工厂方法</h2>]]></content>
       <categories>
         <category>IT分类</category>
         <category>开发杂记</category>
@@ -688,9 +580,27 @@
     <content><![CDATA[<h1 id="面试过往"><a href="#面试过往" class="headerlink" title="面试过往"></a>面试过往</h1><h2 id="C-面试问题"><a href="#C-面试问题" class="headerlink" title="C++面试问题"></a><a href="https://aixuek-itshare.com/it-categories/interviews/C++-interview-questions">C++面试问题</a></h2><h2 id="SIG-grad-tech面试的分享"><a href="#SIG-grad-tech面试的分享" class="headerlink" title="SIG grad tech面试的分享"></a><a href="https://aixuek-itshare.com/it-categories/interviews/sig-interview">SIG grad tech面试的分享</a></h2>]]></content>
   </entry>
   <entry>
-    <title>有趣轶事</title>
-    <url>/personal/funny-experience/index/</url>
-    <content><![CDATA[<h1 id="有趣轶事"><a href="#有趣轶事" class="headerlink" title="有趣轶事"></a>有趣轶事</h1><h2 id="参加SIG-event-day的搞笑事情"><a href="#参加SIG-event-day的搞笑事情" class="headerlink" title="参加SIG event day的搞笑事情"></a><a href="https://aixuek-itshare.com/personal/funny-experience/sig-event">参加SIG event day的搞笑事情</a></h2>]]></content>
+    <title>5.3.2 UE build报错</title>
+    <url>/game-categories/gd-tut/5.3.2-build-error/</url>
+    <content><![CDATA[<p>在升级完Unreal Engine到版本5.3.2之后，发现即使用UE自带的空Actor Class进行编译都有俩项如下报错：<br><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">========== Build: 46 succeeded, 2 failed, 0 up-to-date, 1 skipped ==========</span><br><span class="line">Done building project “BuildGraph.Automation.csproj” – FAILED.</span><br><span class="line">Done building project “AutomationScripts.Automation.csproj” – FAILED.</span><br></pre></td></tr></table></figure></p>
+<p>解决办法为修改UE的源文件：</p>
+<ol>
+<li>找到安装Unreal Engine Machine的文件夹，我的是<code>D:\App\UnrealEngine Machines\UE_5.3\</code></li>
+<li>到<code>Engine\Source\Programs\AutomationTool\BuildGraph\BgScriptReader.cs</code>中将1640行改为：<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"> <span class="keyword">if</span> (users != null)</span><br><span class="line">report.NotifyUsers.<span class="built_in">UnionWith</span>(users);</span><br></pre></td></tr></table></figure></li>
+<li>到<code>Engine/Source/Programs/AutomationTool/Scripts/CheckForHacks.cs</code>中将87行改为：<br><code>Logger.LogInformation(&quot;Scanning files... [&#123;Arg0&#125;]&quot;, FilesToCheck.Count);</code></li>
+</ol>
+<p>即可编译通过。</p>
+<p>后话：</p>
+<p>非常建议开启UE自带的Revision Control功能，这样可以备份自己的游戏项目，同时用自己的硬盘再备份一份。因为如果不小心彻底删掉了<code>.uproject</code>文件，那么似乎就得重新从头做一遍。（我暂时没找到解决方法，如果有知道的大佬麻烦告知 :&gt;~）</p>
+]]></content>
+      <categories>
+        <category>IT分类</category>
+        <category>游戏开发</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+        <tag>Game Dev</tag>
+      </tags>
   </entry>
   <entry>
     <title>SIG grad tech面试的分享</title>
@@ -751,6 +661,87 @@
       </tags>
   </entry>
   <entry>
+    <title>指针vs引用</title>
+    <url>/it-categories/dev-record/pointer-and-reference/</url>
+    <content><![CDATA[<p>指针：</p>
+<ul>
+<li>指向值，但本身值为地址。</li>
+<li>可以有null pointer，指向特殊地址0</li>
+<li>初始化后可以被改变</li>
+</ul>
+<p>引用：</p>
+<ul>
+<li>相当于const指针，<code>int&amp; r = n</code>等同于<code>int *const r = &amp;n</code></li>
+<li>因为是<code>int *const</code>所以初始化之后，r本身的值不能改变，也就是不能改变它指向的地址了</li>
+</ul>
+<p>关于<code>int *const r</code>:</p>
+<ul>
+<li>表示一个常量指针，指向一个整数。</li>
+<li>指针是常量：一旦初始化，指针本身的值（即它指向的地址）不能改变。</li>
+<li>指向的数据是可变的：可以通过这个指针修改它指向的整数的值。</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> value1 = <span class="number">10</span>;</span><br><span class="line"><span class="type">int</span> value2 = <span class="number">20</span>;</span><br><span class="line"><span class="type">int</span> *<span class="type">const</span> ptr = &amp;value1; <span class="comment">// 常量指针，指向 value1，可以将const后面的(ptr)单独看，它是指针本身，所以是指针本身不能变，也就是ptr所储存的地址不能变</span></span><br><span class="line"></span><br><span class="line">*ptr = <span class="number">15</span>; <span class="comment">// 这是可以的，因为可以修改指针指向的数据，所以也可以更改被引用的变量的值</span></span><br><span class="line"><span class="comment">// ptr = &amp;value2; // 报错，因为不能修改指针本身的值</span></span><br></pre></td></tr></table></figure>
+<p>相应的有<code>const int *</code>：</p>
+<ul>
+<li>表示一个指向常量整数的指针。</li>
+<li>指针是可变的：指针本身的值（即它指向的地址）可以改变。</li>
+<li>指向的数据是常量：不能通过这个指针修改它指向的整数的值。</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> value1 = <span class="number">10</span>;</span><br><span class="line"><span class="type">int</span> value2 = <span class="number">20</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> *ptr = &amp;value1; <span class="comment">// 指向常量整数的指针，可以将(int *ptr)看作一个整体，它代表的是指针指向的值，所以是指向的值不能改变</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// *ptr = 15; // 报错，因为不能修改指针指向的数据</span></span><br><span class="line">ptr = &amp;value2; <span class="comment">// 这是可以的，因为可以改变指针本身的值</span></span><br></pre></td></tr></table></figure>
+<p>所以，引用的作用就是一个常量指针，它经常被用于函数中传递数据来节省单独copy一次的空间，或者当函数执行的过程中，参数需要永久被改变，就可以通过引用来传递参数（因为它是通过地址来获取值，所以更改引用的值，就是在地址上更改值，而不是更改复制的值）</p>
+]]></content>
+      <categories>
+        <category>IT分类</category>
+        <category>开发杂记</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+        <tag>Code</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>SFML C++ 项目</title>
+    <url>/game-categories/gd-tut/SFML-project/</url>
+    <content><![CDATA[<ul>
+<li><a href="#项目简介">项目简介</a></li>
+<li><a href="#项目setup">项目Setup</a></li>
+<li><a href="#项目代码">项目代码</a></li>
+</ul>
+<h1 id="项目简介"><a href="#项目简介" class="headerlink" title="项目简介"></a>项目简介</h1><p>这是一个跟着<a href="https://www.youtube.com/watch?v=UARdwTLUH5U&amp;t=5906s">COMP4300的课程</a>记录制作的项目，因不公开提供代码资料，所以我自己整理了一份方便其他人使用，放在网页上的代码和文档都test过，请放心使用。</p>
+<p>这个项目利用SFML来制作一个含有各种图形四处悬动的窗口，示例如下：</p>
+<p><img src="/images/it-categories/SFML-Ass1示例.png" alt="SFML-Ass1示例"></p>
+<p>要求从config.txt文件中读取窗口大小，生成要求的图形（positionX, positionY, speedX, speedY, r, g, b, (height, width) or radius），图形需要根据自身的速度在窗口中移动，当碰到边框时进行反弹（速度变成相反的），图形需要在正中间显示图形名字：<br><figure class="highlight txt"><table><tr><td class="code"><pre><span class="line">Window 1280 720</span><br><span class="line">Font fonts/KillerTech.ttf 36 128 128 255</span><br><span class="line">Circle CGreen 100 100 -3 2 0 255 0 50</span><br><span class="line">Circle CBlue 200 200 2 4 0 0 255 100</span><br><span class="line">Circle CPurple 300 300 -2 -1 255 0 255 75</span><br><span class="line">Rectangle RRed 200 200 4 4 255 0 0 50 25</span><br><span class="line">Rectangle RGrey 300 250 -2 2 100 100 100 50 100</span><br><span class="line">Rectangle RTeal 25 100 -2 -2 0 255 255 100 100</span><br></pre></td></tr></table></figure></p>
+<h1 id="项目Setup"><a href="#项目Setup" class="headerlink" title="项目Setup"></a>项目Setup</h1><ol>
+<li>下载SFML，官网：<a href="https://www.sfml-dev.org/download.php">https://www.sfml-dev.org/download.php</a></li>
+<li>下载Visual Studio 2022，官网：<a href="https://visualstudio.microsoft.com/downloads/">https://visualstudio.microsoft.com/downloads/</a></li>
+<li>将SFML路径添加到系统环境变量中<ol>
+<li>将下载好的<code>SFML-2.6.1</code>放到<code>C:\lib\</code>中（要自己新建文件夹）</li>
+<li>新建变量<code>SFML_DIR</code>: <code>C:\lib\SFML-2.6.1</code></li>
+<li>在path变量中添加：<code>%SFML_DIR%\bin</code>, <code>%SFML_DIR%\include</code></li>
+</ol>
+</li>
+<li>在visual studio 2022中创建一个项目</li>
+<li>跟随官网配置project settings: <a href="https://www.sfml-dev.org/tutorials/2.6/start-vc.php，这步是让Visual">https://www.sfml-dev.org/tutorials/2.6/start-vc.php，这步是让Visual</a> Studio知道SFML在哪里可以找到</li>
+<li>在项目所在的文件夹中，创建一个新文件夹<code>fonts</code>，并下载一个ttf font文件放入其中（我在这里找的免费font：<a href="https://www.1001freefonts.com/）">https://www.1001freefonts.com/）</a></li>
+</ol>
+<p>可以去我的<a href="https://github.com/AiXueK/COMP4300-Game-Programming/tree/SERGEANT/COMP4300-Ass1">github COMP4300项目</a>中查看文件夹结构，或直接下载所需文件</p>
+<h1 id="项目代码"><a href="#项目代码" class="headerlink" title="项目代码"></a>项目代码</h1><p>如果想自己先写写试试的话，可以从以下的Sample Code入手，同时，也可以用以下代码来检测Setup是否成功。这个代码包含基本的窗口、文字和一个移动的圆形。<br><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;SFML/Graphics.hpp&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;fstream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// Create a window</span></span><br><span class="line">    <span class="type">const</span> <span class="type">int</span> wWidth = <span class="number">640</span>;</span><br><span class="line">    <span class="type">const</span> <span class="type">int</span> wHeight = <span class="number">480</span>;</span><br><span class="line">    <span class="function">sf::RenderWindow <span class="title">window</span><span class="params">(sf::VideoMode(wWidth, wHeight), <span class="string">&quot;SFML Works&quot;</span>)</span></span>; <span class="comment">// render a window in video type</span></span><br><span class="line">    window.<span class="built_in">setFramerateLimit</span>(<span class="number">60</span>); <span class="comment">// limit the screen frame rate at 60 per second</span></span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> r = <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> g = <span class="number">255</span>;</span><br><span class="line">    <span class="type">int</span> b = <span class="number">255</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Draw shapes</span></span><br><span class="line">    <span class="function">sf::CircleShape <span class="title">circle</span><span class="params">(<span class="number">50</span>)</span></span>; <span class="comment">// circle with radius of 50</span></span><br><span class="line">    circle.<span class="built_in">setFillColor</span>(sf::<span class="built_in">Color</span>(r, g, b));</span><br><span class="line">    circle.<span class="built_in">setPosition</span>(<span class="number">300.0f</span>, <span class="number">300.0f</span>); <span class="comment">// set top left position of the shape</span></span><br><span class="line">    <span class="type">float</span> circleSpeed = <span class="number">1.0f</span>; <span class="comment">// 1.0f per frame</span></span><br><span class="line"></span><br><span class="line">    sf::Font font;</span><br><span class="line">    <span class="keyword">if</span> (!font.<span class="built_in">loadFromFile</span>(<span class="string">&quot;fonts/FreshMulberryDemoRegular.ttf&quot;</span>)) <span class="comment">// if it returns true, nothing happens</span></span><br><span class="line">    &#123;</span><br><span class="line">        std::cerr &lt;&lt; <span class="string">&quot;Could not load font.&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">        <span class="built_in">exit</span>(<span class="number">-1</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Set up text object</span></span><br><span class="line">    <span class="function">sf::Text <span class="title">text</span><span class="params">(<span class="string">&quot;Sample Text&quot;</span>, font, <span class="number">24</span>)</span></span>; <span class="comment">// set up text string, font and character size</span></span><br><span class="line">    text.<span class="built_in">setPosition</span>(<span class="number">0</span>, wHeight - (<span class="type">float</span>)text.<span class="built_in">getCharacterSize</span>());</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Set up the main loop to keep the window open</span></span><br><span class="line">    <span class="keyword">while</span> (window.<span class="built_in">isOpen</span>())</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// Set up the supervision of the window event</span></span><br><span class="line">        sf::Event event;</span><br><span class="line">        <span class="keyword">while</span> (window.<span class="built_in">pollEvent</span>(event))</span><br><span class="line">        &#123;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (event.type == sf::Event::Closed)</span><br><span class="line">            &#123;</span><br><span class="line">                window.<span class="built_in">close</span>();</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (event.type == sf::Event::KeyPressed)</span><br><span class="line">            &#123;</span><br><span class="line">                std::cout &lt;&lt; <span class="string">&quot;Key pressed with code = &quot;</span> &lt;&lt; event.key.code &lt;&lt; std::endl;</span><br><span class="line"></span><br><span class="line">                <span class="keyword">if</span> (event.key.code == sf::Keyboard::D)</span><br><span class="line">                &#123;</span><br><span class="line">                    circleSpeed *= <span class="number">-1.0F</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Update new shape position per frame</span></span><br><span class="line">        <span class="type">float</span> speedX = <span class="number">0.5</span>;</span><br><span class="line">        <span class="type">float</span> speedY = <span class="number">2.0</span>;</span><br><span class="line">        circle.<span class="built_in">setPosition</span>(circle.<span class="built_in">getPosition</span>().x + circleSpeed, circle.<span class="built_in">getPosition</span>().y + speedY);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Draw &amp; Render window</span></span><br><span class="line">        window.<span class="built_in">clear</span>(); <span class="comment">// clear what&#x27;s left in the previous frame</span></span><br><span class="line">        window.<span class="built_in">draw</span>(circle);</span><br><span class="line">        window.<span class="built_in">draw</span>(text);</span><br><span class="line">        window.<span class="built_in">display</span>();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+]]></content>
+      <categories>
+        <category>IT分类</category>
+        <category>游戏开发</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+        <tag>Game Dev</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>游戏编程</title>
+    <url>/game-categories/gd-tut/index/</url>
+    <content><![CDATA[<h1 id="游戏编程"><a href="#游戏编程" class="headerlink" title="游戏编程"></a>游戏编程</h1><h2 id="SFML-C-项目"><a href="#SFML-C-项目" class="headerlink" title="SFML C++ 项目"></a><a href="https://aixuek-itshare.com/game-categories/gd-tut/SFML-project">SFML C++ 项目</a></h2><h2 id="5-3-2-UE-build报错"><a href="#5-3-2-UE-build报错" class="headerlink" title="5.3.2 UE build报错"></a><a href="https://aixuek-itshare.com/game-categories/gd-tut/5.3.2-build-error">5.3.2 UE build报错</a></h2>]]></content>
+  </entry>
+  <entry>
     <title>参加SIG event day的搞笑事情</title>
     <url>/personal/funny-experience/sig-event/</url>
     <content><![CDATA[<h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>在通过SIG的笔试、HR电话面试之后（有关SIG的面试题和面试经历，请看<a href="/it-categories/interviews/sig-interview">SIG面试</a>），收到了参加SIG办公室俩天参观的邀请，于是开开心心就去了，毕竟美国大投行公司，它的财力对我吸引力是非常大的，也很好奇有钱公司内部长啥样。也就开启了俩天的social娱乐。</p>
@@ -775,6 +766,38 @@
       </categories>
       <tags>
         <tag>搞笑</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>有趣轶事</title>
+    <url>/personal/funny-experience/index/</url>
+    <content><![CDATA[<h1 id="有趣轶事"><a href="#有趣轶事" class="headerlink" title="有趣轶事"></a>有趣轶事</h1><h2 id="参加SIG-event-day的搞笑事情"><a href="#参加SIG-event-day的搞笑事情" class="headerlink" title="参加SIG event day的搞笑事情"></a><a href="https://aixuek-itshare.com/personal/funny-experience/sig-event">参加SIG event day的搞笑事情</a></h2>]]></content>
+  </entry>
+  <entry>
+    <title>gp-record</title>
+    <url>/game-categories/gp-record/index/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>函数指针</title>
+    <url>/it-categories/dev-record/func-pointer/</url>
+    <content><![CDATA[<p>函数指针是指向函数的指针，跟指向变量的指针没差。</p>
+<p>函数的一个属性就是其地址指明了函数体在内存中的位置，在调用函数时，系统将控制权给这个位置来执行函数。</p>
+<p>用一个函数来举例</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">double</span> <span class="title">f</span><span class="params">(<span class="type">double</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">2</span>*x;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里，<code>f</code>是指向函数<code>f()</code>的指针，<code>*f()</code>是函数本身， <code>(*f)(7)</code>是调用这个函数并取得值，其本质跟<code>f(7)</code>没有任何差别，只是在大多数编程语言中（包括 C 和 C++），编译器会自动理解<code>f</code>是一个函数指针并进行适当的解引用。</p>
+<p>函数指针一般在需要函数作为一个变量的时候起到作用，即函数作为参数传递，如当要求n到m之间用函数f的总和时：<br><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">double</span> <span class="title">sum</span><span class="params">(<span class="type">double</span> (*f)(<span class="type">double</span>), <span class="type">int</span> n, <span class="type">int</span> m)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">double</span> result = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = n; i &lt;= m ; ++i)</span><br><span class="line">        result += <span class="built_in">f</span>(i);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这里，<code>double (*f)(double)</code>是指<code>f</code>为指向一个返回<code>double</code>，输入值为<code>double</code>的函数指针，那么实际上传入的function就可以是满足输入和输出的多变的模式，极大地提高了灵活性：<br><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">double</span> <span class="title">square</span><span class="params">(<span class="type">double</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x * x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">double</span> <span class="title">cube</span><span class="params">(<span class="type">double</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x * x * x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">double</span> <span class="title">identity</span><span class="params">(<span class="type">double</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 三种不同的function都可以被当作参数传递进去</span></span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;Sum of squares from 1 to 3: &quot;</span> &lt;&lt; <span class="built_in">sum</span>(square, <span class="number">1</span>, <span class="number">3</span>) &lt;&lt; std::endl;</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;Sum of cubes from 1 to 3: &quot;</span> &lt;&lt; <span class="built_in">sum</span>(cube, <span class="number">1</span>, <span class="number">3</span>) &lt;&lt; std::endl;</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;Sum of identity from 1 to 3: &quot;</span> &lt;&lt; <span class="built_in">sum</span>(identity, <span class="number">1</span>, <span class="number">3</span>) &lt;&lt; std::endl;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>拓展来说，<code>double *f(double)</code>则是一个函数声明，表示 f 是一个函数，它接受一个 double 类型的参数，并返回一个<em>指向double类型的指针</em><br><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">double</span>* <span class="title">f</span><span class="params">(<span class="type">double</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="type">double</span>* result = <span class="keyword">new</span> <span class="built_in">double</span>(x * <span class="number">2</span>); <span class="comment">// 动态分配一个 double 并将其值设置为 x 的两倍</span></span><br><span class="line">    <span class="keyword">return</span> result; <span class="comment">// 返回的是一个指向double这个值的指针</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">double</span> value = <span class="number">5.0</span>;</span><br><span class="line">    <span class="type">double</span>* result = <span class="built_in">f</span>(value); <span class="comment">// 定义一个double指针</span></span><br><span class="line"></span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;Result: &quot;</span> &lt;&lt; *result &lt;&lt; std::endl; <span class="comment">// 输出指针指向的值，解引用</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">delete</span> result; <span class="comment">// 释放动态分配的内存</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>所以<code>double (*f)(double)</code>代表的是一个指向返回double，输入为double的函数指针。函数指针可以让函数作为参数被灵活地使用。</p>
+]]></content>
+      <categories>
+        <category>IT分类</category>
+        <category>开发杂记</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+        <tag>Code</tag>
       </tags>
   </entry>
 </search>
