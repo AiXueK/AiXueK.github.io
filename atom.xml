@@ -6,7 +6,7 @@
   <link href="https://aixuek-itshare.com/atom.xml" rel="self"/>
   
   <link href="https://aixuek-itshare.com/"/>
-  <updated>2024-10-24T13:09:02.921Z</updated>
+  <updated>2024-11-06T15:29:12.829Z</updated>
   <id>https://aixuek-itshare.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Thread的join函数方法</title>
+    <link href="https://aixuek-itshare.com/it-categories/dev-record/thread-join/"/>
+    <id>https://aixuek-itshare.com/it-categories/dev-record/thread-join/</id>
+    <published>2024-11-06T15:20:02.000Z</published>
+    <updated>2024-11-06T15:29:12.829Z</updated>
+    
+    <content type="html"><![CDATA[<p>当在多线程任务中，你需要等待一个线程结束后再进行操作，就可以用<code>thread.joinable()</code>来确保它正在运行，同时用<code>thread.join()</code>来等待线程结束并清理它的资源（这个会block跑这个函数的进程/线程，在这里就是会block这个stopThread函数的进程/线程），例子如下：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;thread&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">stopThread</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// assume threre is a running thread threadA</span></span><br><span class="line">    <span class="keyword">if</span> (threadA.<span class="built_in">joinable</span>()) <span class="comment">// check if threadA is running</span></span><br><span class="line">    &#123;</span><br><span class="line">        threadA.<span class="built_in">join</span>(); <span class="comment">// join threadA. It waits and blocks the calling thread and waits until threadA finishes. It will also clear all the resourses used by threadA in the end.</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>我之前被“join”这个名字所误导，以为它是开始线程或什么，后来发现它之所以不用“stop”这类想表达的意思就是，几个线程汇合到一起，而不是强制停止某一个线程，这样想来还是很合理的，希望有所帮助。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;当在多线程任务中，你需要等待一个线程结束后再进行操作，就可以用&lt;code&gt;thread.joinable()&lt;/code&gt;来确保它正在运行，同时用&lt;code&gt;thread.join()&lt;/code&gt;来等待线程结束并清理它的资源（这个会block跑这个函数的进程/线程，在这里</summary>
+      
+    
+    
+    
+    <category term="IT分类" scheme="https://aixuek-itshare.com/categories/IT%E5%88%86%E7%B1%BB/"/>
+    
+    <category term="开发杂记" scheme="https://aixuek-itshare.com/categories/IT%E5%88%86%E7%B1%BB/%E5%BC%80%E5%8F%91%E6%9D%82%E8%AE%B0/"/>
+    
+    
+    <category term="C++" scheme="https://aixuek-itshare.com/tags/C/"/>
+    
+    <category term="Code" scheme="https://aixuek-itshare.com/tags/Code/"/>
+    
+  </entry>
   
   <entry>
     <title>5.3.2 UE build报错</title>
@@ -330,6 +358,26 @@
   </entry>
   
   <entry>
+    <title>有趣轶事</title>
+    <link href="https://aixuek-itshare.com/personal/funny-experience/index/"/>
+    <id>https://aixuek-itshare.com/personal/funny-experience/index/</id>
+    <published>2024-06-29T04:13:46.000Z</published>
+    <updated>2024-08-24T14:26:51.804Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="有趣轶事"><a href="#有趣轶事" class="headerlink" title="有趣轶事"></a>有趣轶事</h1><h2 id="参加SIG-event-day的搞笑事情"><a href="#参加SIG-event-day的搞笑事情" class="headerlink" title="参加SIG event day的搞笑事情"></a><a href="https://aixuek-itshare.com/personal/funny-experience/sig-event">参加SIG event day的搞笑事情</a></h2>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;有趣轶事&quot;&gt;&lt;a href=&quot;#有趣轶事&quot; class=&quot;headerlink&quot; title=&quot;有趣轶事&quot;&gt;&lt;/a&gt;有趣轶事&lt;/h1&gt;&lt;h2 id=&quot;参加SIG-event-day的搞笑事情&quot;&gt;&lt;a href=&quot;#参加SIG-event-day的搞笑事情&quot; cla</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>参加SIG event day的搞笑事情</title>
     <link href="https://aixuek-itshare.com/personal/funny-experience/sig-event/"/>
     <id>https://aixuek-itshare.com/personal/funny-experience/sig-event/</id>
@@ -352,26 +400,6 @@
     
     
     <category term="搞笑" scheme="https://aixuek-itshare.com/tags/%E6%90%9E%E7%AC%91/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>有趣轶事</title>
-    <link href="https://aixuek-itshare.com/personal/funny-experience/index/"/>
-    <id>https://aixuek-itshare.com/personal/funny-experience/index/</id>
-    <published>2024-06-29T04:13:46.000Z</published>
-    <updated>2024-08-24T14:26:51.804Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="有趣轶事"><a href="#有趣轶事" class="headerlink" title="有趣轶事"></a>有趣轶事</h1><h2 id="参加SIG-event-day的搞笑事情"><a href="#参加SIG-event-day的搞笑事情" class="headerlink" title="参加SIG event day的搞笑事情"></a><a href="https://aixuek-itshare.com/personal/funny-experience/sig-event">参加SIG event day的搞笑事情</a></h2>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;有趣轶事&quot;&gt;&lt;a href=&quot;#有趣轶事&quot; class=&quot;headerlink&quot; title=&quot;有趣轶事&quot;&gt;&lt;/a&gt;有趣轶事&lt;/h1&gt;&lt;h2 id=&quot;参加SIG-event-day的搞笑事情&quot;&gt;&lt;a href=&quot;#参加SIG-event-day的搞笑事情&quot; cla</summary>
-      
-    
-    
-    
     
   </entry>
   
@@ -428,9 +456,9 @@
     <link href="https://aixuek-itshare.com/it-categories/dev-record/index/"/>
     <id>https://aixuek-itshare.com/it-categories/dev-record/index/</id>
     <published>2024-06-28T07:44:36.000Z</published>
-    <updated>2024-08-24T14:26:51.804Z</updated>
+    <updated>2024-11-06T15:30:21.231Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="开发杂记"><a href="#开发杂记" class="headerlink" title="开发杂记"></a>开发杂记</h1><h2 id="C-笔记"><a href="#C-笔记" class="headerlink" title="C++笔记"></a><a href="https://aixuek-itshare.com/it-categories/dev-record/C++-notes">C++笔记</a></h2><h2 id="指针vs引用"><a href="#指针vs引用" class="headerlink" title="指针vs引用"></a><a href="https://aixuek-itshare.com/it-categories/dev-record/pointer-and-reference">指针vs引用</a></h2><h2 id="复制构造函数"><a href="#复制构造函数" class="headerlink" title="复制构造函数"></a><a href="https://aixuek-itshare.com/it-categories/dev-record/copy-constructor">复制构造函数</a></h2><h2 id="函数指针"><a href="#函数指针" class="headerlink" title="函数指针"></a><a href="https://aixuek-itshare.com/it-categories/dev-record/func-pointer">函数指针</a></h2>]]></content>
+    <content type="html"><![CDATA[<h1 id="开发杂记"><a href="#开发杂记" class="headerlink" title="开发杂记"></a>开发杂记</h1><h2 id="C-笔记"><a href="#C-笔记" class="headerlink" title="C++笔记"></a><a href="https://aixuek-itshare.com/it-categories/dev-record/C++-notes">C++笔记</a></h2><h2 id="指针vs引用"><a href="#指针vs引用" class="headerlink" title="指针vs引用"></a><a href="https://aixuek-itshare.com/it-categories/dev-record/pointer-and-reference">指针vs引用</a></h2><h2 id="复制构造函数"><a href="#复制构造函数" class="headerlink" title="复制构造函数"></a><a href="https://aixuek-itshare.com/it-categories/dev-record/copy-constructor">复制构造函数</a></h2><h2 id="函数指针"><a href="#函数指针" class="headerlink" title="函数指针"></a><a href="https://aixuek-itshare.com/it-categories/dev-record/func-pointer">函数指针</a></h2><h2 id="多线程Thread的join函数方法"><a href="#多线程Thread的join函数方法" class="headerlink" title="多线程Thread的join函数方法"></a><a href="https://aixuek-itshare.com/it-categories/dev-record/thread-join">多线程Thread的join函数方法</a></h2>]]></content>
     
     
       
@@ -493,6 +521,26 @@
   </entry>
   
   <entry>
+    <title>游戏编程</title>
+    <link href="https://aixuek-itshare.com/game-categories/gd-tut/index/"/>
+    <id>https://aixuek-itshare.com/game-categories/gd-tut/index/</id>
+    <published>2024-06-24T14:06:31.000Z</published>
+    <updated>2024-10-24T13:09:38.220Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="游戏编程"><a href="#游戏编程" class="headerlink" title="游戏编程"></a>游戏编程</h1><h2 id="SFML-C-项目"><a href="#SFML-C-项目" class="headerlink" title="SFML C++ 项目"></a><a href="https://aixuek-itshare.com/game-categories/gd-tut/SFML-project">SFML C++ 项目</a></h2><h2 id="5-3-2-UE-build报错"><a href="#5-3-2-UE-build报错" class="headerlink" title="5.3.2 UE build报错"></a><a href="https://aixuek-itshare.com/game-categories/gd-tut/5.3.2-build-error">5.3.2 UE build报错</a></h2>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;游戏编程&quot;&gt;&lt;a href=&quot;#游戏编程&quot; class=&quot;headerlink&quot; title=&quot;游戏编程&quot;&gt;&lt;/a&gt;游戏编程&lt;/h1&gt;&lt;h2 id=&quot;SFML-C-项目&quot;&gt;&lt;a href=&quot;#SFML-C-项目&quot; class=&quot;headerlink&quot; title=</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>二分算法</title>
     <link href="https://aixuek-itshare.com/it-categories/code-prac/bisection-alg/"/>
     <id>https://aixuek-itshare.com/it-categories/code-prac/bisection-alg/</id>
@@ -519,46 +567,6 @@
     <category term="Code" scheme="https://aixuek-itshare.com/tags/Code/"/>
     
     <category term="Algorithm" scheme="https://aixuek-itshare.com/tags/Algorithm/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>代码刷题</title>
-    <link href="https://aixuek-itshare.com/it-categories/code-prac/index/"/>
-    <id>https://aixuek-itshare.com/it-categories/code-prac/index/</id>
-    <published>2024-06-24T14:06:31.000Z</published>
-    <updated>2024-08-24T14:26:51.803Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="代码刷题"><a href="#代码刷题" class="headerlink" title="代码刷题"></a>代码刷题</h1><h2 id="排序算法"><a href="#排序算法" class="headerlink" title="排序算法"></a><a href="https://aixuek-itshare.com/it-categories/code-prac/sort-alg">排序算法</a></h2><h2 id="二分算法"><a href="#二分算法" class="headerlink" title="二分算法"></a><a href="https://aixuek-itshare.com/it-categories/code-prac/bisection-alg">二分算法</a></h2><h2 id="前缀和与差分"><a href="#前缀和与差分" class="headerlink" title="前缀和与差分"></a><a href="https://aixuek-itshare.com/it-categories/code-prac/prefix-sum">前缀和与差分</a></h2><h2 id="C-面试准备"><a href="#C-面试准备" class="headerlink" title="C++面试准备"></a><a href="https://aixuek-itshare.com/it-categories/code-prac/C++-interview-prepare">C++面试准备</a></h2><h2 id="DFS和BFS"><a href="#DFS和BFS" class="headerlink" title="DFS和BFS"></a><a href="https://aixuek-itshare.com/it-categories/code-prac/dfs-bfs">DFS和BFS</a></h2>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;代码刷题&quot;&gt;&lt;a href=&quot;#代码刷题&quot; class=&quot;headerlink&quot; title=&quot;代码刷题&quot;&gt;&lt;/a&gt;代码刷题&lt;/h1&gt;&lt;h2 id=&quot;排序算法&quot;&gt;&lt;a href=&quot;#排序算法&quot; class=&quot;headerlink&quot; title=&quot;排序算法&quot;&gt;&lt;/a</summary>
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>游戏编程</title>
-    <link href="https://aixuek-itshare.com/game-categories/gd-tut/index/"/>
-    <id>https://aixuek-itshare.com/game-categories/gd-tut/index/</id>
-    <published>2024-06-24T14:06:31.000Z</published>
-    <updated>2024-10-24T13:09:38.220Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="游戏编程"><a href="#游戏编程" class="headerlink" title="游戏编程"></a>游戏编程</h1><h2 id="SFML-C-项目"><a href="#SFML-C-项目" class="headerlink" title="SFML C++ 项目"></a><a href="https://aixuek-itshare.com/game-categories/gd-tut/SFML-project">SFML C++ 项目</a></h2><h2 id="5-3-2-UE-build报错"><a href="#5-3-2-UE-build报错" class="headerlink" title="5.3.2 UE build报错"></a><a href="https://aixuek-itshare.com/game-categories/gd-tut/5.3.2-build-error">5.3.2 UE build报错</a></h2>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;游戏编程&quot;&gt;&lt;a href=&quot;#游戏编程&quot; class=&quot;headerlink&quot; title=&quot;游戏编程&quot;&gt;&lt;/a&gt;游戏编程&lt;/h1&gt;&lt;h2 id=&quot;SFML-C-项目&quot;&gt;&lt;a href=&quot;#SFML-C-项目&quot; class=&quot;headerlink&quot; title=</summary>
-      
-    
-    
-    
     
   </entry>
   
