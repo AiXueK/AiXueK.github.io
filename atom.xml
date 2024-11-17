@@ -6,7 +6,7 @@
   <link href="https://aixuek-itshare.com/atom.xml" rel="self"/>
   
   <link href="https://aixuek-itshare.com/"/>
-  <updated>2024-11-06T15:29:12.829Z</updated>
+  <updated>2024-11-17T03:38:22.503Z</updated>
   <id>https://aixuek-itshare.com/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>AI论文阅读记录</title>
+    <link href="https://aixuek-itshare.com/ai-categories/paper-records/index/"/>
+    <id>https://aixuek-itshare.com/ai-categories/paper-records/index/</id>
+    <published>2024-11-17T14:06:31.000Z</published>
+    <updated>2024-11-17T03:38:22.503Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="AI论文记录"><a href="#AI论文记录" class="headerlink" title="AI论文记录"></a>AI论文记录</h1>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;AI论文记录&quot;&gt;&lt;a href=&quot;#AI论文记录&quot; class=&quot;headerlink&quot; title=&quot;AI论文记录&quot;&gt;&lt;/a&gt;AI论文记录&lt;/h1&gt;</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Thread的join函数方法</title>
@@ -537,36 +557,6 @@
     
     
     
-    
-  </entry>
-  
-  <entry>
-    <title>二分算法</title>
-    <link href="https://aixuek-itshare.com/it-categories/code-prac/bisection-alg/"/>
-    <id>https://aixuek-itshare.com/it-categories/code-prac/bisection-alg/</id>
-    <published>2024-06-24T14:06:31.000Z</published>
-    <updated>2024-08-24T14:26:51.803Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="整数二分"><a href="#整数二分" class="headerlink" title="整数二分"></a>整数二分</h1><p>本质：</p><ol><li>如果有单调性的话，可以二分；但二分的题目，不一定一定要单调性；所以本质不是单调性</li><li>在一个区间内，我们定义了一个性质，这个性质左半边满足，右半边不满足，可以将区间一分为二；二分可以寻找边界</li></ol><p>主要思想：<br><img src="/images/it-categories/bisection-alg1.png" alt="整数二分思路图示"></p><ol><li><p>以红色区域为True，找分界点（以红色的边界点为分界点）</p><ol><li>找到中间值（mid = (l + r + 1)/2）</li><li><p>查看中间值性质（在左半边还是右半边）：</p><p>  a. [mid, r] mid处于左半边，所以分界点一定处于这里（mid到 r，包括mid）</p><p>  b. [l, mid - 1] mid处于右半边，所以分界点处于左半边 （因 此时 r = mid - 1所以mid需要在之前+1来保证它概括到红色右边 界：mid = (l + r <strong>+ 1</strong>) / 2， 且当情况为 l = r - 1 时，l经过操作还是 l = (l + r) / 2向下取整，还是l，死循 环）</p></li></ol></li><li><p>以绿色区域为True（以绿色的边界点为分界点）</p><ol><li>mid = (l + r ) / 2</li><li><p>查看中间值性质</p><p> a. [l, mid], inclusive</p><p> b. [mid + 1, r] 因mid为False，所以一定从mid + 1开始 （此时 l = mid + 1, 所以mid原本要保证在floor：<strong>mid = (l + r) / 1</strong>，这样让它能概括到右半边的左边界）</p></li></ol></li></ol><details>    <summary>Code</summary>题目（Acwing 789）找到sorted数组中的数的起始和终止位置，若没有这个数，便返回-1, -1输入：数组长度，询问个数，数组<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">1e5</span> + <span class="number">10</span>;</span><br><span class="line"><span class="type">int</span> n, m;</span><br><span class="line"><span class="type">int</span> q[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;n, &amp;m);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; ++i)</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;q[i]);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> (m--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> x;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;x);</span><br><span class="line">        <span class="type">int</span> l = <span class="number">0</span>, r = n - <span class="number">1</span>;</span><br><span class="line">        <span class="comment">// 找到起始值</span></span><br><span class="line">        <span class="keyword">while</span> (l &lt; r)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">// 要满足的条件是左边&lt;x，右边&gt;=x，就是找绿色区域</span></span><br><span class="line">            <span class="type">int</span> mid = l + r &gt;&gt; <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span> (q[mid] &gt;= x)</span><br><span class="line">                r = mid;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                l = mid + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 若第一个&gt;=x的值不为x，即x不存在于数组</span></span><br><span class="line">        <span class="keyword">if</span> (q[l] != x)</span><br><span class="line">            cout &lt;&lt; <span class="string">&quot;-1 -1&quot;</span> &lt;&lt; endl;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            cout &lt;&lt; l &lt;&lt; <span class="string">&#x27; &#x27;</span>;</span><br><span class="line">            <span class="type">int</span> l = <span class="number">0</span>, r = n - <span class="number">1</span>;</span><br><span class="line">            <span class="comment">// 找终止值</span></span><br><span class="line">            <span class="keyword">while</span> (l &lt; r)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="comment">// 要满足的条件是：左边&lt;=x,右边&gt;x，即找红色区域</span></span><br><span class="line">                <span class="type">int</span> mid = l + r + <span class="number">1</span> &gt;&gt; <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">if</span> (q[mid] &lt;= x)</span><br><span class="line">                    l = mid;</span><br><span class="line">                <span class="keyword">else</span></span><br><span class="line">                    r = mid - <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            cout &lt;&lt; r &lt;&lt; endl;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></details><h1 id="浮点数二分"><a href="#浮点数二分" class="headerlink" title="浮点数二分"></a>浮点数二分</h1><p>主要思想和<strong>整数二分</strong>一致，但不用考虑边界问题</p><details>    <summary> Code </summary><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">double</span> x;</span><br><span class="line">    cin &gt;&gt; x;</span><br><span class="line"></span><br><span class="line">    <span class="type">double</span> l = <span class="number">0</span>, r = x;</span><br><span class="line">    <span class="keyword">while</span> (r - l &gt; <span class="number">1e-6</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">double</span> mid = (l + r) / <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (mid * mid &gt;= x)</span><br><span class="line">            r = mid;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            l = mid;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%lf\n&quot;</span>, r);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></details>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;整数二分&quot;&gt;&lt;a href=&quot;#整数二分&quot; class=&quot;headerlink&quot; title=&quot;整数二分&quot;&gt;&lt;/a&gt;整数二分&lt;/h1&gt;&lt;p&gt;本质：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;如果有单调性的话，可以二分；但二分的题目，不一定一定要单调性；所以本质不是单调性&lt;/li&gt;</summary>
-      
-    
-    
-    
-    <category term="IT分类" scheme="https://aixuek-itshare.com/categories/IT%E5%88%86%E7%B1%BB/"/>
-    
-    <category term="代码刷题" scheme="https://aixuek-itshare.com/categories/IT%E5%88%86%E7%B1%BB/%E4%BB%A3%E7%A0%81%E5%88%B7%E9%A2%98/"/>
-    
-    
-    <category term="Code" scheme="https://aixuek-itshare.com/tags/Code/"/>
-    
-    <category term="Algorithm" scheme="https://aixuek-itshare.com/tags/Algorithm/"/>
     
   </entry>
   
