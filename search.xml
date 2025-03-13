@@ -57,6 +57,7 @@
 <ul>
 <li><a href="#c-编码">C++ 编码</a><ul>
 <li><a href="#exposing-c-inherited-vars--funcs-to-blueprint">Exposing C++ inherited vars \&amp; funcs to Blueprint</a></li>
+<li><a href="#template-function">Template Function</a></li>
 </ul>
 </li>
 <li><a href="#unreal-engine-blueprint">Unreal Engine Blueprint</a></li>
@@ -65,12 +66,14 @@
 <li><a href="#circular-movements">Circular Movements</a></li>
 </ul>
 </li>
+<li><a href="#ue-basic-knowledge">UE Basic Knowledge</a></li>
 </ul>
 <hr>
 <h1 id="C-编码"><a href="#C-编码" class="headerlink" title="C++ 编码"></a>C++ 编码</h1><h2 id="Exposing-C-inherited-vars-amp-funcs-to-Blueprint"><a href="#Exposing-C-inherited-vars-amp-funcs-to-Blueprint" class="headerlink" title="Exposing C++ inherited vars &amp; funcs to Blueprint"></a>Exposing C++ inherited vars &amp; funcs to Blueprint</h2><p>Exposing Variable to Blueprint using <code>UPROPERTY()</code>, 这样可以在编辑器中更快地在蓝图中修改调试。<br><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">SWORDSLASH_API</span> AItem : <span class="keyword">public</span> AActor</span><br><span class="line">&#123;</span><br><span class="line">	<span class="built_in">GENERATED_BODY</span>()</span><br><span class="line">	</span><br><span class="line"><span class="keyword">public</span>:	</span><br><span class="line">	<span class="comment">// Sets default values for this actor&#x27;s properties</span></span><br><span class="line">	<span class="built_in">AItem</span>();</span><br><span class="line">	<span class="function"><span class="keyword">virtual</span> <span class="type">void</span> <span class="title">Tick</span><span class="params">(<span class="type">float</span> DeltaTime)</span> <span class="keyword">override</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">protected</span>:</span><br><span class="line">	<span class="comment">// Called when the game starts or when spawned</span></span><br><span class="line">	<span class="function"><span class="keyword">virtual</span> <span class="type">void</span> <span class="title">BeginPlay</span><span class="params">()</span> <span class="keyword">override</span></span>;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	<span class="type">float</span> Amplitude;</span><br><span class="line">    <span class="built_in">UPROPERTY</span>(VisibleDefaultsOnly) <span class="comment">// This makes &quot;RunningTime&quot; visible in blueprint default, but blocks editting (&quot;VisibleInstanceOnly&quot;, &quot;VisibleAnywhere&quot;)</span></span><br><span class="line">	<span class="type">float</span> RunningTime;</span><br><span class="line">    <span class="built_in">UPROPERTY</span>(EditAnywhere) <span class="comment">// This allows &quot;TimeConstant&quot; editable anywhere (&quot;EditDefaultsOnly&quot;, &quot;EditInstanceOnly&quot;)</span></span><br><span class="line">	<span class="type">float</span> TimeConstant;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
 <p>Exposing varaibles to Blueprint in event graph. 这样可以在蓝图的Graph中右键使用Variable了<br><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="built_in">UPROPERTY</span>(EditAnywhere, BluprintReadOnly) <span class="comment">// BlueprintReadOnly cannot be used to private variables (&quot;BlueprintReadWrite&quot;)</span></span><br><span class="line"><span class="built_in">UPROPERTY</span>(EditAnywhere, BluprintReadOnly, meta = (AllowPrivateAccess = <span class="string">&quot;true&quot;</span>)) <span class="comment">// Unless you do this, this meta allows private variable to be accessed by Blueprint</span></span><br><span class="line"><span class="built_in">UPROPERTY</span>(BlueprintReadWrite) <span class="comment">// Allows both getter and setter for this attribute in blueprint graph</span></span><br></pre></td></tr></table></figure></p>
 <p>Set category for inherited C++ variables for better variable organizations<br><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="built_in">UPROPERTY</span>(EditAnywhere, BlueprintReadWrite, Category = <span class="string">&quot;Sine Parameters&quot;</span>)</span><br></pre></td></tr></table></figure></p>
 <p>Exposing function to Blueprint<br><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">SWORDSLASH_API</span> AItem : <span class="keyword">public</span> AActor &#123;</span><br><span class="line">	<span class="built_in">UFUNCTION</span>(BlueprintCallable) <span class="comment">// Expose this function to Blueprint; &quot;BlueprintPure&quot; presents that the function won&#x27;t actually change anything, but only do input and output.</span></span><br><span class="line">	<span class="function"><span class="type">float</span> <span class="title">TransformedSin</span><span class="params">(<span class="type">float</span> Value)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> Amplitude * FMath::<span class="built_in">Sin</span>(Value * TimeConstant);</span><br><span class="line">	&#125;</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure></p>
+<h2 id="Template-Function"><a href="#Template-Function" class="headerlink" title="Template Function"></a>Template Function</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span></span><br><span class="line"><span class="function">T <span class="title">Avg</span><span class="params">(T First, T Second)</span></span>; <span class="comment">// You need to specify type T everytime you call Avg: Avg&lt;int32&gt;(1, 3);</span></span><br></pre></td></tr></table></figure>
 <h1 id="Unreal-Engine-Blueprint"><a href="#Unreal-Engine-Blueprint" class="headerlink" title="Unreal Engine Blueprint"></a>Unreal Engine Blueprint</h1><p>To show the variables inherited from C++ in Blueprint:</p>
 <ul>
 <li>Go to blueprint</li>
@@ -89,6 +92,34 @@
 <li>set the updated value to amplitude for event tick</li>
 </ul>
 <h2 id="Circular-Movements"><a href="#Circular-Movements" class="headerlink" title="Circular Movements"></a>Circular Movements</h2><p>Combine cos and sin functions together in two axes</p>
+<h1 id="UE-Basic-Knowledge"><a href="#UE-Basic-Knowledge" class="headerlink" title="UE Basic Knowledge"></a>UE Basic Knowledge</h1><p><strong>Scene Component</strong></p>
+<p>An actor must have at least one component: Default Scene Component, which contains:</p>
+<ul>
+<li>Transform<ul>
+<li>Location</li>
+<li>Rotation</li>
+<li>Scale</li>
+</ul>
+</li>
+<li>Can be attached to other components</li>
+</ul>
+<p>So the <code>GetActorLocation()</code> function actually returns the “RootComponent’s Location”, which is stored in the Transform variable.</p>
+<p><strong>Static Mesh Component</strong><br><code>UStaticMeshComponent</code>, derived from SceneComponent class:</p>
+<ul>
+<li>Has Transform</li>
+<li>Attachable</li>
+<li>Has a Mesh (<code>UStaticMesh</code>)</li>
+</ul>
+<p>For a Weapon:</p>
+<ul>
+<li>DefaultSceneRoot</li>
+<li>WeaponMesh</li>
+</ul>
+<p>So it has two transforms by default, which means the transformation of the DefaultSceneRoot and the WeaponMesh can be different (导致Mesh和Object错位)。</p>
+<p>To solve this:</p>
+<ul>
+<li>Method 1: In BP_Item, drag Static Mesh onto the DefaultSceneRoot, at the top left corner</li>
+</ul>
 ]]></content>
       <categories>
         <category>IT分类</category>
