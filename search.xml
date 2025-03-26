@@ -74,6 +74,7 @@
 <li><a href="#unreal-property-system-reflection-system">Unreal Property System (Reflection System)</a></li>
 </ul>
 </li>
+<li><a href="#ue-basic-operations">UE Basic Operations</a></li>
 <li><a href="#ue-self-study-resources-自学资料">UE Self-study resources 自学资料</a></li>
 </ul>
 <hr>
@@ -98,10 +99,26 @@
 <li>Create a <code>UCapsuleComponent</code> for the pawn object<br> UObject -&gt; USceneComponent -&gt; UCapsuleComponent (otherwise it would be very expensive to calculate the collision with the mesh itself)<ul>
 <li>Used for simple collision</li>
 <li>Rendered as red lines in the editor<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// header file</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;Components/CapsuleComponent.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="built_in">UPROPERTY</span>(VisibleAnywhere)</span><br><span class="line">UCapsuleComponent* Capsule;</span><br><span class="line"></span><br><span class="line"><span class="comment">// cpp file, constructor</span></span><br><span class="line">Capsule = <span class="built_in">CreateDefaultSubobject</span>&lt;UCapsuleComponent&gt;(<span class="built_in">TEXT</span>(<span class="string">&quot;Capsule&quot;</span>));</span><br><span class="line">Capsule-&gt;<span class="built_in">SetCapsuleHalfHeight</span>(<span class="number">20.f</span>);</span><br><span class="line">Capsule-&gt;<span class="built_in">SetCapsuleRadius</span>(<span class="number">15.f</span>);</span><br><span class="line"><span class="built_in">SetRootComponent</span>(Capsule); <span class="comment">// RootComponent variable is protected; But this function is a public function.</span></span><br></pre></td></tr></table></figure>
+Create mesh and attach mesh component to the object:<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Header file</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">USkeletalMeshComponent</span>; <span class="comment">// Using forward declaration</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">UPROPERTY</span>(VisibleAnywhere)</span><br><span class="line">USkeletalMeshComponent* BirdMesh;</span><br><span class="line"></span><br><span class="line"><span class="comment">// cpp file</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;Components/SkeletalMeshComponent.h&quot;</span></span></span><br><span class="line"></span><br><span class="line">BirdMesh = <span class="built_in">CreateDefaultSubobject</span>&lt;USkeletalMeshComponent&gt;(<span class="built_in">TEXT</span>(<span class="string">&quot;BirdMesh&quot;</span>)); <span class="comment">// Initialize BirdMesh</span></span><br><span class="line">BirdMesh-&gt;<span class="built_in">SetupAttachment</span>(<span class="built_in">GetRootComponent</span>()); <span class="comment">// Since mesh component can be attached to root component, this ensures the sync movement of bird mesh and the root.</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
 </ol>
+<p>Controlling Pawns</p>
+<p>Pawns have the ability of been “possessed”</p>
+<ul>
+<li>Takes the input from the user to manipulate the pawn.</li>
+<li>Has controller: <code>AController</code></li>
+<li>To control the pawn, we need to set the auto possess player on the pawn</li>
+<li>Auto possess player = Player 0, the second player = Player 1 (in multi-player game)</li>
+</ul>
+<p>Bind mappings and function</p>
+<ul>
+<li>Create and define Axis Mappings in project setting -&gt; input, scale is to times the float Value to adjust the movement.</li>
+<li>Create function: <code>ABird::MoveForward(float Value)</code>, then the MoveForward key is bound to MoveForward function, which moves the pawn with float Value every frame. (Using the following function)</li>
+<li>Bind Axis Mapping under this function using callback function:<code>ABird::SetupPlayerInputComponent(UInputComponent* InputComponent)</code><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// hpp file</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">MoveForward</span><span class="params">(<span class="type">float</span> Value)</span></span>; <span class="comment">// normally put it under protected field</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// cpp file</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">ABird::MoveForward</span><span class="params">(<span class="type">float</span> Value)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// Called to bind functionality to input</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">ABird::SetupPlayerInputComponent</span><span class="params">(UInputComponent* PlayerInputComponent)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	Super::<span class="built_in">SetupPlayerInputComponent</span>(PlayerInputComponent);</span><br><span class="line"></span><br><span class="line">	PlayerInputComponent-&gt;<span class="built_in">BindAxis</span>(<span class="built_in">FName</span>(<span class="string">&quot;MoveForward&quot;</span>), <span class="keyword">this</span>, &amp;ABird::MoveForward); <span class="comment">// Actual bind function</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
 <h1 id="Unreal-Engine-Blueprint"><a href="#Unreal-Engine-Blueprint" class="headerlink" title="Unreal Engine Blueprint"></a>Unreal Engine Blueprint</h1><p>To show the variables inherited from C++ in Blueprint:</p>
 <ul>
 <li>Go to blueprint</li>
@@ -149,6 +166,16 @@
 <ul>
 <li>Method 1: In BP_Item, drag Static Mesh onto the DefaultSceneRoot, at the top left corner</li>
 </ul>
+<p><strong>Skeletal Mesh Component</strong><br>UObject -&gt;(derive) USceneComponent -&gt; USkeletalMeshComponent:</p>
+<ul>
+<li>It has its own <code>USkeletalMesh</code></li>
+<li><code>USkeletalMesh</code> has Skeleton, which can be animated (Normal Static Mesh cannot be animated)</li>
+</ul>
+<p>To show bones in UE:</p>
+<ul>
+<li>Open Skeletal Mesh</li>
+<li>On top center: click “Character” -&gt; Bones -&gt; All </li>
+</ul>
 <h2 id="Unreal-Property-System-Reflection-System"><a href="#Unreal-Property-System-Reflection-System" class="headerlink" title="Unreal Property System (Reflection System)"></a>Unreal Property System (Reflection System)</h2><p>Reflection system is as the property system, 反射系统让开发者和引擎在运行时获取并操作类，对象，属性和方法的信息。</p>
 <p>而Unreal Header Tool（UHT）就是指UE提供的宏，它能够将C++ object加入反射系统中，例如:<br><code>UENUM(), UCLASS(), USTRUCT(), UFUNCTION(), UPROPERTY()</code></p>
 <p>CDO (Class Default Object):</p>
@@ -157,6 +184,23 @@
 <li>It contains object defaults and make them accessible easily</li>
 <li>It’s created when engine is initialized. During initialization, engine generates UClass objects for each class, then it executes constructor setting default variables.</li>
 <li>Thus, objects or gameplay codes should not be placed in constructor. Because at that time during the initialization, other objects may not exist, and the level is mosly likely not even loaded. So you should put code in BeginPlay().</li>
+</ul>
+<h1 id="UE-Basic-Operations"><a href="#UE-Basic-Operations" class="headerlink" title="UE Basic Operations"></a>UE Basic Operations</h1><p>To Detach from the default player:</p>
+<ul>
+<li>Hit Play</li>
+<li><code>Shift + F1</code></li>
+<li>Select “Detach from the control player” on top center</li>
+</ul>
+<p>Set the auto possess player to pawn:</p>
+<ul>
+<li>Select BP_Pawn</li>
+<li>In detail panel -&gt; select auto possess player -&gt; select the player you want to set.</li>
+<li>Or use C++: <code>AutoPossessPlayer = EAutoReceiveInput::Player0;</code> under your pawn class.</li>
+</ul>
+<p>Add Input Binding</p>
+<ul>
+<li>Edit -&gt; Project Settings</li>
+<li>Select “Input” -&gt; Select “Axis Mapping” -&gt; Click “Add” -&gt; Select your binding</li>
 </ul>
 <h1 id="UE-Self-study-resources-自学资料"><a href="#UE-Self-study-resources-自学资料" class="headerlink" title="UE Self-study resources 自学资料"></a>UE Self-study resources 自学资料</h1><p>UE的所有Class类资料都可以在官方文档中查询，且资料齐全详细：<a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/unreal-engine-5-5-documentation">官方文档</a></p>
 ]]></content>
