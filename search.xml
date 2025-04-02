@@ -219,7 +219,7 @@ Create mesh and attach mesh component to the object:<figure class="highlight c++
   <entry>
     <title>游戏编程</title>
     <url>/game-categories/gd-tut/index/</url>
-    <content><![CDATA[<h1 id="游戏编程"><a href="#游戏编程" class="headerlink" title="游戏编程"></a>游戏编程</h1><h2 id="SFML-C-项目"><a href="#SFML-C-项目" class="headerlink" title="SFML C++ 项目"></a><a href="https://aixuek-itshare.com/game-categories/gd-tut/SFML-project">SFML C++ 项目</a></h2><h2 id="5-3-2-UE-build报错"><a href="#5-3-2-UE-build报错" class="headerlink" title="5.3.2 UE build报错"></a><a href="https://aixuek-itshare.com/game-categories/gd-tut/5.3.2-build-error">5.3.2 UE build报错</a></h2><h2 id="UE-5-3-2-错误解决合集"><a href="#UE-5-3-2-错误解决合集" class="headerlink" title="UE 5.3.2 错误解决合集"></a><a href="https://aixuek-itshare.com/game-categories/gd-tut/5.3.2-error-collection">UE 5.3.2 错误解决合集</a></h2><h2 id="UE-5-3-2-知识记录"><a href="#UE-5-3-2-知识记录" class="headerlink" title="UE 5.3.2 知识记录"></a><a href="https://aixuek-itshare.com/game-categories/gd-tut/general-ue-notes">UE 5.3.2 知识记录</a></h2>]]></content>
+    <content><![CDATA[<h1 id="游戏编程"><a href="#游戏编程" class="headerlink" title="游戏编程"></a>游戏编程</h1><h2 id="SFML-C-项目"><a href="#SFML-C-项目" class="headerlink" title="SFML C++ 项目"></a><a href="https://aixuek-itshare.com/game-categories/gd-tut/SFML-project">SFML C++ 项目</a></h2><h2 id="5-3-2-UE-build报错"><a href="#5-3-2-UE-build报错" class="headerlink" title="5.3.2 UE build报错"></a><a href="https://aixuek-itshare.com/game-categories/gd-tut/5.3.2-build-error">5.3.2 UE build报错</a></h2><h2 id="UE-5-3-2-错误解决合集"><a href="#UE-5-3-2-错误解决合集" class="headerlink" title="UE 5.3.2 错误解决合集"></a><a href="https://aixuek-itshare.com/game-categories/gd-tut/5.3.2-error-collection">UE 5.3.2 错误解决合集</a></h2><h2 id="UE-5-3-2-知识记录"><a href="#UE-5-3-2-知识记录" class="headerlink" title="UE 5.3.2 知识记录"></a><a href="https://aixuek-itshare.com/game-categories/gd-tut/general-ue-notes">UE 5.3.2 知识记录</a></h2><h2 id="离线本地Unreal-Engine文档"><a href="#离线本地Unreal-Engine文档" class="headerlink" title="离线本地Unreal Engine文档"></a><a href="https://aixuek-itshare.com/game-categories/gd-tut/ue-offline-docs">离线本地Unreal Engine文档</a></h2>]]></content>
   </entry>
   <entry>
     <title>SFML C++ 项目</title>
@@ -1009,7 +1009,7 @@ Create mesh and attach mesh component to the object:<figure class="highlight c++
       </tags>
   </entry>
   <entry>
-    <title>离线Unreal Engine文档</title>
+    <title>离线本地Unreal Engine文档</title>
     <url>/game-categories/gd-tut/ue-offline-docs/</url>
     <content><![CDATA[<p>Unreal Engine的官方文档，一方面服务器太慢，一方面本地的文档打开就是没有渲染过的html，看起来实在太过难受，而且index中的链接都显示查无此文档，十分不方便，于是找到了建立本地文档库的方法，达到在本地跟官方服务器上阅读、搜索文档一样的效果。</p>
 <p>docset-unreal-engine工具生成了Unreal Engine文档的docset，后用Zeal软件打开阅读，以下为具体步骤。</p>
