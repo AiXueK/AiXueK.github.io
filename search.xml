@@ -205,6 +205,13 @@ Create mesh and attach mesh component to the object:<figure class="highlight c++
 <li>Edit -&gt; Project Settings</li>
 <li>Select “Input” -&gt; Select “Axis Mapping” -&gt; Click “Add” -&gt; Select your binding</li>
 </ul>
+<p>Switch Existing Unreal Project’s Engine Version</p>
+<ul>
+<li>Close all project files: Unreal Engine Editor &amp;&amp; Visual Studio</li>
+<li>Find the <code>.uproject</code> file -&gt; Right click -&gt; Switch Unreal Engine Version -&gt; Select the target UE Engine Version</li>
+<li>Open Visual Studio and re-compile the code</li>
+<li>Open the Editor</li>
+</ul>
 <h1 id="UE-Self-study-resources-自学资料"><a href="#UE-Self-study-resources-自学资料" class="headerlink" title="UE Self-study resources 自学资料"></a>UE Self-study resources 自学资料</h1><p>UE的所有Class类资料都可以在官方文档中查询，且资料齐全详细：<a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/unreal-engine-5-5-documentation">官方文档</a></p>
 ]]></content>
       <categories>
@@ -219,7 +226,7 @@ Create mesh and attach mesh component to the object:<figure class="highlight c++
   <entry>
     <title>游戏编程</title>
     <url>/game-categories/gd-tut/index/</url>
-    <content><![CDATA[<h1 id="游戏编程"><a href="#游戏编程" class="headerlink" title="游戏编程"></a>游戏编程</h1><h2 id="SFML-C-项目"><a href="#SFML-C-项目" class="headerlink" title="SFML C++ 项目"></a><a href="https://aixuek-itshare.com/game-categories/gd-tut/SFML-project">SFML C++ 项目</a></h2><h2 id="5-3-2-UE-build报错"><a href="#5-3-2-UE-build报错" class="headerlink" title="5.3.2 UE build报错"></a><a href="https://aixuek-itshare.com/game-categories/gd-tut/5.3.2-build-error">5.3.2 UE build报错</a></h2><h2 id="UE-5-3-2-错误解决合集"><a href="#UE-5-3-2-错误解决合集" class="headerlink" title="UE 5.3.2 错误解决合集"></a><a href="https://aixuek-itshare.com/game-categories/gd-tut/5.3.2-error-collection">UE 5.3.2 错误解决合集</a></h2><h2 id="UE-5-3-2-知识记录"><a href="#UE-5-3-2-知识记录" class="headerlink" title="UE 5.3.2 知识记录"></a><a href="https://aixuek-itshare.com/game-categories/gd-tut/general-ue-notes">UE 5.3.2 知识记录</a></h2><h2 id="离线本地Unreal-Engine文档"><a href="#离线本地Unreal-Engine文档" class="headerlink" title="离线本地Unreal Engine文档"></a><a href="https://aixuek-itshare.com/game-categories/gd-tut/ue-offline-docs">离线本地Unreal Engine文档</a></h2>]]></content>
+    <content><![CDATA[<h1 id="游戏编程"><a href="#游戏编程" class="headerlink" title="游戏编程"></a>游戏编程</h1><h2 id="SFML-C-项目"><a href="#SFML-C-项目" class="headerlink" title="SFML C++ 项目"></a><a href="https://aixuek-itshare.com/game-categories/gd-tut/SFML-project">SFML C++ 项目</a></h2><h2 id="5-3-2-UE-build报错"><a href="#5-3-2-UE-build报错" class="headerlink" title="5.3.2 UE build报错"></a><a href="https://aixuek-itshare.com/game-categories/gd-tut/5.3.2-build-error">5.3.2 UE build报错</a></h2><h2 id="UE-5-3-2-错误解决合集"><a href="#UE-5-3-2-错误解决合集" class="headerlink" title="UE 5.3.2 错误解决合集"></a><a href="https://aixuek-itshare.com/game-categories/gd-tut/5.3.2-error-collection">UE 5.3.2 错误解决合集</a></h2><h2 id="UE-5-3-2-知识记录"><a href="#UE-5-3-2-知识记录" class="headerlink" title="UE 5.3.2 知识记录"></a><a href="https://aixuek-itshare.com/game-categories/gd-tut/general-ue-notes">UE 5.3.2 知识记录</a></h2><h2 id="离线本地Unreal-Engine文档"><a href="#离线本地Unreal-Engine文档" class="headerlink" title="离线本地Unreal Engine文档"></a><a href="https://aixuek-itshare.com/game-categories/gd-tut/ue-offline-docs">离线本地Unreal Engine文档</a></h2><h2 id="UE-Niagara特效记录"><a href="#UE-Niagara特效记录" class="headerlink" title="UE Niagara特效记录"></a><a href="https://aixuek-itshare.com/game-categories/gd-tut/UE-Niagara">UE Niagara特效记录</a></h2>]]></content>
   </entry>
   <entry>
     <title>SFML C++ 项目</title>
@@ -1042,6 +1049,56 @@ Create mesh and attach mesh component to the object:<figure class="highlight c++
 <p><strong>找到storage文件夹位置</strong><br>打开Zeal，在 Customize 下面，选择 Preferences -&gt; Docset Storage，设置为你自己想要的位置。</p>
 <h2 id="3-用Zeal打开文档"><a href="#3-用Zeal打开文档" class="headerlink" title="3. 用Zeal打开文档"></a>3. 用Zeal打开文档</h2><p>Zeal没有什么导入文档的按钮，所有在storage文件夹下的docset都会被读入，所以把生成好的docset文件夹放入storage 文件夹，<strong>重启Zeal</strong>就可以看到了！</p>
 <p>大功告成，希望对你有帮助！！！</p>
+]]></content>
+      <categories>
+        <category>IT分类</category>
+        <category>游戏开发</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+        <tag>Game Dev</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>UE Niagara特效记录</title>
+    <url>/game-categories/gd-tut/UE-Niagara/</url>
+    <content><![CDATA[<p>这里是Unreal Engine的Niagara特效笔记记录。</p>
+<h1 id="Operations"><a href="#Operations" class="headerlink" title="Operations"></a>Operations</h1><p><strong>Change to GPU Sim</strong><br>In Niagara System object -&gt; Select “Properties” -&gt; Sim Target -&gt; Select “GPUCompute Sim”</p>
+]]></content>
+      <categories>
+        <category>IT分类</category>
+        <category>游戏开发</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+        <tag>Game Dev</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>UE Enhanced Inputs</title>
+    <url>/game-categories/gd-tut/enhanced-inputs/</url>
+    <content><![CDATA[<h1 id="Setup-Enhanced-Inputs-using-C"><a href="#Setup-Enhanced-Inputs-using-C" class="headerlink" title="Setup Enhanced Inputs using C++"></a>Setup Enhanced Inputs using C++</h1><ol>
+<li>Add “EnhancedInput” module to project build file (<ProjectName>.Build.cs):<figure class="highlight c#"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Fill out your copyright notice in the Description page of Project Settings.</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> UnrealBuildTool;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">SwordSlash</span> : <span class="title">ModuleRules</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">SwordSlash</span>(<span class="params">ReadOnlyTargetRules Target</span>) : <span class="title">base</span>(<span class="params">Target</span>)</span></span><br><span class="line">	&#123;</span><br><span class="line">		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;</span><br><span class="line">	</span><br><span class="line">		PublicDependencyModuleNames.AddRange(<span class="keyword">new</span> <span class="built_in">string</span>[] &#123; <span class="string">&quot;Core&quot;</span>, <span class="string">&quot;CoreUObject&quot;</span>, <span class="string">&quot;Engine&quot;</span>, <span class="string">&quot;InputCore&quot;</span>, <span class="string">&quot;EnhancedInput&quot;</span> &#125;);</span><br><span class="line"></span><br><span class="line">		PrivateDependencyModuleNames.AddRange(<span class="keyword">new</span> <span class="built_in">string</span>[] &#123;  &#125;);</span><br><span class="line"></span><br><span class="line">		<span class="comment">// Uncomment if you are using Slate UI</span></span><br><span class="line">		<span class="comment">// PrivateDependencyModuleNames.AddRange(new string[] &#123; &quot;Slate&quot;, &quot;SlateCore&quot; &#125;);</span></span><br><span class="line">		</span><br><span class="line">		<span class="comment">// Uncomment if you are using online features</span></span><br><span class="line">		<span class="comment">// PrivateDependencyModuleNames.Add(&quot;OnlineSubsystem&quot;);</span></span><br><span class="line"></span><br><span class="line">		<span class="comment">// To include OnlineSubsystemSteam, add it to the plugins section in your uproject file with the Enabled attribute set to true</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li>Close Visual Studio Code</li>
+<li>Open Unreal Editor -&gt; Choose “Tools” -&gt; Click “Refresh Visual Studio Project” (This step is crucial! Otherwise it still cannot detect the module update.)</li>
+<li>Reopen Visual Studio Code, and then you are ready to use the module “EnhancedInput”</li>
+</ol>
+<p>In header file<br><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">protected</span>:</span><br><span class="line">    <span class="built_in">UPROPERTY</span>(EditAnywhere, BlueprintReadOnly, Category = Input)</span><br><span class="line">	UInputMappingContext* BirdMappingContext;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">UPROPERTY</span>(EditAnywhere, BlueprintReadOnly, Category = Input)</span><br><span class="line">	UInputAction* MoveAction;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">Move</span><span class="params">(<span class="type">const</span> FInputActionValue&amp; Value)</span></span>;</span><br></pre></td></tr></table></figure></p>
+<ol>
+<li>Set your inputs in BluePrint<ol>
+<li>Select “BP_[YourCharacter]”</li>
+<li>In Details Panel:<ol>
+<li>Set “Bird Mapping Context” to your mapping context</li>
+<li>Set “Move Action” to your move action</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<p>In c++ file, under <code>BeginPlay()</code><br><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// If you find any link error, please refer to step 3</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;Components/InputComponent.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;EnhancedInputSubsystems.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;EnhancedInputComponent.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">ABird::BeginPlay</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	Super::<span class="built_in">BeginPlay</span>();</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">if</span> (APlayerController* PlayerController = <span class="built_in">Cast</span>&lt;APlayerController&gt;(<span class="built_in">GetController</span>()))</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (UEnhancedInputLocalPlayerSubsystem* Subsystem = ULocalPlayer::<span class="built_in">GetSubsystem</span>&lt;UEnhancedInputLocalPlayerSubsystem&gt;(PlayerController-&gt;<span class="built_in">GetLocalPlayer</span>()))</span><br><span class="line">		&#123;</span><br><span class="line">			Subsystem-&gt;<span class="built_in">ClearAllMappings</span>();</span><br><span class="line">			Subsystem-&gt;<span class="built_in">AddMappingContext</span>(BirdMappingContext, <span class="number">0</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">ABird::Move</span><span class="params">(<span class="type">const</span> FInputActionValue&amp; Value)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="type">const</span> <span class="type">bool</span> CurrentValue = Value.<span class="built_in">Get</span>&lt;<span class="type">bool</span>&gt;();</span><br><span class="line">	<span class="keyword">if</span> (CurrentValue)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">UE_LOG</span>(LogTemp, Warning, <span class="built_in">TEXT</span>(<span class="string">&quot;IA_Move triggered&quot;</span>));</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Called to bind function to input</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">ABird::SetupPlayerInputComponent</span><span class="params">(UInputComponent* PlayerInputComponent)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	Super::<span class="built_in">SetupPlayerInputComponent</span>(PlayerInputComponent);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (UEnhancedInputComponent* EnhancedInputComponent = <span class="built_in">CastChecked</span>&lt;UEnhancedInputComponent&gt;(PlayerInputComponent))</span><br><span class="line">	&#123;</span><br><span class="line">		EnhancedInputComponent-&gt;<span class="built_in">BindAction</span>(MoveAction, ETriggerEvent::Triggered, <span class="keyword">this</span>, &amp;ABird::Move);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<ol>
+<li>Compile and run project, when you triggers your mapping context, the warning log “IA_Move triggered” should show.</li>
+</ol>
 ]]></content>
       <categories>
         <category>IT分类</category>
