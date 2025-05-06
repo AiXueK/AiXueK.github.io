@@ -8,7 +8,8 @@
   <entry>
     <title>5.3.2 UE build报错</title>
     <url>/game-categories/gd-tut/5.3.2-build-error/</url>
-    <content><![CDATA[<p>在升级完Unreal Engine到版本5.3.2之后，发现即使用UE自带的空Actor Class进行编译都有俩项如下报错：<br><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">========== Build: 46 succeeded, 2 failed, 0 up-to-date, 1 skipped ==========</span><br><span class="line">Done building project “BuildGraph.Automation.csproj” – FAILED.</span><br><span class="line">Done building project “AutomationScripts.Automation.csproj” – FAILED.</span><br></pre></td></tr></table></figure></p>
+    <content><![CDATA[<h1 id="BuildGraph-Automation-csproj-amp-AutomationScripts-Automation-csproj-Error"><a href="#BuildGraph-Automation-csproj-amp-AutomationScripts-Automation-csproj-Error" class="headerlink" title="BuildGraph.Automation.csproj &amp; AutomationScripts.Automation.csproj Error"></a>BuildGraph.Automation.csproj &amp; AutomationScripts.Automation.csproj Error</h1><p>在升级完Unreal Engine到版本5.3.2之后，发现即使用UE自带的空Actor Class进行编译都有俩项如下报错：<br><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">========== Build: 46 succeeded, 2 failed, 0 up-to-date, 1 skipped ==========</span><br><span class="line">Done building project “BuildGraph.Automation.csproj” – FAILED.</span><br><span class="line">Done building project “AutomationScripts.Automation.csproj” – FAILED.</span><br></pre></td></tr></table></figure></p>
+<p>还可能在编译build中遇到没来由的Error：<br><code>Metadata file &#39;\UE_5.3\Engine\Binaries\DotNET\AutomationTool\AutomationScripts\Scripts\ref\AutomationScripts.Automation.dll could not be found</code></p>
 <p>解决办法为修改UE的源文件：</p>
 <ol>
 <li>找到安装Unreal Engine Machine的文件夹，我的是<code>D:\App\UnrealEngine Machines\UE_5.3\</code></li>
@@ -40,6 +41,12 @@
 <p>或者，如果只用蓝图Blueprint，那么需要在“Event Tick”node节点上，Exec连接”Set Actor Tick Enabled”，并将“Enabled”勾上即可。</p>
 <h2 id="Build报错function-override-error"><a href="#Build报错function-override-error" class="headerlink" title="Build报错function override error"></a>Build报错function override error</h2><p>如果在下面这些function或者更多地方出现”Member function declared with ‘override’ does not override a base class member”错误。而你又没有更改过它们这些function。<br><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">virtual bool SerializeBulkData(class FBulkData&amp; BulkData, const struct FBulkDataSerializationParams&amp; Params) override</span><br><span class="line">virtual bool SetCompressionMap(TArray&lt;FCompressedChunk&gt;* CompressedChunks, ECompressionFlags CompressionFlags) override</span><br><span class="line">virtual FArchive&amp; operator&lt;&lt;(FLazyObjectPtr&amp; Value) override &#123; return SerializeLazyObjectPtr(*this, Value); &#125;</span><br><span class="line">virtual FArchive&amp; operator&lt;&lt;(FObjectPtr&amp; Value) override &#123; return SerializeObjectPtr(*this, Value); &#125;</span><br><span class="line">virtual FArchive&amp; operator&lt;&lt;(FSoftObjectPtr&amp; Value) override &#123; return SerializeSoftObjectPtr(*this, Value); &#125;</span><br><span class="line">virtual FArchive&amp; operator&lt;&lt;(FSoftObjectPath&amp; Value) override &#123; return SerializeSoftObjectPath(*this, Value); &#125;</span><br><span class="line">virtual FArchive&amp; operator&lt;&lt;(FWeakObjectPtr&amp; Value) override &#123; return SerializeWeakObjectPtr(*this, Value); &#125;</span><br></pre></td></tr></table></figure></p>
 <p>那么就是UE的live coding在捣鬼。回到UE界面中，找到右下角像“俄罗斯方块”的标志，鼠标移到上面显示“Recompiles and reloads C++ blabla”, 点右边三个点，关掉live coding就好了。之后编译直接点一下这个按钮就行。（不知UE为啥这么多bug）</p>
+<h1 id="Groom-HairStandsCore-module-导入报错"><a href="#Groom-HairStandsCore-module-导入报错" class="headerlink" title="Groom HairStandsCore module 导入报错"></a>Groom HairStandsCore module 导入报错</h1><p>在build.cs文件中加入了 “HairStandsCore” module 后，发现编译报错 <code>NiagaraDataInterfacePhysicsAsset.h header not found</code>, 按照有的Forum答案再加入 “Niagara” module 之后导致 Editor都打不开了。解决办法是：</p>
+<ol>
+<li>在Editor中，Tools -&gt; Plugin -&gt; tick “Groom”</li>
+<li>在 Build.cs 文件中加入这些module：<code>&quot;HairStrandsCore&quot;, &quot;RenderCore&quot;, &quot;Niagara&quot;, &quot;RHI&quot;</code></li>
+<li>删除 “intermediate, saved, binaries”文件夹，右键 .uproject file -&gt; generate vs files -&gt; open project and build solution</li>
+</ol>
 ]]></content>
       <categories>
         <category>IT分类</category>
@@ -211,6 +218,30 @@ Create mesh and attach mesh component to the object:<figure class="highlight c++
 <li>Find the <code>.uproject</code> file -&gt; Right click -&gt; Switch Unreal Engine Version -&gt; Select the target UE Engine Version</li>
 <li>Open Visual Studio and re-compile the code</li>
 <li>Open the Editor</li>
+</ul>
+<p>Change “Override GameMode” (Delete the pawned default player, and start game with your own player)</p>
+<ul>
+<li>Generate your own GameMode<ul>
+<li>Create folder “GameModes” under Blueprint</li>
+<li>Create Blueprint Class -&gt; Game Mode</li>
+<li>Change “Default Pawn Class” to your BP Class</li>
+</ul>
+</li>
+<li>Change World Setting<ul>
+<li>Open World Setting</li>
+<li>GameMode Override -&gt; your GameMode </li>
+</ul>
+</li>
+</ul>
+<p>Allow Spring Arm to follow the controller while disable character rotation based on controller</p>
+<ul>
+<li>Disable character rotation following the controller<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Under Character constructor</span></span><br><span class="line">bUseControllerRotationPitch = <span class="literal">false</span>;</span><br><span class="line">bUseControllerRotationYaw = <span class="literal">false</span>;</span><br><span class="line">bUseControllerRotationRoll = <span class="literal">false</span>;</span><br></pre></td></tr></table></figure></li>
+<li>Allow Spring Arm to follow the controller rotation<ul>
+<li>In Character BluePrint, click your “Spring Arm” component</li>
+<li>Search for “camera”</li>
+<li>Click “Use Pawn Control Rotation”</li>
+</ul>
+</li>
 </ul>
 <h1 id="UE-Self-study-resources-自学资料"><a href="#UE-Self-study-resources-自学资料" class="headerlink" title="UE Self-study resources 自学资料"></a>UE Self-study resources 自学资料</h1><p>UE的所有Class类资料都可以在官方文档中查询，且资料齐全详细：<a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/unreal-engine-5-5-documentation">官方文档</a></p>
 ]]></content>
