@@ -78,15 +78,15 @@
     <link href="https://aixuek-itshare.com/game-categories/gd-tut/UE-Niagara/"/>
     <id>https://aixuek-itshare.com/game-categories/gd-tut/UE-Niagara/</id>
     <published>2025-03-23T01:45:00.000Z</published>
-    <updated>2025-04-07T12:33:20.412Z</updated>
+    <updated>2025-08-31T13:27:53.862Z</updated>
     
-    <content type="html"><![CDATA[<p>这里是Unreal Engine的Niagara特效笔记记录。</p><h1 id="Operations"><a href="#Operations" class="headerlink" title="Operations"></a>Operations</h1><p><strong>Change to GPU Sim</strong><br>In Niagara System object -&gt; Select “Properties” -&gt; Sim Target -&gt; Select “GPUCompute Sim”</p>]]></content>
+    <content type="html"><![CDATA[<p>这里是Unreal Engine的Niagara特效笔记记录。</p><h1 id="Core-Knowledge"><a href="#Core-Knowledge" class="headerlink" title="Core Knowledge"></a>Core Knowledge</h1><h2 id="Structure-of-Niagara"><a href="#Structure-of-Niagara" class="headerlink" title="Structure of Niagara"></a>Structure of Niagara</h2><ul><li>Niagara System: A container that can be spawned or placed in the world</li><li>Niagara Emitter: Emits and controls particles</li></ul><p>A Niagara System can contain multiple Niagara Emitters.</p><p>Create Niagara System/Emitter: Right click in Content Browser -&gt; FX -&gt; Niagara System + Niagara Emitter</p><h2 id="Stages-in-Niagara-Emitter"><a href="#Stages-in-Niagara-Emitter" class="headerlink" title="Stages in Niagara Emitter"></a>Stages in Niagara Emitter</h2><ul><li>Emitter Spawn</li><li>Emitter Update</li><li>Particle Spawn</li><li>Particle Update</li><li>Render<ul><li>Sprite Renderer</li><li>Mesh Renderer</li><li>Ribbon Renderer</li></ul></li></ul><h3 id="Sprite"><a href="#Sprite" class="headerlink" title="Sprite"></a>Sprite</h3><p>Definition: In video games, a sprite is a 2D graphical image or animation that is integrated into a larger scene to represent characters, objects, or special effects. (In short, it’s a 2D camera-facing plane)</p><h1 id="VFX-Library"><a href="#VFX-Library" class="headerlink" title="VFX Library"></a>VFX Library</h1><h1 id="Techniques-amp-Tips"><a href="#Techniques-amp-Tips" class="headerlink" title="Techniques &amp; Tips"></a>Techniques &amp; Tips</h1><p><strong>Change to GPU Sim</strong><br>In Niagara System object -&gt; Select “Properties” -&gt; Sim Target -&gt; Select “GPUCompute Sim”</p><h1 id="Troubleshooting"><a href="#Troubleshooting" class="headerlink" title="Troubleshooting"></a>Troubleshooting</h1><h1 id="Inspirations"><a href="#Inspirations" class="headerlink" title="Inspirations"></a>Inspirations</h1><h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1>]]></content>
     
     
       
       
     <summary type="html">&lt;p&gt;这里是Unreal Engine的Niagara特效笔记记录。&lt;/p&gt;
-&lt;h1 id=&quot;Operations&quot;&gt;&lt;a href=&quot;#Operations&quot; class=&quot;headerlink&quot; title=&quot;Operations&quot;&gt;&lt;/a&gt;Operations&lt;/h1&gt;&lt;p</summary>
+&lt;h1 id=&quot;Core-Knowledge&quot;&gt;&lt;a href=&quot;#Core-Knowledge&quot; class=&quot;headerlink&quot; title=&quot;Core Knowledge&quot;&gt;&lt;/a&gt;Core </summary>
       
     
     
@@ -134,13 +134,13 @@
   </entry>
   
   <entry>
-    <title>UE 5.3.2 错误解决合集</title>
-    <link href="https://aixuek-itshare.com/game-categories/gd-tut/5.3.2-error-collection/"/>
-    <id>https://aixuek-itshare.com/game-categories/gd-tut/5.3.2-error-collection/</id>
+    <title>UE 错误解决合集</title>
+    <link href="https://aixuek-itshare.com/game-categories/gd-tut/ue-error-collection/"/>
+    <id>https://aixuek-itshare.com/game-categories/gd-tut/ue-error-collection/</id>
     <published>2024-11-19T15:31:05.000Z</published>
-    <updated>2025-05-06T12:37:07.451Z</updated>
+    <updated>2025-07-02T13:28:10.170Z</updated>
     
-    <content type="html"><![CDATA[<p>在跟随Udemy课程《Unreal Engine 5 C++ The Ultimate Game Developer Course》的过程中，碰到了各种因为UE本身或者版本问题导致即使步骤一致，但执行一直出错的情况，遂列举出来，希望对同样碰到这些问题的伙伴有所帮助。</p><ul><li><a href="#tick-失效每帧无改变">Tick 失效每帧无改变</a></li><li><a href="#build报错function-override-error">Build报错function override error</a></li></ul><h2 id="Tick-失效每帧无改变"><a href="#Tick-失效每帧无改变" class="headerlink" title="Tick 失效每帧无改变"></a>Tick 失效每帧无改变</h2><p>在课程中原本代码为<code>PrimaryActorTick.bCanEverTick = true;</code>但这个并没用，即使更改了 <code>void AItem::Tick(float DeltaTime)</code>函数，里面的内容在UE运行后没有任何显示。应该更改的是<code>bStartWithTickEnabled</code>参数：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">AItem::<span class="built_in">AItem</span>()</span><br><span class="line">&#123;</span><br><span class="line"> <span class="comment">// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don&#x27;t need it.</span></span><br><span class="line"><span class="comment">//PrimaryActorTick.bCanEverTick = true;</span></span><br><span class="line">PrimaryActorTick.bStartWithTickEnabled = <span class="literal">true</span>; <span class="comment">// Changed code</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// Called every frame</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">AItem::Tick</span><span class="params">(<span class="type">float</span> DeltaTime)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">Super::<span class="built_in">Tick</span>(DeltaTime);</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (GEngine)</span><br><span class="line">&#123;</span><br><span class="line">GEngine-&gt;<span class="built_in">AddOnScreenDebugMessage</span>(<span class="number">1</span>, <span class="number">60.f</span>, FColor::Cyan, FString::<span class="built_in">Printf</span>(<span class="built_in">TEXT</span>(<span class="string">&quot;DeltaTime: %f&quot;</span>), DeltaTime));</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>或者，如果只用蓝图Blueprint，那么需要在“Event Tick”node节点上，Exec连接”Set Actor Tick Enabled”，并将“Enabled”勾上即可。</p><h2 id="Build报错function-override-error"><a href="#Build报错function-override-error" class="headerlink" title="Build报错function override error"></a>Build报错function override error</h2><p>如果在下面这些function或者更多地方出现”Member function declared with ‘override’ does not override a base class member”错误。而你又没有更改过它们这些function。<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">virtual bool SerializeBulkData(class FBulkData&amp; BulkData, const struct FBulkDataSerializationParams&amp; Params) override</span><br><span class="line">virtual bool SetCompressionMap(TArray&lt;FCompressedChunk&gt;* CompressedChunks, ECompressionFlags CompressionFlags) override</span><br><span class="line">virtual FArchive&amp; operator&lt;&lt;(FLazyObjectPtr&amp; Value) override &#123; return SerializeLazyObjectPtr(*this, Value); &#125;</span><br><span class="line">virtual FArchive&amp; operator&lt;&lt;(FObjectPtr&amp; Value) override &#123; return SerializeObjectPtr(*this, Value); &#125;</span><br><span class="line">virtual FArchive&amp; operator&lt;&lt;(FSoftObjectPtr&amp; Value) override &#123; return SerializeSoftObjectPtr(*this, Value); &#125;</span><br><span class="line">virtual FArchive&amp; operator&lt;&lt;(FSoftObjectPath&amp; Value) override &#123; return SerializeSoftObjectPath(*this, Value); &#125;</span><br><span class="line">virtual FArchive&amp; operator&lt;&lt;(FWeakObjectPtr&amp; Value) override &#123; return SerializeWeakObjectPtr(*this, Value); &#125;</span><br></pre></td></tr></table></figure></p><p>那么就是UE的live coding在捣鬼。回到UE界面中，找到右下角像“俄罗斯方块”的标志，鼠标移到上面显示“Recompiles and reloads C++ blabla”, 点右边三个点，关掉live coding就好了。之后编译直接点一下这个按钮就行。（不知UE为啥这么多bug）</p><h1 id="Groom-HairStandsCore-module-导入报错"><a href="#Groom-HairStandsCore-module-导入报错" class="headerlink" title="Groom HairStandsCore module 导入报错"></a>Groom HairStandsCore module 导入报错</h1><p>在build.cs文件中加入了 “HairStandsCore” module 后，发现编译报错 <code>NiagaraDataInterfacePhysicsAsset.h header not found</code>, 按照有的Forum答案再加入 “Niagara” module 之后导致 Editor都打不开了。解决办法是：</p><ol><li>在Editor中，Tools -&gt; Plugin -&gt; tick “Groom”</li><li>在 Build.cs 文件中加入这些module：<code>&quot;HairStrandsCore&quot;, &quot;RenderCore&quot;, &quot;Niagara&quot;, &quot;RHI&quot;</code></li><li>删除 “intermediate, saved, binaries”文件夹，右键 .uproject file -&gt; generate vs files -&gt; open project and build solution</li></ol>]]></content>
+    <content type="html"><![CDATA[<p>在跟随Udemy课程《Unreal Engine 5 C++ The Ultimate Game Developer Course》的过程中，碰到了各种因为UE本身或者版本问题导致即使步骤一致，但执行一直出错的情况，遂列举出来，希望对同样碰到这些问题的伙伴有所帮助。</p><ul><li><a href="#tick-失效每帧无改变">Tick 失效每帧无改变</a></li><li><a href="#build报错function-override-error">Build报错function override error</a></li></ul><h2 id="Tick-失效每帧无改变-5-3-2"><a href="#Tick-失效每帧无改变-5-3-2" class="headerlink" title="Tick 失效每帧无改变 (5.3.2)"></a>Tick 失效每帧无改变 (5.3.2)</h2><p>在课程中原本代码为<code>PrimaryActorTick.bCanEverTick = true;</code>但这个并没用，即使更改了 <code>void AItem::Tick(float DeltaTime)</code>函数，里面的内容在UE运行后没有任何显示。应该更改的是<code>bStartWithTickEnabled</code>参数：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">AItem::<span class="built_in">AItem</span>()</span><br><span class="line">&#123;</span><br><span class="line"> <span class="comment">// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don&#x27;t need it.</span></span><br><span class="line"><span class="comment">//PrimaryActorTick.bCanEverTick = true;</span></span><br><span class="line">PrimaryActorTick.bStartWithTickEnabled = <span class="literal">true</span>; <span class="comment">// Changed code</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// Called every frame</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">AItem::Tick</span><span class="params">(<span class="type">float</span> DeltaTime)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">Super::<span class="built_in">Tick</span>(DeltaTime);</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (GEngine)</span><br><span class="line">&#123;</span><br><span class="line">GEngine-&gt;<span class="built_in">AddOnScreenDebugMessage</span>(<span class="number">1</span>, <span class="number">60.f</span>, FColor::Cyan, FString::<span class="built_in">Printf</span>(<span class="built_in">TEXT</span>(<span class="string">&quot;DeltaTime: %f&quot;</span>), DeltaTime));</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>或者，如果只用蓝图Blueprint，那么需要在“Event Tick”node节点上，Exec连接”Set Actor Tick Enabled”，并将“Enabled”勾上即可。</p><h2 id="Build报错function-override-error-5-3-2"><a href="#Build报错function-override-error-5-3-2" class="headerlink" title="Build报错function override error (5.3.2)"></a>Build报错function override error (5.3.2)</h2><p>如果在下面这些function或者更多地方出现”Member function declared with ‘override’ does not override a base class member”错误。而你又没有更改过它们这些function。<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">virtual bool SerializeBulkData(class FBulkData&amp; BulkData, const struct FBulkDataSerializationParams&amp; Params) override</span><br><span class="line">virtual bool SetCompressionMap(TArray&lt;FCompressedChunk&gt;* CompressedChunks, ECompressionFlags CompressionFlags) override</span><br><span class="line">virtual FArchive&amp; operator&lt;&lt;(FLazyObjectPtr&amp; Value) override &#123; return SerializeLazyObjectPtr(*this, Value); &#125;</span><br><span class="line">virtual FArchive&amp; operator&lt;&lt;(FObjectPtr&amp; Value) override &#123; return SerializeObjectPtr(*this, Value); &#125;</span><br><span class="line">virtual FArchive&amp; operator&lt;&lt;(FSoftObjectPtr&amp; Value) override &#123; return SerializeSoftObjectPtr(*this, Value); &#125;</span><br><span class="line">virtual FArchive&amp; operator&lt;&lt;(FSoftObjectPath&amp; Value) override &#123; return SerializeSoftObjectPath(*this, Value); &#125;</span><br><span class="line">virtual FArchive&amp; operator&lt;&lt;(FWeakObjectPtr&amp; Value) override &#123; return SerializeWeakObjectPtr(*this, Value); &#125;</span><br></pre></td></tr></table></figure></p><p>那么就是UE的live coding在捣鬼。回到UE界面中，找到右下角像“俄罗斯方块”的标志，鼠标移到上面显示“Recompiles and reloads C++ blabla”, 点右边三个点，关掉live coding就好了。之后编译直接点一下这个按钮就行。（不知UE为啥这么多bug）</p><h1 id="Groom-HairStandsCore-module-导入报错-5-3-2"><a href="#Groom-HairStandsCore-module-导入报错-5-3-2" class="headerlink" title="Groom HairStandsCore module 导入报错 (5.3.2)"></a>Groom HairStandsCore module 导入报错 (5.3.2)</h1><p>在build.cs文件中加入了 “HairStandsCore” module 后，发现编译报错 <code>NiagaraDataInterfacePhysicsAsset.h header not found</code>, 按照有的Forum答案再加入 “Niagara” module 之后导致 Editor都打不开了。解决办法是：</p><ol><li>在Editor中，Tools -&gt; Plugin -&gt; tick “Groom”</li><li>在 Build.cs 文件中加入这些module：<code>&quot;HairStrandsCore&quot;, &quot;RenderCore&quot;, &quot;Niagara&quot;, &quot;RHI&quot;</code></li><li>删除 “intermediate, saved, binaries”文件夹，右键 .uproject file -&gt; generate vs files -&gt; open project and build solution</li></ol><h1 id="UnrealBuildTool-exe-exited-with-code-1-0x1"><a href="#UnrealBuildTool-exe-exited-with-code-1-0x1" class="headerlink" title="UnrealBuildTool.exe exited with code 1 (0x1)"></a>UnrealBuildTool.exe exited with code 1 (0x1)</h1><p>当切换到UE5.6之后，删除了 Intermediate, Saved, Binaries, DerivedDataCache 之后，启动VisualStudioCode，再试图直接运行时，报错 “UnrealBuildTool.exe exited with code 1 (0x1)”。</p><p>解决办法：</p><ol><li>通过.uproject 文件打开项目（确保项目是好的）</li><li>关闭UE，删除VisualStudio文件</li><li>右键 .uproject 文件，切换成另一个version</li><li>生成VisualStudio文件，并确保能正常再VisualStudio中打开项目</li><li>删除VisualStudio文件，和Intermediate, Saved, Binaries, DerivedDataCache 之后，启动VisualStudioCode，再试图直接运行时，报错 “UnrealBuildTool.exe exited with code 1 (0x1)”。</li><li>切换回原本的version，再生成VisualStudio文件即可正常运行。</li></ol>]]></content>
     
     
       
@@ -203,9 +203,9 @@
     <category term="开发杂记" scheme="https://aixuek-itshare.com/categories/IT%E5%88%86%E7%B1%BB/%E5%BC%80%E5%8F%91%E6%9D%82%E8%AE%B0/"/>
     
     
-    <category term="Code" scheme="https://aixuek-itshare.com/tags/Code/"/>
-    
     <category term="C++" scheme="https://aixuek-itshare.com/tags/C/"/>
+    
+    <category term="Code" scheme="https://aixuek-itshare.com/tags/Code/"/>
     
   </entry>
   
@@ -214,7 +214,7 @@
     <link href="https://aixuek-itshare.com/game-categories/gd-tut/5.3.2-build-error/"/>
     <id>https://aixuek-itshare.com/game-categories/gd-tut/5.3.2-build-error/</id>
     <published>2024-10-24T13:00:27.000Z</published>
-    <updated>2025-05-06T12:22:52.774Z</updated>
+    <updated>2025-07-02T13:22:19.865Z</updated>
     
     <content type="html"><![CDATA[<h1 id="BuildGraph-Automation-csproj-amp-AutomationScripts-Automation-csproj-Error"><a href="#BuildGraph-Automation-csproj-amp-AutomationScripts-Automation-csproj-Error" class="headerlink" title="BuildGraph.Automation.csproj &amp; AutomationScripts.Automation.csproj Error"></a>BuildGraph.Automation.csproj &amp; AutomationScripts.Automation.csproj Error</h1><p>在升级完Unreal Engine到版本5.3.2之后，发现即使用UE自带的空Actor Class进行编译都有俩项如下报错：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">========== Build: 46 succeeded, 2 failed, 0 up-to-date, 1 skipped ==========</span><br><span class="line">Done building project “BuildGraph.Automation.csproj” – FAILED.</span><br><span class="line">Done building project “AutomationScripts.Automation.csproj” – FAILED.</span><br></pre></td></tr></table></figure></p><p>还可能在编译build中遇到没来由的Error：<br><code>Metadata file &#39;\UE_5.3\Engine\Binaries\DotNET\AutomationTool\AutomationScripts\Scripts\ref\AutomationScripts.Automation.dll could not be found</code></p><p>解决办法为修改UE的源文件：</p><ol><li>找到安装Unreal Engine Machine的文件夹，我的是<code>D:\App\UnrealEngine Machines\UE_5.3\</code></li><li>到<code>Engine\Source\Programs\AutomationTool\BuildGraph\BgScriptReader.cs</code>中将1640行改为：<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">if</span> (users != null)</span><br><span class="line">report.NotifyUsers.<span class="built_in">UnionWith</span>(users);</span><br></pre></td></tr></table></figure></li><li>到<code>Engine/Source/Programs/AutomationTool/Scripts/CheckForHacks.cs</code>中将87行改为：<br><code>Logger.LogInformation(&quot;Scanning files... [&#123;Arg0&#125;]&quot;, FilesToCheck.Count);</code></li></ol><p>即可编译通过。</p><p>后话：</p><p>非常建议开启UE自带的Revision Control功能，这样可以备份自己的游戏项目，同时用自己的硬盘再备份一份。因为如果不小心彻底删掉了<code>.uproject</code>文件，那么似乎就得重新从头做一遍。（我暂时没找到解决方法，如果有知道的大佬麻烦告知 :&gt;~）</p>]]></content>
     
@@ -331,9 +331,9 @@
     <category term="开发杂记" scheme="https://aixuek-itshare.com/categories/IT%E5%88%86%E7%B1%BB/%E5%BC%80%E5%8F%91%E6%9D%82%E8%AE%B0/"/>
     
     
-    <category term="Code" scheme="https://aixuek-itshare.com/tags/Code/"/>
-    
     <category term="C++" scheme="https://aixuek-itshare.com/tags/C/"/>
+    
+    <category term="Code" scheme="https://aixuek-itshare.com/tags/Code/"/>
     
   </entry>
   
@@ -395,9 +395,9 @@
     <category term="开发杂记" scheme="https://aixuek-itshare.com/categories/IT%E5%88%86%E7%B1%BB/%E5%BC%80%E5%8F%91%E6%9D%82%E8%AE%B0/"/>
     
     
-    <category term="Code" scheme="https://aixuek-itshare.com/tags/Code/"/>
-    
     <category term="C++" scheme="https://aixuek-itshare.com/tags/C/"/>
+    
+    <category term="Code" scheme="https://aixuek-itshare.com/tags/Code/"/>
     
   </entry>
   
@@ -431,9 +431,9 @@
     <category term="开发杂记" scheme="https://aixuek-itshare.com/categories/IT%E5%88%86%E7%B1%BB/%E5%BC%80%E5%8F%91%E6%9D%82%E8%AE%B0/"/>
     
     
-    <category term="Code" scheme="https://aixuek-itshare.com/tags/Code/"/>
-    
     <category term="C++" scheme="https://aixuek-itshare.com/tags/C/"/>
+    
+    <category term="Code" scheme="https://aixuek-itshare.com/tags/Code/"/>
     
   </entry>
   
@@ -460,9 +460,9 @@
     <category term="开发杂记" scheme="https://aixuek-itshare.com/categories/IT%E5%88%86%E7%B1%BB/%E5%BC%80%E5%8F%91%E6%9D%82%E8%AE%B0/"/>
     
     
-    <category term="Code" scheme="https://aixuek-itshare.com/tags/Code/"/>
-    
     <category term="C++" scheme="https://aixuek-itshare.com/tags/C/"/>
+    
+    <category term="Code" scheme="https://aixuek-itshare.com/tags/Code/"/>
     
   </entry>
   
@@ -523,6 +523,26 @@
   </entry>
   
   <entry>
+    <title>有趣轶事</title>
+    <link href="https://aixuek-itshare.com/personal/funny-experience/index/"/>
+    <id>https://aixuek-itshare.com/personal/funny-experience/index/</id>
+    <published>2024-06-29T04:13:46.000Z</published>
+    <updated>2024-08-24T14:26:51.804Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="有趣轶事"><a href="#有趣轶事" class="headerlink" title="有趣轶事"></a>有趣轶事</h1><h2 id="参加SIG-event-day的搞笑事情"><a href="#参加SIG-event-day的搞笑事情" class="headerlink" title="参加SIG event day的搞笑事情"></a><a href="https://aixuek-itshare.com/personal/funny-experience/sig-event">参加SIG event day的搞笑事情</a></h2>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;有趣轶事&quot;&gt;&lt;a href=&quot;#有趣轶事&quot; class=&quot;headerlink&quot; title=&quot;有趣轶事&quot;&gt;&lt;/a&gt;有趣轶事&lt;/h1&gt;&lt;h2 id=&quot;参加SIG-event-day的搞笑事情&quot;&gt;&lt;a href=&quot;#参加SIG-event-day的搞笑事情&quot; cla</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>参加SIG event day的搞笑事情</title>
     <link href="https://aixuek-itshare.com/personal/funny-experience/sig-event/"/>
     <id>https://aixuek-itshare.com/personal/funny-experience/sig-event/</id>
@@ -545,26 +565,6 @@
     
     
     <category term="搞笑" scheme="https://aixuek-itshare.com/tags/%E6%90%9E%E7%AC%91/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>有趣轶事</title>
-    <link href="https://aixuek-itshare.com/personal/funny-experience/index/"/>
-    <id>https://aixuek-itshare.com/personal/funny-experience/index/</id>
-    <published>2024-06-29T04:13:46.000Z</published>
-    <updated>2024-08-24T14:26:51.804Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="有趣轶事"><a href="#有趣轶事" class="headerlink" title="有趣轶事"></a>有趣轶事</h1><h2 id="参加SIG-event-day的搞笑事情"><a href="#参加SIG-event-day的搞笑事情" class="headerlink" title="参加SIG event day的搞笑事情"></a><a href="https://aixuek-itshare.com/personal/funny-experience/sig-event">参加SIG event day的搞笑事情</a></h2>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;有趣轶事&quot;&gt;&lt;a href=&quot;#有趣轶事&quot; class=&quot;headerlink&quot; title=&quot;有趣轶事&quot;&gt;&lt;/a&gt;有趣轶事&lt;/h1&gt;&lt;h2 id=&quot;参加SIG-event-day的搞笑事情&quot;&gt;&lt;a href=&quot;#参加SIG-event-day的搞笑事情&quot; cla</summary>
-      
-    
-    
-    
     
   </entry>
   
