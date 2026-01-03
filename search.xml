@@ -69,10 +69,22 @@
 <li>Updated every frame</li>
 </ul>
 <h3 id="Emitter-Update"><a href="#Emitter-Update" class="headerlink" title="Emitter Update"></a>Emitter Update</h3><p>Spawn Burst Instantaneous</p>
-<p>Emitter State</p>
+<p>Emitter State:</p>
+<ul>
+<li>Loop Behavior: set the loop to infinite/once</li>
+<li>Life Cycle Mode: Self/System (system is set to be infinite)</li>
+</ul>
+<p>Spawn Rate:</p>
+<ul>
+<li>Let particle spawn with a specific rate</li>
+</ul>
 <h3 id="Particle-Spawn"><a href="#Particle-Spawn" class="headerlink" title="Particle Spawn"></a>Particle Spawn</h3><p>Initialize Particle:</p>
 <ul>
 <li>Set the particle size mode/location/color</li>
+</ul>
+<p>Add Velocity:</p>
+<ul>
+<li>Called once when spawned</li>
 </ul>
 <h3 id="Particle-Update"><a href="#Particle-Update" class="headerlink" title="Particle Update"></a>Particle Update</h3><p>Particle State: Kill particles when lifetime (Initialize Particle defines the lifetime, while Particle State determines the behavior when particle approaches the lifetime)</p>
 <p>Scale Color: Define colour behaviour of the particle (fading, scaling …)</p>
@@ -81,12 +93,12 @@
 <h1 id="VFX-Library"><a href="#VFX-Library" class="headerlink" title="VFX Library"></a>VFX Library</h1><h1 id="Techniques-amp-Tips"><a href="#Techniques-amp-Tips" class="headerlink" title="Techniques &amp; Tips"></a>Techniques &amp; Tips</h1><p><strong>Change to GPU Sim</strong><br>In Niagara System object -&gt; Select “Properties” -&gt; Sim Target -&gt; Select “GPUCompute Sim”</p>
 <h1 id="Troubleshooting"><a href="#Troubleshooting" class="headerlink" title="Troubleshooting"></a>Troubleshooting</h1><h1 id="Inspirations"><a href="#Inspirations" class="headerlink" title="Inspirations"></a>Inspirations</h1><h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1>]]></content>
       <categories>
-        <category>IT分类</category>
+        <category>技美</category>
         <category>游戏开发</category>
       </categories>
       <tags>
-        <tag>C++</tag>
         <tag>Game Dev</tag>
+        <tag>TA</tag>
       </tags>
   </entry>
   <entry>
@@ -1199,6 +1211,55 @@ Create mesh and attach mesh component to the object:<figure class="highlight c++
       </categories>
       <tags>
         <tag>Interview</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>UE Modeling 建模记录</title>
+    <url>/game-categories/gd-tut/UE-Modeling/</url>
+    <content><![CDATA[<p>这是关于UE中建模的指南笔记。</p>
+<h1 id="Basic-Notes"><a href="#Basic-Notes" class="headerlink" title="Basic Notes"></a>Basic Notes</h1><p>If you want to edit the model using “Modeling”, you must create the asset using “Create” in Modeling. Otherwise it will show “Selection includes Engine Assets, which cannot be modified”</p>
+<h1 id="Core-Knowledge"><a href="#Core-Knowledge" class="headerlink" title="Core Knowledge"></a>Core Knowledge</h1><h1 id="Techniques-amp-Tips"><a href="#Techniques-amp-Tips" class="headerlink" title="Techniques &amp; Tips"></a>Techniques &amp; Tips</h1><h1 id="Troubleshooting"><a href="#Troubleshooting" class="headerlink" title="Troubleshooting"></a>Troubleshooting</h1><h1 id="Inspirations"><a href="#Inspirations" class="headerlink" title="Inspirations"></a>Inspirations</h1><h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1>]]></content>
+      <categories>
+        <category>技美</category>
+        <category>游戏开发</category>
+      </categories>
+      <tags>
+        <tag>Game Dev</tag>
+        <tag>TA</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>tricks分享</title>
+    <url>/it-categories/useful-tricks/index/</url>
+    <content><![CDATA[<h1 id="tricks分享"><a href="#tricks分享" class="headerlink" title="tricks分享"></a>tricks分享</h1><h2 id="Windows系统问题"><a href="#Windows系统问题" class="headerlink" title="Windows系统问题"></a><a href="https://aixuek-itshare.com/it-categories/useful-tricks/windows-trick">Windows系统问题</a></h2>]]></content>
+  </entry>
+  <entry>
+    <title>WindowsSystem 问题解决分享</title>
+    <url>/it-categories/useful-tricks/windows-trick/</url>
+    <content><![CDATA[<p>这里是遇到并解决了的WindowsSystem问题的方法分享。</p>
+<h1 id="Windows键没法搜索"><a href="#Windows键没法搜索" class="headerlink" title="Windows键没法搜索"></a>Windows键没法搜索</h1><p>问题：</p>
+<p>碰到过按下Windows键后，直接输入期望搜索，但显示一直在搜索，未成功。此行为已长达一个多月之久。</p>
+<p>原因：</p>
+<p>系统里搜索索引库损坏导致目录结构缺失，所以无法进行搜索。</p>
+<p>解决办法：</p>
+<ol>
+<li>用管理员打开PowerShell（右键Taskbar上的Windows按键，选择Terminal（Admin）</li>
+<li>确保搜索服务能正常运行： <code>Restart-Service -Name &quot;WSearch&quot; -Force</code></li>
+<li>检查状态：<code>Get-Service WSearch</code></li>
+<li>重置搜索功能相关系统包：<code>Get-AppxPackage -AllUsers Microsoft.Windows.Search | Reset-AppxPackage</code></li>
+<li>重新初始化索引目录权限（修复可能的访问失败）：<code>icacls &quot;C:\ProgramData\Microsoft&quot; /grant administrators:F /t</code></li>
+<li>重新触发系统索引重建：<code>control.exe srchadmin.dll</code></li>
+<li>在弹出的“索引选项”中，点 高级 → 重建索引</li>
+<li>重启电脑</li>
+</ol>
+<p>这样就修复了！！！</p>
+]]></content>
+      <categories>
+        <category>IT分类</category>
+        <category>tricks分享</category>
+      </categories>
+      <tags>
+        <tag>Tricks</tag>
       </tags>
   </entry>
 </search>

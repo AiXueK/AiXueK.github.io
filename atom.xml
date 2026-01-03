@@ -6,7 +6,7 @@
   <link href="https://aixuek-itshare.com/atom.xml" rel="self"/>
   
   <link href="https://aixuek-itshare.com/"/>
-  <updated>2025-04-11T04:38:34.028Z</updated>
+  <updated>2026-01-03T13:46:03.313Z</updated>
   <id>https://aixuek-itshare.com/</id>
   
   <author>
@@ -15,6 +15,62 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>WindowsSystem 问题解决分享</title>
+    <link href="https://aixuek-itshare.com/it-categories/useful-tricks/windows-trick/"/>
+    <id>https://aixuek-itshare.com/it-categories/useful-tricks/windows-trick/</id>
+    <published>2026-01-02T16:00:00.000Z</published>
+    <updated>2026-01-03T13:46:03.313Z</updated>
+    
+    <content type="html"><![CDATA[<p>这里是遇到并解决了的WindowsSystem问题的方法分享。</p><h1 id="Windows键没法搜索"><a href="#Windows键没法搜索" class="headerlink" title="Windows键没法搜索"></a>Windows键没法搜索</h1><p>问题：</p><p>碰到过按下Windows键后，直接输入期望搜索，但显示一直在搜索，未成功。此行为已长达一个多月之久。</p><p>原因：</p><p>系统里搜索索引库损坏导致目录结构缺失，所以无法进行搜索。</p><p>解决办法：</p><ol><li>用管理员打开PowerShell（右键Taskbar上的Windows按键，选择Terminal（Admin）</li><li>确保搜索服务能正常运行： <code>Restart-Service -Name &quot;WSearch&quot; -Force</code></li><li>检查状态：<code>Get-Service WSearch</code></li><li>重置搜索功能相关系统包：<code>Get-AppxPackage -AllUsers Microsoft.Windows.Search | Reset-AppxPackage</code></li><li>重新初始化索引目录权限（修复可能的访问失败）：<code>icacls &quot;C:\ProgramData\Microsoft&quot; /grant administrators:F /t</code></li><li>重新触发系统索引重建：<code>control.exe srchadmin.dll</code></li><li>在弹出的“索引选项”中，点 高级 → 重建索引</li><li>重启电脑</li></ol><p>这样就修复了！！！</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;这里是遇到并解决了的WindowsSystem问题的方法分享。&lt;/p&gt;
+&lt;h1 id=&quot;Windows键没法搜索&quot;&gt;&lt;a href=&quot;#Windows键没法搜索&quot; class=&quot;headerlink&quot; title=&quot;Windows键没法搜索&quot;&gt;&lt;/a&gt;Windows键没法搜</summary>
+      
+    
+    
+    
+    <category term="IT分类" scheme="https://aixuek-itshare.com/categories/IT%E5%88%86%E7%B1%BB/"/>
+    
+    <category term="tricks分享" scheme="https://aixuek-itshare.com/categories/IT%E5%88%86%E7%B1%BB/tricks%E5%88%86%E4%BA%AB/"/>
+    
+    
+    <category term="Tricks" scheme="https://aixuek-itshare.com/tags/Tricks/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>UE Modeling 建模记录</title>
+    <link href="https://aixuek-itshare.com/game-categories/gd-tut/UE-Modeling/"/>
+    <id>https://aixuek-itshare.com/game-categories/gd-tut/UE-Modeling/</id>
+    <published>2025-11-16T01:45:00.000Z</published>
+    <updated>2025-11-16T10:11:51.355Z</updated>
+    
+    <content type="html"><![CDATA[<p>这是关于UE中建模的指南笔记。</p><h1 id="Basic-Notes"><a href="#Basic-Notes" class="headerlink" title="Basic Notes"></a>Basic Notes</h1><p>If you want to edit the model using “Modeling”, you must create the asset using “Create” in Modeling. Otherwise it will show “Selection includes Engine Assets, which cannot be modified”</p><h1 id="Core-Knowledge"><a href="#Core-Knowledge" class="headerlink" title="Core Knowledge"></a>Core Knowledge</h1><h1 id="Techniques-amp-Tips"><a href="#Techniques-amp-Tips" class="headerlink" title="Techniques &amp; Tips"></a>Techniques &amp; Tips</h1><h1 id="Troubleshooting"><a href="#Troubleshooting" class="headerlink" title="Troubleshooting"></a>Troubleshooting</h1><h1 id="Inspirations"><a href="#Inspirations" class="headerlink" title="Inspirations"></a>Inspirations</h1><h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;这是关于UE中建模的指南笔记。&lt;/p&gt;
+&lt;h1 id=&quot;Basic-Notes&quot;&gt;&lt;a href=&quot;#Basic-Notes&quot; class=&quot;headerlink&quot; title=&quot;Basic Notes&quot;&gt;&lt;/a&gt;Basic Notes&lt;/h1&gt;&lt;p&gt;If you want</summary>
+      
+    
+    
+    
+    <category term="技美" scheme="https://aixuek-itshare.com/categories/%E6%8A%80%E7%BE%8E/"/>
+    
+    <category term="游戏开发" scheme="https://aixuek-itshare.com/categories/%E6%8A%80%E7%BE%8E/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/"/>
+    
+    
+    <category term="Game Dev" scheme="https://aixuek-itshare.com/tags/Game-Dev/"/>
+    
+    <category term="TA" scheme="https://aixuek-itshare.com/tags/TA/"/>
+    
+  </entry>
   
   <entry>
     <title>UE Enhanced Inputs</title>
@@ -78,9 +134,9 @@
     <link href="https://aixuek-itshare.com/game-categories/gd-tut/UE-Niagara/"/>
     <id>https://aixuek-itshare.com/game-categories/gd-tut/UE-Niagara/</id>
     <published>2025-03-23T01:45:00.000Z</published>
-    <updated>2025-09-08T14:25:15.317Z</updated>
+    <updated>2025-11-16T10:04:33.803Z</updated>
     
-    <content type="html"><![CDATA[<p>这里是Unreal Engine的Niagara特效笔记记录。</p><h1 id="Core-Knowledge"><a href="#Core-Knowledge" class="headerlink" title="Core Knowledge"></a>Core Knowledge</h1><h2 id="Structure-of-Niagara"><a href="#Structure-of-Niagara" class="headerlink" title="Structure of Niagara"></a>Structure of Niagara</h2><ul><li>Niagara System: A container that can be spawned or placed in the world (So you must create a Niagara System to contain the Emitters)</li><li>Niagara Emitter: Emits and controls particles</li></ul><p>A Niagara System can contain multiple Niagara Emitters.</p><p>Create Niagara System/Emitter: Right click in Content Browser -&gt; FX -&gt; Niagara System + Niagara Emitter</p><h2 id="Stages-in-Niagara-Emitter"><a href="#Stages-in-Niagara-Emitter" class="headerlink" title="Stages in Niagara Emitter"></a>Stages in Niagara Emitter</h2><ul><li>Emitter Spawn</li><li>Emitter Update<ul><li>Lifecycle mode, loop behaviour</li><li>Scalability</li><li>Number of particles to spawn, spawn time</li></ul></li><li>Particle Spawn<ul><li>Initial size/location/color of the particle</li><li>Lifetime of the particle</li></ul></li><li>Particle Update<ul><li>Particle movement/scaling/fading (all the changes you want to have during the particle lifetime)</li></ul></li><li>Render<ul><li>Sprite Renderer</li><li>Mesh Renderer</li><li>Ribbon Renderer</li></ul></li></ul><p>Spawn:</p><ul><li>Event BeginPlay</li><li>Runs once when spawn</li></ul><p>Update:</p><ul><li>Event Tick</li><li>Updated every frame</li></ul><h3 id="Emitter-Update"><a href="#Emitter-Update" class="headerlink" title="Emitter Update"></a>Emitter Update</h3><p>Spawn Burst Instantaneous</p><p>Emitter State</p><h3 id="Particle-Spawn"><a href="#Particle-Spawn" class="headerlink" title="Particle Spawn"></a>Particle Spawn</h3><p>Initialize Particle:</p><ul><li>Set the particle size mode/location/color</li></ul><h3 id="Particle-Update"><a href="#Particle-Update" class="headerlink" title="Particle Update"></a>Particle Update</h3><p>Particle State: Kill particles when lifetime (Initialize Particle defines the lifetime, while Particle State determines the behavior when particle approaches the lifetime)</p><p>Scale Color: Define colour behaviour of the particle (fading, scaling …)</p><h3 id="Sprite"><a href="#Sprite" class="headerlink" title="Sprite"></a>Sprite</h3><p>Definition: In video games, a sprite is a 2D graphical image or animation that is integrated into a larger scene to represent characters, objects, or special effects. (In short, it’s a 2D camera-facing plane)</p><p>So even if it looks like a sphere or some 3D stuff, it’s only because it’s always facing the camera when you rotate it. (It’s only a dot)</p><h1 id="VFX-Library"><a href="#VFX-Library" class="headerlink" title="VFX Library"></a>VFX Library</h1><h1 id="Techniques-amp-Tips"><a href="#Techniques-amp-Tips" class="headerlink" title="Techniques &amp; Tips"></a>Techniques &amp; Tips</h1><p><strong>Change to GPU Sim</strong><br>In Niagara System object -&gt; Select “Properties” -&gt; Sim Target -&gt; Select “GPUCompute Sim”</p><h1 id="Troubleshooting"><a href="#Troubleshooting" class="headerlink" title="Troubleshooting"></a>Troubleshooting</h1><h1 id="Inspirations"><a href="#Inspirations" class="headerlink" title="Inspirations"></a>Inspirations</h1><h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1>]]></content>
+    <content type="html"><![CDATA[<p>这里是Unreal Engine的Niagara特效笔记记录。</p><h1 id="Core-Knowledge"><a href="#Core-Knowledge" class="headerlink" title="Core Knowledge"></a>Core Knowledge</h1><h2 id="Structure-of-Niagara"><a href="#Structure-of-Niagara" class="headerlink" title="Structure of Niagara"></a>Structure of Niagara</h2><ul><li>Niagara System: A container that can be spawned or placed in the world (So you must create a Niagara System to contain the Emitters)</li><li>Niagara Emitter: Emits and controls particles</li></ul><p>A Niagara System can contain multiple Niagara Emitters.</p><p>Create Niagara System/Emitter: Right click in Content Browser -&gt; FX -&gt; Niagara System + Niagara Emitter</p><h2 id="Stages-in-Niagara-Emitter"><a href="#Stages-in-Niagara-Emitter" class="headerlink" title="Stages in Niagara Emitter"></a>Stages in Niagara Emitter</h2><ul><li>Emitter Spawn</li><li>Emitter Update<ul><li>Lifecycle mode, loop behaviour</li><li>Scalability</li><li>Number of particles to spawn, spawn time</li></ul></li><li>Particle Spawn<ul><li>Initial size/location/color of the particle</li><li>Lifetime of the particle</li></ul></li><li>Particle Update<ul><li>Particle movement/scaling/fading (all the changes you want to have during the particle lifetime)</li></ul></li><li>Render<ul><li>Sprite Renderer</li><li>Mesh Renderer</li><li>Ribbon Renderer</li></ul></li></ul><p>Spawn:</p><ul><li>Event BeginPlay</li><li>Runs once when spawn</li></ul><p>Update:</p><ul><li>Event Tick</li><li>Updated every frame</li></ul><h3 id="Emitter-Update"><a href="#Emitter-Update" class="headerlink" title="Emitter Update"></a>Emitter Update</h3><p>Spawn Burst Instantaneous</p><p>Emitter State:</p><ul><li>Loop Behavior: set the loop to infinite/once</li><li>Life Cycle Mode: Self/System (system is set to be infinite)</li></ul><p>Spawn Rate:</p><ul><li>Let particle spawn with a specific rate</li></ul><h3 id="Particle-Spawn"><a href="#Particle-Spawn" class="headerlink" title="Particle Spawn"></a>Particle Spawn</h3><p>Initialize Particle:</p><ul><li>Set the particle size mode/location/color</li></ul><p>Add Velocity:</p><ul><li>Called once when spawned</li></ul><h3 id="Particle-Update"><a href="#Particle-Update" class="headerlink" title="Particle Update"></a>Particle Update</h3><p>Particle State: Kill particles when lifetime (Initialize Particle defines the lifetime, while Particle State determines the behavior when particle approaches the lifetime)</p><p>Scale Color: Define colour behaviour of the particle (fading, scaling …)</p><h3 id="Sprite"><a href="#Sprite" class="headerlink" title="Sprite"></a>Sprite</h3><p>Definition: In video games, a sprite is a 2D graphical image or animation that is integrated into a larger scene to represent characters, objects, or special effects. (In short, it’s a 2D camera-facing plane)</p><p>So even if it looks like a sphere or some 3D stuff, it’s only because it’s always facing the camera when you rotate it. (It’s only a dot)</p><h1 id="VFX-Library"><a href="#VFX-Library" class="headerlink" title="VFX Library"></a>VFX Library</h1><h1 id="Techniques-amp-Tips"><a href="#Techniques-amp-Tips" class="headerlink" title="Techniques &amp; Tips"></a>Techniques &amp; Tips</h1><p><strong>Change to GPU Sim</strong><br>In Niagara System object -&gt; Select “Properties” -&gt; Sim Target -&gt; Select “GPUCompute Sim”</p><h1 id="Troubleshooting"><a href="#Troubleshooting" class="headerlink" title="Troubleshooting"></a>Troubleshooting</h1><h1 id="Inspirations"><a href="#Inspirations" class="headerlink" title="Inspirations"></a>Inspirations</h1><h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1>]]></content>
     
     
       
@@ -91,14 +147,14 @@
     
     
     
-    <category term="IT分类" scheme="https://aixuek-itshare.com/categories/IT%E5%88%86%E7%B1%BB/"/>
+    <category term="技美" scheme="https://aixuek-itshare.com/categories/%E6%8A%80%E7%BE%8E/"/>
     
-    <category term="游戏开发" scheme="https://aixuek-itshare.com/categories/IT%E5%88%86%E7%B1%BB/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/"/>
+    <category term="游戏开发" scheme="https://aixuek-itshare.com/categories/%E6%8A%80%E7%BE%8E/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/"/>
     
-    
-    <category term="C++" scheme="https://aixuek-itshare.com/tags/C/"/>
     
     <category term="Game Dev" scheme="https://aixuek-itshare.com/tags/Game-Dev/"/>
+    
+    <category term="TA" scheme="https://aixuek-itshare.com/tags/TA/"/>
     
   </entry>
   
@@ -535,52 +591,6 @@
       
       
     <summary type="html">&lt;h1 id=&quot;有趣轶事&quot;&gt;&lt;a href=&quot;#有趣轶事&quot; class=&quot;headerlink&quot; title=&quot;有趣轶事&quot;&gt;&lt;/a&gt;有趣轶事&lt;/h1&gt;&lt;h2 id=&quot;参加SIG-event-day的搞笑事情&quot;&gt;&lt;a href=&quot;#参加SIG-event-day的搞笑事情&quot; cla</summary>
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>参加SIG event day的搞笑事情</title>
-    <link href="https://aixuek-itshare.com/personal/funny-experience/sig-event/"/>
-    <id>https://aixuek-itshare.com/personal/funny-experience/sig-event/</id>
-    <published>2024-06-29T04:13:46.000Z</published>
-    <updated>2024-08-24T14:26:51.805Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>在通过SIG的笔试、HR电话面试之后（有关SIG的面试题和面试经历，请看<a href="/it-categories/interviews/sig-interview">SIG面试</a>），收到了参加SIG办公室俩天参观的邀请，于是开开心心就去了，毕竟美国大投行公司，它的财力对我吸引力是非常大的，也很好奇有钱公司内部长啥样。也就开启了俩天的social娱乐。</p><h1 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h1><p>SIG的参观活动包括：刚开始的破冰，大家一起吃早餐（白人早餐真的一般，但是咖啡和面包还是不错的），一群人一起坐个大桌子，一起聊天，然后会有HR工作人员到每个桌子参与聊天（纯闲聊，之前正值Taylor Swift在悉尼开了个演唱会，而且那个HR是粉丝，于是这个成为了主要话题）。</p><p>结束之后开始由团队做演讲，介绍公司、投行、公司团队结构和负责的事情，有提问环节，在介绍Trading思想时，也会插入跟股票相关的卡牌游戏环节，来方便理解。当然，之后还有赌博游戏，因为SIG这个公司的赌博文化很重，每年还会举行赌博游戏WIZARD的比赛（包含奖金的那种:&gt;）。</p><p>第一天晚上，因为SIG把住宿和路费都包了，很豪华的酒店，就在悉尼歌剧院海湾附近的高楼里面，听住进去的人说晚上的夜景灯光非常漂亮，房间也很豪华（瞬间后悔为啥我要写我住悉尼），所以我们都参加了晚上的酒吧晚餐。酒吧是crown顶楼的露台，非常豪华！（又是豪华，我知道，这就是财力的魅力啊）。SIG的it老员工和第二天带我们的员工组长都会来一起聊天（就是试水感觉，看看你做了啥项目，擅长什么，沟通怎么样），我和之前聊天的大佬也一起聊项目，一起问他们一些之后工作的问题和他们对it的看法啥的。在屋顶上边聊天边喝酒吃小burger，第一次体验服务员轮流托着餐盘一个个服务的感觉挺新奇舒适的。</p><p>第一天结束后，第二天就多了一个题目分析。在这个event之前，SIG会发一个题目邮件，要求在来event前做完。所以第二天员工team leader就会带着自己的组员一起把每个人写的题解放到屏幕上讲解分析，有什么缺点，什么有点，为什么错，现场优化。这就是贼有趣的事情发生的时候了（后面些写）。之后，员工带着我们参观了各种办公区，SIG的办公区属于黑色简约风，黑色的地毯，清爽大气的办公桌，加上落地窗外明朗开阔的风景，简直是我的梦中情office！</p><p>在第二天结束末尾，大家一起拍了合照，领了纪念礼包（喜欢它送到WIZARD卡牌哈哈），就欢快地结束了。</p><h2 id="有趣事件1"><a href="#有趣事件1" class="headerlink" title="有趣事件1"></a>有趣事件1</h2><p>关于代码一起分析那事儿，铺垫挺长的。在第一天晚上酒吧聊天地时候，就有一个白女不停地说，“哎呀，有的时候我的灵感一会儿就来了，我喜欢深夜写码，但有时候写完之后第二天就忘了怎么写的，很惊讶我自己能写出来，真的有趣哈哈。”</p><p>我其实也喜欢大晚上写，可能一部分码农都有这个习惯吧，特别熬夜的时候如何喝酒提神的话（我会这样，很爽哈哈），有的时候确实会再次看到代码有点懵，啊这咋写的。而且我在写完代码一周之后，大概率会忘记我的逻辑和干的事情，所以我一直需要记笔记，记录这个代码重点干了啥，逻辑是怎么样的（之前实习的时候，就因为我忘记我写的代码的逻辑，而被mentor问这是我写的代码吗:&lt;…）。</p><p>所以我理解她说的话，可能说得夸张了一点，但是是可能存在的，但是我不理解为啥她逢人就讲，难不成这是优势？自动清缓存让脑子更灵光？但是第二天，我就理解了。</p><p>当时正巧第二天我跟那个白女在一个组，这个代码题，就我和她写出了全部的解，有另俩个女生卡在了最后一个test，time limit上，还有一个女生有bug，只过了一部分test。于是工作人员在分析完其他人的代码，就让我和她讲讲解题思路。当时我还有点小私心：她在我前面（按顺序一个一个讲），那她把思路讲完了，我就是透明了。随后我发现这个完全多余，因为她直接搬出了“啊呀，我有时候晚上写码blablabla…我忘了咋做的”，mentor一听，就直接问我你来讲讲？</p><p>于是我意味深长地看了她一眼（因为昨晚她挺跳的，除了说她忘代码的事儿，还不停地说她自己的项目，多么多么厉害啥的），如果她只是抄了代码我无所谓，但是又抄代码又要跳说自己多厉害就有点讨厌了。然后到白板讲了解题思路。之后小组的人不理解的也是找我问思路，都不问她。所以嘛，小聪明少耍，大家都懂。</p><p>后来想来挺搞笑的，铺垫了一晚上，也不回去查一查捣鼓下解题思路，还期望第二天能混过去呢，原来有的白女跟普信男一样，老装了。</p><h2 id="有趣事件2"><a href="#有趣事件2" class="headerlink" title="有趣事件2"></a>有趣事件2</h2><p>这个event本身就挺drama，但也挺合乎常理吧。在第一天开始的时候，SIG团队的工作人员就不停强调“这不是面试中的一环，大家敞开心扉玩，就是互相熟悉熟悉介绍介绍，不要太紧张”。结果我知道一同去参加的一个好友，在这个event之后就给刷了 :&lt;???。我当时听这个话一开始是嗤之以鼻“谁特么信啊”，之后听SIG说了好几次，给我洗脑了：开开心心玩，谁会用这个来评估，有时候玩游戏的时候也没咋看工作人员观察，于是自己开开心心和大佬沉浸在解方块puzzle中，当时一群人在旁边问工作人员面试问题。。。每想到结果还是会刷人。。。，而且当时我都那样都没被刷。</p><h1 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h1><p>在里面遇到了很多有趣的人，有在玩WIZARD一直负分的女生，可可爱爱地向马上让她再次输分的人撒娇说“不要，让我赢一盘嘛，求你了”，有C++大佬谦虚地说我没那么厉害的同时给我展示了他们在做的贼大的开源服务，还有一个眼睛亮闪闪的女生认真地看着我说这个解法很棒…</p><p>这些真诚有趣的人都是比这个event更加令人深刻、有意义的回忆，一直期待遇到更多有趣的人。虽然之后SIG后面几面挂了，但是让我记住了：哇，有钱就是np！</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h1&gt;&lt;p&gt;在通过SIG的笔试、HR电话面试之后（有关SIG的面试题和面试经历，请看&lt;a href=&quot;/it-categories/interviews</summary>
-      
-    
-    
-    
-    <category term="个人" scheme="https://aixuek-itshare.com/categories/%E4%B8%AA%E4%BA%BA/"/>
-    
-    <category term="有趣轶事" scheme="https://aixuek-itshare.com/categories/%E4%B8%AA%E4%BA%BA/%E6%9C%89%E8%B6%A3%E8%BD%B6%E4%BA%8B/"/>
-    
-    
-    <category term="搞笑" scheme="https://aixuek-itshare.com/tags/%E6%90%9E%E7%AC%91/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>面试过往</title>
-    <link href="https://aixuek-itshare.com/it-categories/interviews/index/"/>
-    <id>https://aixuek-itshare.com/it-categories/interviews/index/</id>
-    <published>2024-06-28T09:18:28.000Z</published>
-    <updated>2024-08-24T14:26:51.804Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="面试过往"><a href="#面试过往" class="headerlink" title="面试过往"></a>面试过往</h1><h2 id="C-面试问题"><a href="#C-面试问题" class="headerlink" title="C++面试问题"></a><a href="https://aixuek-itshare.com/it-categories/interviews/C++-interview-questions">C++面试问题</a></h2><h2 id="SIG-grad-tech面试的分享"><a href="#SIG-grad-tech面试的分享" class="headerlink" title="SIG grad tech面试的分享"></a><a href="https://aixuek-itshare.com/it-categories/interviews/sig-interview">SIG grad tech面试的分享</a></h2>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;面试过往&quot;&gt;&lt;a href=&quot;#面试过往&quot; class=&quot;headerlink&quot; title=&quot;面试过往&quot;&gt;&lt;/a&gt;面试过往&lt;/h1&gt;&lt;h2 id=&quot;C-面试问题&quot;&gt;&lt;a href=&quot;#C-面试问题&quot; class=&quot;headerlink&quot; title=&quot;C++面试</summary>
       
     
     
