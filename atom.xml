@@ -6,7 +6,7 @@
   <link href="https://aixuek-itshare.com/atom.xml" rel="self"/>
   
   <link href="https://aixuek-itshare.com/"/>
-  <updated>2026-01-03T13:46:03.313Z</updated>
+  <updated>2026-04-06T02:22:32.001Z</updated>
   <id>https://aixuek-itshare.com/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>OneDrive同步分享</title>
+    <link href="https://aixuek-itshare.com/it-categories/useful-tricks/onedrive-trick/"/>
+    <id>https://aixuek-itshare.com/it-categories/useful-tricks/onedrive-trick/</id>
+    <published>2026-04-05T16:00:00.000Z</published>
+    <updated>2026-04-06T02:22:32.001Z</updated>
+    
+    <content type="html"><![CDATA[<p>Onedrive一般都会通过复制一个文件夹进行云备份，但这样就重复占用了俩份储存空间。所以可以用复制link的形式，进行云储存：</p><ol><li>Open cmd as administrator</li><li><code>mklink /d &quot;D:\App\OneDrive\&lt;onedrive-foldername&gt;&quot; &quot;D:\&lt;actual-foldername&gt;&quot;</code></li><li>成功后会出现：<code>symbolic link created for D:\App\OneDrive\&lt;onedrive-foldername&gt; &lt;&lt;===&gt;&gt; D:\&lt;actual-foldername&gt;</code><br>其中 onedrive-foldername 是你希望onedrive中储存的文件夹名，actual-foldername 是真正的你希望云储存的link对应文件夹。这样运行后，就会在OneDrive中生成一个同步link的文件夹了。</li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;Onedrive一般都会通过复制一个文件夹进行云备份，但这样就重复占用了俩份储存空间。所以可以用复制link的形式，进行云储存：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Open cmd as administrator&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;mklink /d &amp;quot;D:</summary>
+      
+    
+    
+    
+    <category term="IT分类" scheme="https://aixuek-itshare.com/categories/IT%E5%88%86%E7%B1%BB/"/>
+    
+    <category term="tricks分享" scheme="https://aixuek-itshare.com/categories/IT%E5%88%86%E7%B1%BB/tricks%E5%88%86%E4%BA%AB/"/>
+    
+    
+    <category term="Tricks" scheme="https://aixuek-itshare.com/tags/Tricks/"/>
+    
+  </entry>
   
   <entry>
     <title>WindowsSystem 问题解决分享</title>
@@ -575,26 +604,6 @@
     
     
     <category term="Code" scheme="https://aixuek-itshare.com/tags/Code/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>有趣轶事</title>
-    <link href="https://aixuek-itshare.com/personal/funny-experience/index/"/>
-    <id>https://aixuek-itshare.com/personal/funny-experience/index/</id>
-    <published>2024-06-29T04:13:46.000Z</published>
-    <updated>2024-08-24T14:26:51.804Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="有趣轶事"><a href="#有趣轶事" class="headerlink" title="有趣轶事"></a>有趣轶事</h1><h2 id="参加SIG-event-day的搞笑事情"><a href="#参加SIG-event-day的搞笑事情" class="headerlink" title="参加SIG event day的搞笑事情"></a><a href="https://aixuek-itshare.com/personal/funny-experience/sig-event">参加SIG event day的搞笑事情</a></h2>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;有趣轶事&quot;&gt;&lt;a href=&quot;#有趣轶事&quot; class=&quot;headerlink&quot; title=&quot;有趣轶事&quot;&gt;&lt;/a&gt;有趣轶事&lt;/h1&gt;&lt;h2 id=&quot;参加SIG-event-day的搞笑事情&quot;&gt;&lt;a href=&quot;#参加SIG-event-day的搞笑事情&quot; cla</summary>
-      
-    
-    
-    
     
   </entry>
   

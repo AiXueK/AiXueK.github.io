@@ -1231,7 +1231,7 @@ Create mesh and attach mesh component to the object:<figure class="highlight c++
   <entry>
     <title>tricks分享</title>
     <url>/it-categories/useful-tricks/index/</url>
-    <content><![CDATA[<h1 id="tricks分享"><a href="#tricks分享" class="headerlink" title="tricks分享"></a>tricks分享</h1><h2 id="Windows系统问题"><a href="#Windows系统问题" class="headerlink" title="Windows系统问题"></a><a href="https://aixuek-itshare.com/it-categories/useful-tricks/windows-trick">Windows系统问题</a></h2>]]></content>
+    <content><![CDATA[<h1 id="tricks分享"><a href="#tricks分享" class="headerlink" title="tricks分享"></a>tricks分享</h1><h2 id="Windows系统问题"><a href="#Windows系统问题" class="headerlink" title="Windows系统问题"></a><a href="https://aixuek-itshare.com/it-categories/useful-tricks/windows-trick">Windows系统问题</a></h2><h2 id="OneDrive同步分享"><a href="#OneDrive同步分享" class="headerlink" title="OneDrive同步分享"></a><a href="https://aixuek-itshare.com/it-categories/useful-tricks/onedrive-trick">OneDrive同步分享</a></h2>]]></content>
   </entry>
   <entry>
     <title>WindowsSystem 问题解决分享</title>
@@ -1253,6 +1253,24 @@ Create mesh and attach mesh component to the object:<figure class="highlight c++
 <li>重启电脑</li>
 </ol>
 <p>这样就修复了！！！</p>
+]]></content>
+      <categories>
+        <category>IT分类</category>
+        <category>tricks分享</category>
+      </categories>
+      <tags>
+        <tag>Tricks</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>OneDrive同步分享</title>
+    <url>/it-categories/useful-tricks/onedrive-trick/</url>
+    <content><![CDATA[<p>Onedrive一般都会通过复制一个文件夹进行云备份，但这样就重复占用了俩份储存空间。所以可以用复制link的形式，进行云储存：</p>
+<ol>
+<li>Open cmd as administrator</li>
+<li><code>mklink /d &quot;D:\App\OneDrive\&lt;onedrive-foldername&gt;&quot; &quot;D:\&lt;actual-foldername&gt;&quot;</code></li>
+<li>成功后会出现：<code>symbolic link created for D:\App\OneDrive\&lt;onedrive-foldername&gt; &lt;&lt;===&gt;&gt; D:\&lt;actual-foldername&gt;</code><br>其中 onedrive-foldername 是你希望onedrive中储存的文件夹名，actual-foldername 是真正的你希望云储存的link对应文件夹。这样运行后，就会在OneDrive中生成一个同步link的文件夹了。</li>
+</ol>
 ]]></content>
       <categories>
         <category>IT分类</category>
